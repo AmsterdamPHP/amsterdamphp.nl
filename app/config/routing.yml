@@ -1,0 +1,5 @@
+amsterdam_php_meetup:
+    resource: "@AmsterdamPHPMeetupBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
