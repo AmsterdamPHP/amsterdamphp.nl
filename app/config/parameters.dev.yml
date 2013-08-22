@@ -1,0 +1,16 @@
+parameters:
+  database_driver:   pdo_mysql
+  database_host:     localhost
+  database_port:
+  database_name:     amsterdamphp
+  database_user:     amsterdamphp
+  database_password: amsterdamphp
+
+  mailer_transport:      sendmail
+  mailer_host:           localhost
+  mailer_user:           ~
+  mailer_password:       ~
+  mailer_sender_address: contact@amsterdamphp.nl
+
+  locale:            nl
+  secret:            123a2821ff7c24f9a81ed1de5575058f
