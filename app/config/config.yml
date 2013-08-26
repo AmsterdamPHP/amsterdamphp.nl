@@ -68,3 +68,10 @@ swiftmailer:
 dms_meetup_api:
     client:
         key: 54855707c254f3f793214051c437a
+
+snc_redis:
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn: redis://localhost

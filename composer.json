@@ -18,7 +18,9 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
 
-        "dms/meetup-api-bundle": "dev-master@dev"
+        "dms/meetup-api-bundle": "dev-master@dev",
+        "snc/redis-bundle": "~1.1",
+        "predis/predis": "~0.8"
     },
     "scripts": {
         "post-install-cmd": [
