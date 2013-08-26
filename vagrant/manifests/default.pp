@@ -41,7 +41,6 @@ package { 'apache2-mpm-prefork':
 class { 'puphpet::dotfiles': }
 
 package { [
-    'build-essential',
     'vim',
     'curl',
     'git-core'
@@ -197,3 +196,6 @@ apache::vhost { 'phpmyadmin':
   require     => Class['phpmyadmin'],
 }
 
+class { 'redis':
+    version => '2.6.5',
+}
