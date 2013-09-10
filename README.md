@@ -30,7 +30,7 @@ We want this to be a community project we all rally behind and keep up to date, 
 Like I said, learning experience, we want to pack some new stuff in here for us to experiment with, this may be familiar to some and new to others, that's where you come in to teach others.
 
 - Symfony 2.3
-- Behat and Spec
+- [Behat](http://behat.org/) and [PHPSpec](http://www.phpspec.net/)
 - API's, lots of them.
 - Vagrant
 - Redis
