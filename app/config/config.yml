@@ -75,3 +75,7 @@ snc_redis:
             type: predis
             alias: default
             dsn: redis://localhost
+        cache:
+            type: predis
+            alias: cache
+            dsn: redis://localhost
