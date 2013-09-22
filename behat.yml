@@ -2,6 +2,9 @@ default:
     extensions:
         Behat\Symfony2Extension\Extension:
             mink_driver: true
+            kernel:
+                env: test
+                bootstrap: vendor/autoload.php
         Behat\MinkExtension\Extension:
             default_session: 'symfony2'
         Sanpi\Behatch\Extension:
@@ -16,5 +19,6 @@ default:
         PSS\Behat\Symfony2MockerExtension\Extension: ~
     paths:
         features: features
+        bootstrap: src/AmsterdamPHP/Behat/bootstrap
     context:
         class:  AmsterdamPHP\Behat\FeatureContext
