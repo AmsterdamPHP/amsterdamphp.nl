@@ -6,7 +6,8 @@ Feature:
   Scenario: See a call to action
   Scenario: See list of sponsors on homepage
   Scenario: See list of sponsors on separate page
-  Scenario: De-actiavated sponsors do not show up on homepage
+  Scenario: Inactive sponsor is grayscaled but listed
+  Scenario: Suspended sponsor is ot listed
 
   @v1.1
   Scenario: Sponsor page shows tiers of contribution

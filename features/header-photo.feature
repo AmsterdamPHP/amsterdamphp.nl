@@ -10,7 +10,20 @@ Feature: Header Photo
 #      And I should see an ".photo" element
 
   Scenario: Show Header Image
+    Given Meetup API returns "10" photos
+      And Pre-Selection has "5" photos
+     When I go to "/"
+     Then I should see an ".header-photo" element
 
   Scenario: Fallback when no pre-selection
+    Given Meetup API returns "10" photos
+    And Pre-Selection has "0" photos
+    When I go to "/"
+    Then I should see an ".header-photo" element
 
   Scenario: Shown Image must be from pre-selection
+    Given Meetup API returns "10" photos
+    And Pre-Selection has "5" photos
+    When I go to "/"
+    Then I should see an ".header-photo" element
+     And The Image should belong to the pre-selection
