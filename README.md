@@ -13,10 +13,12 @@ We want this to be a community project we all rally behind and keep up to date, 
 
 1. **look at the issues**, they are our guide, find something you are comfortable with and claim it
 2. if details are lacking, **start a discussion** on the issue
-3. **write your code** according to the guidelines below
-4. **open a PR** and wait for the review results by one of the project leads
-5. ...
-6. **Profit!**, no I'm kidding, but the learning process should indeed be a profit for you.
+3. **run the behat tests** for that feature (or write if needed)
+4. **write your code** according to the guidelines below
+5. **run behat tests** make sure everything is green
+6. **open a PR** and wait for the review results by one of the project leads
+7. ...
+8. **Profit!**, no I'm kidding, but the learning process should indeed be a profit for you.
 
 ### Guidelines
 
