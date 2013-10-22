@@ -1,5 +1,6 @@
 <?php
 
+use Bc\Bundle\BootstrapBundle\BcBootstrapBundle;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
@@ -21,9 +22,11 @@ class AppKernel extends Kernel
             #Third Party
             new Snc\RedisBundle\SncRedisBundle(),
             new DMS\Bundle\MeetupApiBundle\DMSMeetupApiBundle(),
+            new BcBootstrapBundle(),
 
             #AmsterdamPHP
-            new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
+//            new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
+            new AmsterdamPHP\Bundle\SiteBundle\AmsterdamPHPSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

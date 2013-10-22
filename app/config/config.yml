@@ -25,19 +25,49 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+# Bootstrap
+bc_bootstrap:
+    assets_dir:     %kernel.root_dir%/../vendor/twbs/bootstrap
+    jquery_path:    %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.10.2.js
 
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
     use_controller: false
     bundles:        [ ]
-    #java: /usr/bin/java
+    write_to:       %kernel.root_dir%/../web
     filters:
+        less:
+            node:       /usr/local/bin/node
+            node_paths: [/usr/local/lib/node_modules]
+            apply_to:   "\.less$"
         cssrewrite: ~
-        #closure:
-        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
-        #yui_css:
-        #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+        uglifyjs:
+            bin: /usr/local/bin/uglifyjs
+        uglifycss:
+            bin: /usr/local/bin/uglifycss
+    assets:
+        ie8:
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/assets/js/html5shiv.js
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/assets/js/respond.min.js
+            filters:
+                - ?uglifyjs
+            output: js/ie8.js
+        amsterdamphp:
+            inputs:
+                - %kernel.root_dir%/Resources/less/amsterdamphp.less
+            filters:
+                - cssrewrite
+                - ?uglifycss
+            output: css/amsterdamphp.css
+        amsterdamphp-js:
+            inputs:
+                - %kernel.root_dir%/../web/js/jquery.js
+                - %kernel.root_dir%/../web/js/bootstrap.js
+            filters:
+                - ?uglifyjs
+            output: js/amsterdamphp.js
 
 # Doctrine Configuration
 doctrine:

@@ -20,7 +20,18 @@
 
         "dms/meetup-api-bundle": "dev-master@dev",
         "snc/redis-bundle": "~1.1",
-        "predis/predis": "~0.8"
+        "predis/predis": "~0.8",
+        "braincrafted/bootstrap-bundle": "bootstrap-3.0-forms-dev@dev",
+        "twbs/bootstrap": "3.0.*",
+        "jquery/jquery": "1.10.2"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*@dev",
+        "behat/symfony2-extension": "~1.1",
+        "behat/mink-extension": "~1.2",
+        "behat/mink-browserkit-driver": "~1.1",
+        "polishsymfonycommunity/symfony2-mocker-extension": "~1.0",
+        "sanpi/behatch-contexts": "~1.2"
     },
     "scripts": {
         "post-install-cmd": [
@@ -38,6 +49,23 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/egrajeda/bootstrap-bundle.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.10.2",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
     "config": {
         "bin-dir": "bin"
     },
@@ -51,13 +79,5 @@
         "branch-alias": {
             "dev-master": "2.3-dev"
         }
-    },
-    "require-dev": {
-        "phpspec/phpspec": "2.0.*@dev",
-        "behat/symfony2-extension": "~1.1",
-        "behat/mink-extension": "~1.2",
-        "behat/mink-browserkit-driver": "~1.1",
-        "polishsymfonycommunity/symfony2-mocker-extension": "~1.0",
-        "sanpi/behatch-contexts": "~1.2"
     }
 }

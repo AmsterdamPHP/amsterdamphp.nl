@@ -1,5 +1,10 @@
-amsterdam_php_meetup:
-    resource: "@AmsterdamPHPMeetupBundle/Controller/"
+amsterdam_php_site:
+    resource: "@AmsterdamPHPSiteBundle/Controller/"
     type:     annotation
     prefix:   /
 
+#amsterdam_php_meetup:
+#    resource: "@AmsterdamPHPMeetupBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+#

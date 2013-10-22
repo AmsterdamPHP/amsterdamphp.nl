@@ -3,11 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('/css/amsterdamphp.css') }}">
         {% block stylesheets %}{% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="{{ asset('js/ie8.js') }}"></script>
+        <![endif]-->
     </head>
     <body>
         {% block body %}{% endblock %}
+
+        <script src="{{ '/js/amsterdamphp.js' }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

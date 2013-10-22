@@ -1,0 +1,90 @@
+// Bootstrap
+@import "../../../vendor/twbs/bootstrap/less/bootstrap";
+@import "../../../vendor/braincrafted/bootstrap-bundle/Bc/Bundle/BootstrapBundle/Resources/less/form";
+
+// Font Awesome
+@import "../../../web/font-awesome/less/font-awesome";
+@FontAwesomePath: '/font-awesome/font';
+
+// Our font
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+/**
+ * Base Stylesheet
+ */
+
+/** Our Colors */
+@amsBlack: #000;
+@amsRed: #F00;
+
+/** Bootstrap override */
+@brand-primary: @amsRed;
+
+@font-family-sans-serif:  'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+/** Custom Styles */
+header {
+    color:  #ffffff;
+    background-color: @amsBlack;
+    padding-top: 20px;
+
+    .social-icons {
+        font-size: 24px;
+
+        a { color: #ffffff;}
+    }
+
+    .nav-menu {
+        li {
+            height:  50px;
+            margin-bottom: -10px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 15px 0 15px;
+
+            a { color: #ffffff; }
+            a:hover { text-decoration: none; }
+
+        }
+
+        li:hover {
+            background-color: @amsRed;
+        }
+    }
+}
+
+footer {
+    background-color: @amsBlack;
+    color:  #ffffff;
+    a { color: @amsRed; }
+
+    .about {
+        padding:  25px 0;
+
+        .lead {
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .follow-title {
+            width: 100%;
+            text-transform: uppercase;
+            .text-center;
+        }
+
+        .follow-list {
+            width: 100%;
+            text-transform: uppercase;
+            .text-center;
+        }
+    }
+}
+
+
+.photo-bar {
+    .list-inline;
+    .photo {}
+}
