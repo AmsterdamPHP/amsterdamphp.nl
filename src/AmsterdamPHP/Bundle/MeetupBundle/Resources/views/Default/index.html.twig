@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <ul class="photo-bar">
+        {% for photo in photos %}
+            <li class="photo"><img src="{{ getMeetupPhotoUrl(photo) }}" alt="" width="200"/></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+

@@ -1,0 +1,15 @@
+parameters:
+    meetup.photos.class: AmsterdamPHP\Bundle\MeetupBundle\Service\PhotoService
+    meetup.twig.photos.class: AmsterdamPHP\Bundle\MeetupBundle\Twig\PhotoRenderer
+services:
+
+    meetup.photos:
+        class: %meetup.photos.class%
+        arguments:
+            client: @dms_meetup_api.key_client
+            cache: @snc_redis.cache
+
+    meetup.twig.photos:
+        class: %meetup.twig.photos.class%
+        tags:
+            - { name: twig.extension }
