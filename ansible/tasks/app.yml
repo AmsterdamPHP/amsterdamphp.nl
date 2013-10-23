@@ -1,0 +1,3 @@
+---
+- name: App | Composer install
+  action: shell composer install --no-scripts chdir=/var/www/amsphp

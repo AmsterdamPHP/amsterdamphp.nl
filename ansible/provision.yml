@@ -1,0 +1,14 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    document_root: /var/www/amsphp
+  tasks:
+    - include: tasks/common.yml
+    - include: tasks/development.yml
+    - include: tasks/host.yml
+    - include: tasks/app.yml
+
+  handlers:
+    - name: restart apache
+      service: name=apache2 state=restarted
