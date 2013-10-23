@@ -20,6 +20,17 @@ We want this to be a community project we all rally behind and keep up to date, 
 7. ...
 8. **Profit!**, no I'm kidding, but the learning process should indeed be a profit for you.
 
+#### Booting up Vagrant Box
+
+To make it easier for you to contribute and use all the new and shiny, we have setup a Vagrant box. It is provisioned with Ansible, so you need to have a few extra things, these are the steps
+
+1. Install Ansible ([See Docs](http://www.ansibleworks.com/docs/intro_installation.html) or use HomeBrew on Mac OSX)
+2. Install VirtualBox
+3. Install Vagrant
+4. Run `vagrant up`
+5. Point `vagrant.amsterdamphp.dev` to `192.168.33.10`
+6. Code!
+
 ### Guidelines
 
 - use PSR-2 guidelines to write code
