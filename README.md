@@ -34,7 +34,7 @@ Like I said, learning experience, we want to pack some new stuff in here for us 
 - Symfony 2.3
 - [Behat](http://behat.org/) and [PHPSpec](http://www.phpspec.net/)
 - API's, lots of them.
-- Vagrant
+- Vagrant + [Ansible](http://www.ansibleworks.com)
 - Redis
 - Less
 
