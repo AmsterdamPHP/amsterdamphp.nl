@@ -11,4 +11,4 @@
   notify: restart apache
 
 - name: Apache | Ensure application files are present
-  file: path={{ document_root }}/web/ state=directory
+  file: path={{ document_root }} state=directory

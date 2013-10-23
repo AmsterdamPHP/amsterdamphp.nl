@@ -2,7 +2,8 @@
 - hosts: all
   sudo: true
   vars:
-    document_root: /var/www/amsphp
+    root_folder: /var/www/amsphp
+    document_root: "{{ root_folder }}/web/"
   tasks:
     - include: tasks/common.yml
     - include: tasks/development.yml
