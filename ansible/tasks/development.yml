@@ -62,7 +62,7 @@
 #     - restart apache
 
 - name: PHP | Enable Custom Config
-  action: shell php5enmod -s ALL timezone.ini 
+  action: shell php5enmod -s ALL timezone
 
 # PHP Tools
 
