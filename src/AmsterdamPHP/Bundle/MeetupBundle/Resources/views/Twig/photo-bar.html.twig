@@ -3,7 +3,9 @@
         {% for photo in photos %}
         <li style="width: {{ 100/photos|length }}%">
             <a href="">
-                <div class="photo" style="background-image:url('{{ getMeetupPhotoUrl(photo) }}')"></div>
+                <div class="photo" style="background-image:url('{{ getMeetupPhotoUrl(photo) }}')">
+                    <span class="photo-credits">by {{ getMeetupPhotoCredits(photo) }}</span>
+                </div>
             </a>
         </li>
         {% endfor %}
