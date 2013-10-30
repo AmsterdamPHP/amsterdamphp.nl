@@ -39,16 +39,56 @@ class PhotoService
 
         shuffle($photos);
 
-        return array_slice($photos, 0, $max);
+        return ($max == 1)? array_shift($photos) : array_slice($photos, 0, $max);
     }
 
-    public function getRandomPhotosFromPool($pool, $max, $resolution = 'high')
+    /**
+     * Gets random photos from a pool of previously selected photos
+     *
+     * @param $max
+     * @return array
+     */
+    public function getRandomPhotosFromPool($max)
     {
+        $pool = $this->getAllPoolPhotos();
+
+        shuffle($pool);
+
+        return ($max == 1)? array_shift($pool) : array_slice($pool, 0, $max);
     }
 
+    /**
+     * Stores a photo in the pool of photos
+     *
+     * @param $id
+     * @param $entries
+     */
     public function storePhotoPool($id, $entries)
     {
 
+    }
+
+    /**
+     * Gets all the Photos in the pool
+     * Falls back to All Photos
+     *
+     * @param bool $fallback
+     * @return array|mixed
+     */
+    public function getAllPoolPhotos($fallback = true)
+    {
+        $cacheKey = 'meetup.api.photos.pool';
+        $pool = $this->getCache()->get($cacheKey);
+
+        if ($pool !== null) {
+            $pool = unserialize($pool);
+        }
+
+        if ($pool === null && $fallback) {
+            $pool = $this->getAllPhotos();
+        }
+
+        return $pool;
     }
 
     /**
@@ -60,7 +100,7 @@ class PhotoService
         $cacheKey = 'meetup.api.photos.all';
 
         //Check Photo Cache
-        $cachedPhotos = $this->cache->get($cacheKey);
+        $cachedPhotos = $this->getCache()->get($cacheKey);
         if ($cachedPhotos !== null){
             return unserialize($cachedPhotos);
         }
@@ -78,9 +118,26 @@ class PhotoService
         }
 
         //Cache resource
-        $this->cache->set($cacheKey, serialize($allPhotos));
-        $this->cache->expireat($cacheKey, strtotime('+24 hours'));
+        $this->getCache()->set($cacheKey, serialize($allPhotos));
+        $this->getCache()->expireat($cacheKey, strtotime('+24 hours'));
 
         return $allPhotos;
     }
+
+    /**
+     * @return \DMS\Service\Meetup\AbstractMeetupClient
+     */
+    public function getApi()
+    {
+        return $this->api;
+    }
+
+    /**
+     * @return \Predis\Client
+     */
+    public function getCache()
+    {
+        return $this->cache;
+    }
+
 }

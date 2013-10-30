@@ -25,7 +25,7 @@ class AppKernel extends Kernel
             new BcBootstrapBundle(),
 
             #AmsterdamPHP
-//            new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
+            new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
             new AmsterdamPHP\Bundle\SiteBundle\AmsterdamPHPSiteBundle(),
         );
 
@@ -53,5 +53,23 @@ class AppKernel extends Kernel
         }
 
         return parent::getContainerBaseClass();
+    }
+
+    public function getCacheDir()
+    {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return '/dev/shm/amsphp/cache/' .  $this->environment;
+        }
+
+        return parent::getCacheDir();
+    }
+
+    public function getLogDir()
+    {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return '/dev/shm/amsphp/logs';
+        }
+
+        return parent::getLogDir();
     }
 }

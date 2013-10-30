@@ -9,11 +9,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        $photoService = $this->get('meetup.photos');
+        $headerPhoto = $photoService->getRandomPhotosFromPool(1);
+
+
+        return [
+            'header_photo' => $headerPhoto
+        ];
     }
 }

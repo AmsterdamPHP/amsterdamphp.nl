@@ -11,5 +11,7 @@ services:
 
     meetup.twig.photos:
         class: %meetup.twig.photos.class%
+        arguments:
+            photos: @meetup.photos
         tags:
             - { name: twig.extension }

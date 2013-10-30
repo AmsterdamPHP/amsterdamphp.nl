@@ -7410,6 +7410,9 @@ header {
   background-color: #000000;
   padding-top: 20px;
 }
+header .logo {
+  padding: 10px 25px;
+}
 header .social-icons {
   font-size: 24px;
 }
@@ -7420,7 +7423,6 @@ header .nav-menu li {
   height: 50px;
   margin-bottom: -10px;
   font-size: 18px;
-  font-weight: bold;
   padding: 0 15px 0 15px;
 }
 header .nav-menu li a {
@@ -7431,6 +7433,24 @@ header .nav-menu li a:hover {
 }
 header .nav-menu li:hover {
   background-color: #ff0000;
+}
+.header-photo {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.header-photo span {
+  font-size: 55px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header-photo span b {
+  color: #ff0000;
 }
 footer {
   background-color: #000000;
@@ -7459,9 +7479,35 @@ footer .about .follow-list {
 .photo-bar {
   padding-left: 0;
   list-style: none;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: -5px;
 }
 .photo-bar > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
+}
+@media (min-width: 1200px) {
+  .photo-bar {
+    float: left;
+    width: 100%;
+  }
+}
+.photo-bar li {
+  padding: 0;
+  margin-right: -4px;
+}
+.photo-bar .photo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50% ;
+  /* % of width, defines aspect ratio*/
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }

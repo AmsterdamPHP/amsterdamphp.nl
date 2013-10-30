@@ -1,3 +1,9 @@
 ---
+- name: App | Folder Permissions (Part 1)
+  command: sudo setfacl -R -m u:www-data:rwX -m u:vagrant:rwX /dev/shm/amsphp/
+
+- name: App | Folder Permissions (Part 2)
+  command: sudo setfacl -dR -m u:www-data:rwX -m u:vagrant:rwX /dev/shm/amsphp/
+
 - name: App | Composer install
   action: shell composer install --no-scripts chdir={{ root_folder }}
