@@ -5,6 +5,9 @@
     root_folder: /var/www/amsphp
     document_root: "{{ root_folder }}/web/"
     write_to_folder: /dev/shm/amsphp
+    dbname: amsphp
+    dbuser: root
+    dbpasswd: root
   tasks:
     - include: tasks/common.yml
     - include: tasks/build.yml

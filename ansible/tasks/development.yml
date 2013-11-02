@@ -19,6 +19,24 @@
 - name: MySQL
   action: apt pkg=mysql-server state=installed
 
+- name: MySQL
+  action: apt pkg=python-mysqldb state=installed
+
+# 'localhost' needs to be the last item for idempotency, see
+# http://ansible.cc/docs/modules.html#mysql-user
+- name: MySQL | Set Root Password
+  mysql_user: name={{ dbuser }} host={{ item }} password={{ dbpasswd }} priv=*.*:ALL,GRANT
+  with_items:
+    - 127.0.0.1
+    - ::1
+    - localhost
+
+- name: MySQL | Copy Config File
+  template: src=../files/.my.cnf dest=/{{ dbuser }}/.my.cnf owner={{ dbuser }} mode=0600
+
+- name: MySQL | Create App DB
+  mysql_db: name={{ dbname }} state=present login_password={{ dbpasswd }} login_user={{ dbuser }}
+
 - name: Redis
   action: apt pkg=redis-server state=installed
 

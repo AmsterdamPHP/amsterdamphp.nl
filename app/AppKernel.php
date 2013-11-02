@@ -1,6 +1,7 @@
 <?php
 
 use Bc\Bundle\BootstrapBundle\BcBootstrapBundle;
+use Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
@@ -23,6 +24,7 @@ class AppKernel extends Kernel
             new Snc\RedisBundle\SncRedisBundle(),
             new DMS\Bundle\MeetupApiBundle\DMSMeetupApiBundle(),
             new BcBootstrapBundle(),
+            new DoctrineMigrationsBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
