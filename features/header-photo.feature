@@ -17,7 +17,7 @@ Feature: Header Photo
 
   Scenario: Fallback when no pre-selection
     Given Meetup API returns "10" photos
-    And Pre-Selection has "0" photos
+    And Pre-Selection is empty
     When I go to "/"
     Then I should see an ".header-photo" element
 

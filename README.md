@@ -3,11 +3,23 @@ amsterdamphp.nl
 
 This repository hosts the main AmsterdamPHP Website. The purpose of this website is to showcase the User Group, from the work that is done and its results to the sponsors who allow us to make this happen and the people who contribute to allow us to accomplish so much.
 
-Its a community project, lead by the organizers and executed by the members. All communication for this project is done either in the issues page, or in the enablers mailing list.
+Its a community project, lead by the organisers and executed by the members. All communication for this project is done either in the issues page, or in the enablers mailing list.
 
 ## Want to contribute?
 
 We want this to be a community project we all rally behind and keep up to date, but we also want it to be a **learning experience**. This means experimenting with new technologies and trying out things we may not have time to use in everyday life.
+
+### Vagrant up and away
+
+To make contributing easier we have provided a vagrant setup to allow people to run a machine that provides all the tools needed for our tech sandbox. To get all of this running follow these steps:
+
+* Setup VirtualBox
+* Setup Vagrant
+* Setup Ansible
+* Execute `vagrant up`
+* [optional] Add `vagrant.amsterdamphp.nl` to your hosts file pointing to `192.168.33.10`
+
+**note:** This box has a always running process that will constantly compile the less files into CSS while you work, you do not need to run it yourself.
 
 ### How to contribute?
 

@@ -23,7 +23,9 @@
         "predis/predis": "~0.8",
         "braincrafted/bootstrap-bundle": "bootstrap-3.0-forms-dev@dev",
         "twbs/bootstrap": "3.0.*",
-        "jquery/jquery": "1.10.2"
+        "jquery/jquery": "1.10.2",
+        "doctrine/doctrine-migrations-bundle": "dev-master@dev",
+        "doctrine/migrations": "dev-master@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*@dev",
