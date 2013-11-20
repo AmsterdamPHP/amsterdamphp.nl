@@ -1,6 +1,7 @@
 <?php
 
 use Bc\Bundle\BootstrapBundle\BcBootstrapBundle;
+use DMS\Bundle\TwigExtensionBundle\DMSTwigExtensionBundle;
 use Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -25,6 +26,7 @@ class AppKernel extends Kernel
             new DMS\Bundle\MeetupApiBundle\DMSMeetupApiBundle(),
             new BcBootstrapBundle(),
             new DoctrineMigrationsBundle(),
+            new DMSTwigExtensionBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
@@ -57,15 +59,15 @@ class AppKernel extends Kernel
         return parent::getContainerBaseClass();
     }
 
-    public function getCacheDir()
-    {
-        if (in_array($this->environment, array('dev', 'test'))) {
-            return '/dev/shm/amsphp/cache/' .  $this->environment;
-        }
-
-        return parent::getCacheDir();
-    }
-
+//    public function getCacheDir()
+//    {
+//        if (in_array($this->environment, array('dev', 'test'))) {
+//            return '/dev/shm/amsphp/cache/' .  $this->environment;
+//        }
+//
+//        return parent::getCacheDir();
+//    }
+//
     public function getLogDir()
     {
         if (in_array($this->environment, array('dev', 'test'))) {

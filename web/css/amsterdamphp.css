@@ -280,12 +280,12 @@ textarea {
   background-image: none;
 }
 a {
-  color: #ff0000;
+  color: #ec292c;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #b30000;
+  color: #b81013;
   text-decoration: underline;
 }
 a:focus {
@@ -359,7 +359,7 @@ cite {
   color: #999999;
 }
 .text-primary {
-  color: #ff0000;
+  color: #ec292c;
 }
 .text-warning {
   color: #c09853;
@@ -1870,8 +1870,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #ff0000;
-  border-color: #e60000;
+  background-color: #ec292c;
+  border-color: #e71518;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1879,8 +1879,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #d60000;
-  border-color: #a80000;
+  background-color: #d91316;
+  border-color: #af1012;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -1902,8 +1902,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #ff0000;
-  border-color: #e60000;
+  background-color: #ec292c;
+  border-color: #e71518;
 }
 .btn-warning {
   color: #ffffff;
@@ -2054,7 +2054,7 @@ fieldset[disabled] .btn-info.active {
   border-color: #46b8da;
 }
 .btn-link {
-  color: #ff0000;
+  color: #ec292c;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
@@ -2075,7 +2075,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #b30000;
+  color: #b81013;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -2813,7 +2813,7 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
-  background-color: #ff0000;
+  background-color: #ec292c;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -2821,7 +2821,7 @@ input[type="button"].btn-block {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #ff0000;
+  background-color: #ec292c;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -3294,7 +3294,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #ff0000;
+  border-color: #ec292c;
 }
 .nav .nav-divider {
   height: 1px;
@@ -3366,7 +3366,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #ff0000;
+  background-color: #ec292c;
 }
 .nav-stacked > li {
   float: none;
@@ -3429,12 +3429,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav .caret {
-  border-top-color: #ff0000;
-  border-bottom-color: #ff0000;
+  border-top-color: #ec292c;
+  border-bottom-color: #ec292c;
 }
 .nav a:hover .caret {
-  border-top-color: #b30000;
-  border-bottom-color: #b30000;
+  border-top-color: #b81013;
+  border-bottom-color: #b81013;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -4029,8 +4029,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #ff0000;
-  border-color: #ff0000;
+  background-color: #ec292c;
+  border-color: #ec292c;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4159,11 +4159,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #808080;
 }
 .label-primary {
-  background-color: #ff0000;
+  background-color: #ec292c;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #cc0000;
+  background-color: #d01215;
 }
 .label-success {
   background-color: #5cb85c;
@@ -4222,7 +4222,7 @@ a.badge:focus {
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #ff0000;
+  color: #ec292c;
   background-color: #ffffff;
 }
 .nav-pills > li > a > .badge {
@@ -4280,7 +4280,7 @@ a.list-group-item.active > .badge,
 }
 a.thumbnail:hover,
 a.thumbnail:focus {
-  border-color: #ff0000;
+  border-color: #ec292c;
 }
 .thumbnail > img {
   margin-left: auto;
@@ -4411,7 +4411,7 @@ a.thumbnail:focus {
   font-size: 12px;
   color: #ffffff;
   text-align: center;
-  background-color: #ff0000;
+  background-color: #ec292c;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -4538,8 +4538,8 @@ a.list-group-item:focus {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #ff0000;
-  border-color: #ff0000;
+  background-color: #ec292c;
+  border-color: #ec292c;
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -4549,7 +4549,7 @@ a.list-group-item:focus {
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
 .list-group-item.active:focus .list-group-item-text {
-  color: #ffcccc;
+  color: #fde4e5;
 }
 .list-group-item-heading {
   margin-top: 0;
@@ -4668,18 +4668,18 @@ a.list-group-item:focus {
   border-bottom-color: #dddddd;
 }
 .panel-primary {
-  border-color: #ff0000;
+  border-color: #ec292c;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #ff0000;
-  border-color: #ff0000;
+  background-color: #ec292c;
+  border-color: #ec292c;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #ff0000;
+  border-top-color: #ec292c;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #ff0000;
+  border-bottom-color: #ec292c;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -7373,14 +7373,14 @@ header .nav-menu li a:hover {
   text-decoration: none;
 }
 header .nav-menu li:hover {
-  background-color: #ff0000;
+  background-color: #ec292c;
 }
 footer {
   background-color: #000000;
   color: #ffffff;
 }
 footer a {
-  color: #ff0000;
+  color: #ec292c;
 }
 footer .about {
   padding: 25px 0;
@@ -7415,7 +7415,7 @@ footer .about .follow-list {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .header-photo span b {
-  color: #ff0000;
+  color: #ec292c;
 }
 .photo-bar {
   padding-left: 0;
@@ -7460,4 +7460,100 @@ footer .about .follow-list {
   padding: 3px;
   float: right !important;
   float: right;
+}
+.meetup .title-bar {
+  font-weight: bold;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.meetup.upcoming .rsvp-box {
+  float: right !important;
+  float: right;
+  background-color: #E5E5E5;
+}
+.meetup.upcoming .rsvp-box .header {
+  display: block;
+  border-bottom: 1px solid white;
+  color: #ec292c;
+  font-weight: bold;
+  text-align: right;
+  padding: 5px 10px;
+}
+.meetup.upcoming .rsvp-box .stats {
+  padding-left: 0;
+  list-style: none;
+  padding: 5px 10px;
+}
+.meetup.upcoming .info-box {
+  color: #393939;
+}
+.meetup.upcoming .info-box .date {
+  font-size: 22px;
+  color: #ec292c;
+  font-weight: bold;
+}
+.meetup.upcoming .info-box .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.meetup.upcoming .map-box .address {
+  margin-bottom: 10px;
+}
+.meetup.upcoming .map-box .map {
+  height: 250px;
+}
+.meetup.upcoming .title-bar {
+  color: #ffffff;
+  background-color: #ec292c;
+  border-bottom: 1px solid #ffffff;
+}
+.meetup.upcoming .title-bar:after {
+  position: absolute;
+  display: block;
+  content: '';
+  border-bottom: 1px solid white;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0 0 0 -3px;
+}
+.meetups.past .title-bar {
+  font-weight: bold;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  border-bottom: 1px solid #ec292c;
+  color: #ec292c;
+}
+.meetup.past {
+  margin-bottom: 15px;
+}
+.meetup.past .overview-box .date {
+  font-size: 14px;
+}
+.meetup.past .overview-box .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.meetup.past .overview-box .stats {
+  font-size: 16px;
+}
+.meetup.past .overview-box .stats .rating {
+  color: #FBCE19;
+}
+.meetup.past .overview-box .attendance {
+  text-align: right;
+}
+.meetup.past .overview-box .attendance img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+.meetup.past .description-box {
+  font-size: 16px;
+  margin-top: 15px;
 }

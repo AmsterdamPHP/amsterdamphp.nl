@@ -17,9 +17,14 @@ class DefaultController extends Controller
         $photoService = $this->get('meetup.photos');
         $headerPhoto = $photoService->getRandomPhotosFromPool(1);
 
+        $eventService = $this->get('meetup.events');
+        $nextEvents   = $eventService->getUpcomingEvents(true)->toArray();
+        $pastEvents   = $eventService->getPastEvents(true)->toArray();
 
         return [
-            'header_photo' => $headerPhoto
+            'header_photo' => $headerPhoto,
+            'next_event'   => array_shift($nextEvents),
+            'past_events'  => array_splice($pastEvents, 0, 2),
         ];
     }
 }

@@ -1,0 +1,36 @@
+<div class="past meetups col-lg-12 col-md-12">
+    <div class="title-bar">LAST MEETINGS</div>
+
+    {% for event in events %}
+    <div class="meetup past">
+        <div class="overview-box row">
+            <div class="col-lg-7 col-md-7">
+                <p class="date">{{ (event.time/1000)|date('F d - H:i') }}</p>
+                <p class="name">{{ event.name }}</p>
+                <div class="stats">
+                    {{ (event.headcount > 0)? event.headcount : event.yes_rsvp_count }} {{ event.group.who }} |
+                    <span class="rating">
+                        {% for index in 1..5 %}
+                            <i class="icon-star{% if index > event.rating.average %}-empty{% endif %}"></i>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+            <div class="attendance col-lg-5 col-md-5">
+                {% set attendance = event.attendance.toArray() %}
+                {% for guest in attendance|slice(random(attendance|length - 16), 16) %}
+                    {% if guest.member.photo is defined %}
+                        <img src="{{ guest.member.photo.thumb }}" alt="{{ guest.member.name }}"/>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="description-box col-lg-12 col-md-12">
+                {{ event.description|striptags|truncate(300) }}
+                <a href="{{ event.event_url }}">Learn More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

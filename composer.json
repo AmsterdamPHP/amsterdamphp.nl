@@ -25,7 +25,8 @@
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery": "1.10.2",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
-        "doctrine/migrations": "dev-master@dev"
+        "doctrine/migrations": "dev-master@dev",
+        "dms/twig-extension-bundle": "~1.2"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*@dev",

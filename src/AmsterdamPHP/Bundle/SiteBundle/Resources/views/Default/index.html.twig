@@ -6,5 +6,17 @@
         <span>An english-speaking group for <b>PHP</b></span>
         <span>developers in and around <b>Amsterdam</b></span>
     </div>
-    <h1>Hello!</h1>
+
+    <div class="row">
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-8 col-lg-8">
+            <div class="row">
+                {% include 'AmsterdamPHPSiteBundle:Default:_next_event.html.twig' with {event: next_event} %}
+            </div>
+            <div class="row">
+                {% include 'AmsterdamPHPSiteBundle:Default:_past_events.html.twig' with {events: past_events} %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
