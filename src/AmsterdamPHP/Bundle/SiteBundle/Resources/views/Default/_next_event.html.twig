@@ -19,7 +19,11 @@
                 {{ (event.time/1000)|date('G:i') }}
             </p>
             <p class="name">{{ event.name }}</p>
+
+            {% if event.venue is defined %}
             <p class="host-sponsor">{{ event.venue.name }}</p>
+            {% endif %}
+
             <p class="description">
                 {{ event.description|striptags|truncate(300) }}
                 <a href="{{ event.event_url }}">Learn more</a>
@@ -27,7 +31,13 @@
 
         </div>
         <div class="map-box col-lg-6 col-md-6">
-            <span class="address">{{ event.venue.address_1 }}, {{ event.venue.city }}</span>
+            <span class="address">
+                {% if event.venue is defined %}
+                    {{ event.venue.address_1 }}, {{ event.venue.city }}
+                {% else %}
+                    TBA, Amsterdam
+                {% endif %}
+            </span>
             <div id="gmap" class="map">MAP</div>
         </div>
     </div>
@@ -37,7 +47,7 @@
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
     var myOptions = {
-        zoom: 15,
+        zoom: {{ (event.venue is defined)? 15:10}},
         center: new google.maps.LatLng({{ event.venue.lat|default(52.3731) }}, {{ event.venue.lon|default(4.8922) }}),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };

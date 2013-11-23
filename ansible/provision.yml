@@ -4,7 +4,7 @@
   vars:
     root_folder: /var/www/amsphp
     document_root: "{{ root_folder }}/web/"
-    write_to_folder: /dev/shm/amsphp
+    write_to_folder: /dev/shm
     dbname: amsphp
     dbuser: root
     dbpasswd: root

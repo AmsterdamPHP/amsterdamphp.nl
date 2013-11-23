@@ -1,0 +1,16 @@
+<div class="blog-posts">
+    {% for post in blog_posts|slice(0, 2) %}
+        <div class="blog-post">
+
+            <div class="date-box">
+                <span class="date">{{ post.pubDate|date('F d, Y') }}</span>
+            </div>
+            <p class="title">{{ post.title }}</p>
+            <p class="content">
+                {{ post.description|striptags|truncate(250) }}
+                <a href="{{ post.link }}">More</a>
+            </p>
+        </div>
+    {% endfor %}
+    <a class="more" href="http://blog.amsterdamphp.nl">OLDER POSTS</a>
+</div>

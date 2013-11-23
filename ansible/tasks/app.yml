@@ -1,4 +1,7 @@
 ---
+- name: App | Add boot time file
+  action: template src=../files/boot.sh dest=/etc/init.d/amsphp-boot mode=0777 owner=root
+
 - name: App | Write to Folder
   file: path={{ write_to_folder}} state=directory
 
