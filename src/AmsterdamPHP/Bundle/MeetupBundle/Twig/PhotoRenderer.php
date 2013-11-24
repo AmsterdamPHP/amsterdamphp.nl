@@ -74,6 +74,10 @@ class PhotoRenderer extends \Twig_Extension
 
     public function getMeetupPhotoCredits($photo)
     {
+        if (! isset($photo['member']['name'])) {
+            return '';
+        }
+
         return $photo['member']['name'];
     }
 

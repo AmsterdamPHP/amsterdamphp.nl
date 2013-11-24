@@ -1,10 +1,17 @@
 parameters:
     meetup.photos.class: AmsterdamPHP\Bundle\MeetupBundle\Service\PhotoService
+    meetup.events.class: AmsterdamPHP\Bundle\MeetupBundle\Service\EventService
     meetup.twig.photos.class: AmsterdamPHP\Bundle\MeetupBundle\Twig\PhotoRenderer
 services:
 
     meetup.photos:
         class: %meetup.photos.class%
+        arguments:
+            client: @dms_meetup_api.key_client
+            cache: @snc_redis.cache
+
+    meetup.events:
+        class: %meetup.events.class%
         arguments:
             client: @dms_meetup_api.key_client
             cache: @snc_redis.cache

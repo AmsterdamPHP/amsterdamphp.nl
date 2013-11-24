@@ -1,1 +1,6 @@
 services:
+
+    amsterdamphp_site.integration.blog:
+        class: AmsterdamPHP\Bundle\SiteBundle\Service\BlogService
+        arguments:
+            cache: @snc_redis.cache

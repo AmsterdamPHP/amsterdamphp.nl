@@ -6,5 +6,35 @@
         <span>An english-speaking group for <b>PHP</b></span>
         <span>developers in and around <b>Amsterdam</b></span>
     </div>
-    <h1>Hello!</h1>
+
+    <div class="row sponsor-box">
+        <div class="col-md-12 col-lg-12">
+            <h2>SPONSORS</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <div class="callout sponsor">
+                <p class="call">SPONSOR US!</p>
+                <p>Show your love for the community</p>
+            </div>
+
+            <div class="callout speaker">
+                <p class="call">BE A SPEAKER</p>
+                <p>Share your knowledge with the community!</p>
+            </div>
+
+            {% include 'AmsterdamPHPSiteBundle:Default:_blog_posts.html.twig' %}
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <div class="row">
+                {% include 'AmsterdamPHPSiteBundle:Default:_next_event.html.twig' with {event: next_event} %}
+            </div>
+            <div class="row">
+                {% include 'AmsterdamPHPSiteBundle:Default:_past_events.html.twig' with {events: past_events} %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

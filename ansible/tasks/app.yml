@@ -1,12 +1,24 @@
 ---
+- name: App | Add boot time file
+  action: template src=../files/boot.sh dest=/etc/init.d/amsphp-boot mode=0777 owner=root
+
 - name: App | Write to Folder
   file: path={{ write_to_folder}} state=directory
+
+- name: App | Write to Folder
+  file: path={{ write_to_folder}}/logs state=directory
+
+- name: App | Write to Folder
+  file: path={{ root_folder }}/app/cache state=directory
 
 - name: App | Folder Permissions (Part 1)
   command: sudo setfacl -R -m u:www-data:rwX -m u:vagrant:rwX {{ write_to_folder}}
 
 - name: App | Folder Permissions (Part 2)
   command: sudo setfacl -dR -m u:www-data:rwX -m u:vagrant:rwX {{ write_to_folder}}
+
+- name: App | Logs Folder Symlink
+  file: src={{ write_to_folder }}/logs dest={{ root_folder }}/app/logs state=link
 
 - name: App | Populate parameters.yml
   action: template src=../files/parameters.dist.yml dest={{ root_folder }}/app/config/parameters.yml
@@ -16,6 +28,9 @@
 
 #- name: App | Run Migrations
 #  command: php app/console doctrine:migrations:migrate -n chdir={{ root_folder }}
+
+- name: App | Ensure supervisor is running
+  service: name=supervisor state=running
 
 - name: App | Assetic Watch Config
   action: template src=../files/supervisord.conf dest=/etc/supervisor/conf.d/amsphp.conf

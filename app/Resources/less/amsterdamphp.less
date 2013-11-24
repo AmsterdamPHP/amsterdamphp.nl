@@ -1,4 +1,5 @@
 // Bootstrap
+@import "elements";
 @import "../../../vendor/twbs/bootstrap/less/bootstrap";
 @import "../../../vendor/braincrafted/bootstrap-bundle/Bc/Bundle/BootstrapBundle/Resources/less/form";
 
@@ -15,7 +16,8 @@
 
 /** Our Colors */
 @amsBlack: #000;
-@amsRed: #F00;
+@amsRed: #EC292C;
+@textGray: #393939;
 
 /** Bootstrap override */
 @brand-primary: @amsRed;
@@ -40,6 +42,7 @@ header {
         font-size: 24px;
 
         a { color: #ffffff;}
+        a:hover { text-decoration: none; color: @amsRed; }
     }
 
     .nav-menu {
@@ -85,6 +88,10 @@ footer {
             .text-center;
         }
     }
+}
+
+.content {
+    background-color: #F6F6F6;
 }
 
 // Photos
@@ -149,4 +156,213 @@ footer {
     padding:  3px;
 
     .pull-right();
+}
+
+.meetup {
+    .title-bar {
+        //text-transform: uppercase;
+        font-weight: bold;
+        padding:  3px;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+}
+
+.meetup.upcoming {
+
+
+    .rsvp-box {
+        .pull-right;
+        background-color: #E5E5E5;
+
+        .header {
+            display: block;
+            border-bottom: 1px solid white;
+            color:  @amsRed;
+            font-weight:bold;
+            text-align: right;
+            padding:  5px 10px;
+        }
+
+        .stats {
+            .list-unstyled;
+            padding: 5px 10px;
+        }
+    }
+
+    .info-box {
+
+        color: @textGray;
+
+        .date {
+            font-size: 22px;
+            color:  @amsRed;
+            font-weight: bold;
+        }
+
+        .name {
+            font-size:  18px;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+    }
+
+    .map-box {
+
+        .address {
+            margin-bottom: 10px;
+        }
+
+        .map { height:  250px}
+    }
+
+    .title-bar {
+        color: #ffffff;
+        background-color: @amsRed;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .title-bar:after {
+        position: absolute; display: block; content: '';
+        border-bottom: 1px solid white;
+        width: 100%;
+        box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+        margin: 0 0 0 -3px;
+    }
+
+
+}
+.meetups.past {
+    .title-bar {
+        font-weight: bold;
+        padding:  3px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        border-bottom: 1px solid @amsRed;
+        color:  @amsRed;
+    }
+}
+
+.meetup.past {
+    margin-bottom: 15px;
+
+    .overview-box {
+        .date {
+            font-size: 14px;
+        }
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .stats {
+            font-size: 16px;
+            .rating {
+                color: #FBCE19;
+            }
+        }
+
+        .attendance {
+            img {
+                width: 30px;
+                height:  30px;
+                margin-bottom: 5px;
+            }
+            text-align: right;
+        }
+    }
+
+    .description-box {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+}
+
+.callout {
+    color:  #ffffff;
+    font-size: 16px;
+    height: 91px;
+
+    padding: 15px 15px 0 15px;
+    margin-bottom: 30px;
+
+    .call {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}
+
+.callout.sponsor {
+    border-bottom: 3px solid @amsRed;
+    .gradient(#000, #5B5B5B, #000);
+}
+
+.callout.speaker {
+    border-bottom: 3px solid #393939;
+    background-color: @amsRed;
+    background-image: url('../images/speaker-call-bg.png');
+}
+
+.sponsor-box {
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    height:  160px;
+}
+
+.blog-post {
+
+    margin-bottom: 20px;
+
+    .date-box {
+        .text-center;
+//        line-height:  0.5;
+        overflow: hidden;
+
+        .date {
+            display: inline-block;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .date:before,
+        .date:after {
+            content: "";
+            position: absolute;
+            height: 10px;
+            border-bottom: 1px dashed #d7d7d7;
+            top: 0;
+            width: 600px;
+        }
+        .date:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+        .date:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+
+    .title {
+        .text-center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .content {
+        .text-left;
+        font-size:  16px;
+    }
+}
+
+.blog-posts {
+    .text-center;
+    .more {
+        border: 1px solid @amsRed;
+        font-size: 14px;
+        padding: 5px;
+    }
 }

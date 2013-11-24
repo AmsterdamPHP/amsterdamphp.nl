@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "addb3f02c610097912e0d382be64ecf1",
+    "hash": "a055972a26fcb9e1afafd41db5bd8e6a",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -115,25 +115,26 @@
         },
         {
             "name": "dms/meetup-api-client",
-            "version": "v1.1",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rdohms/meetup-api-client.git",
-                "reference": "v1.1"
+                "reference": "4f3e0011b115166e7235372a8fe8b236d39f0b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdohms/meetup-api-client/zipball/v1.1",
-                "reference": "v1.1",
+                "url": "https://api.github.com/repos/rdohms/meetup-api-client/zipball/4f3e0011b115166e7235372a8fe8b236d39f0b26",
+                "reference": "4f3e0011b115166e7235372a8fe8b236d39f0b26",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": ">=3.1,<4.0"
+                "guzzle/guzzle": "~3.7"
             },
             "require-dev": {
-                "symfony/console": ">=2.2,<3.0",
-                "symfony/css-selector": ">=2.2,<3.0",
-                "symfony/dom-crawler": ">=2.2,<3.0"
+                "phpunit/phpunit": "~3.7",
+                "symfony/console": "~2.2",
+                "symfony/css-selector": "~2.2",
+                "symfony/dom-crawler": "~2.2"
             },
             "type": "library",
             "extra": {
@@ -163,7 +164,57 @@
                 "dms",
                 "meetup.com"
             ],
-            "time": "2013-04-11 18:14:12"
+            "time": "2013-11-12 21:21:13"
+        },
+        {
+            "name": "dms/twig-extension-bundle",
+            "version": "v1.2.0",
+            "target-dir": "DMS/Bundle/TwigExtensionBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rdohms/DMSTwigExtensionBundle.git",
+                "reference": "4d0185be6412bd8befe79fb16017b6d6bedaf60d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rdohms/DMSTwigExtensionBundle/zipball/4d0185be6412bd8befe79fb16017b6d6bedaf60d",
+                "reference": "4d0185be6412bd8befe79fb16017b6d6bedaf60d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "twig/extensions": "1.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "DMS\\Bundle\\TwigExtensionBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rafael Dohms",
+                    "homepage": "http://doh.ms"
+                }
+            ],
+            "description": "DMS Twig Extension Bundle, leverages Fabien Potencier's extra twig extensions for your website.",
+            "homepage": "https://github.com/rdohms/DMSTwigExtensionBundle",
+            "keywords": [
+                "bundle",
+                "dms",
+                "fabpot",
+                "symfony",
+                "twig",
+                "twig extension"
+            ],
+            "time": "2013-04-04 09:02:23"
         },
         {
             "name": "doctrine/annotations",

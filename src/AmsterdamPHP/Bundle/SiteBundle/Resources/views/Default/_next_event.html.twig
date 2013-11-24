@@ -1,0 +1,61 @@
+<div class="upcoming meetup col-lg-12 col-md-12">
+    <div class="title-bar">NEXT MEETUP</div>
+    <div class="content-box row">
+        <div class="info-box col-lg-6 col-md-6">
+            <div class="rsvp-box">
+                <span class="header"><a href="{{ event.event_url }}">RSVP >></a></span>
+                <ul class="stats">
+                    <li>{{ event.yes_rsvp_count }} Attending</li>
+                    {% if event.rsvp_limit is defined and event.waiting_list|default(null) == 0 %}
+                    <li class="spots-left">{{ event.rsvp_limit - event.yes_rsvp_count }} Spots left</li>
+                    {% elseif event.waiting_list|default(0) > 0 %}
+                    <li class="waiting-list">{{ event.waiting_list }} Waiting</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <p class="date">
+                {{ (event.time/1000)|date('l, M. d') }}<br>
+                {{ (event.time/1000)|date('G:i') }}
+            </p>
+            <p class="name">{{ event.name }}</p>
+
+            {% if event.venue is defined %}
+            <p class="host-sponsor">{{ event.venue.name }}</p>
+            {% endif %}
+
+            <p class="description">
+                {{ event.description|striptags|truncate(300) }}
+                <a href="{{ event.event_url }}">Learn more</a>
+            </p>
+
+        </div>
+        <div class="map-box col-lg-6 col-md-6">
+            <span class="address">
+                {% if event.venue is defined %}
+                    {{ event.venue.address_1 }}, {{ event.venue.city }}
+                {% else %}
+                    TBA, Amsterdam
+                {% endif %}
+            </span>
+            <div id="gmap" class="map">MAP</div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    var myOptions = {
+        zoom: {{ (event.venue is defined)? 15:10}},
+        center: new google.maps.LatLng({{ event.venue.lat|default(52.3731) }}, {{ event.venue.lon|default(4.8922) }}),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+
+    var marker = new google.maps.Marker({
+        position: myOptions.center,
+        map: map
+    });
+</script>
