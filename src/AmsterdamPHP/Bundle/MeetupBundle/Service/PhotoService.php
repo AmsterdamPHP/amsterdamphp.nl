@@ -65,7 +65,7 @@ class PhotoService
      */
     public function storePhotoPool($id, $entries)
     {
-
+        //TODO Implement this as part of ticket #21
     }
 
     /**

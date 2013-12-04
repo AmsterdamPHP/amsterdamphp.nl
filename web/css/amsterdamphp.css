@@ -7763,11 +7763,6 @@ footer .about .follow-list {
   background-color: #ec292c;
   background-image: url('../images/speaker-call-bg.png');
 }
-.sponsor-box {
-  background-color: #ffffff;
-  margin-bottom: 25px;
-  height: 160px;
-}
 .blog-post {
   margin-bottom: 20px;
 }
@@ -7813,4 +7808,38 @@ footer .about .follow-list {
   border: 1px solid #ec292c;
   font-size: 14px;
   padding: 5px;
+}
+.sponsor-box {
+  background-color: #ffffff;
+  margin-bottom: 25px;
+}
+.sponsor-box h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #919191;
+  margin: 5px 0 0 0;
+}
+.sponsor-list li {
+  width: 120px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.sponsor-list li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: url('/images/empty.gif');
+}
+.bx-wrapper {
+  margin: 0;
+}
+.bx-wrapper .bx-viewport {
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  border: 0;
+  left: 0;
 }

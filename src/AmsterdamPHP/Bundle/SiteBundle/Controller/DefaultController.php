@@ -17,6 +17,9 @@ class DefaultController extends Controller
         $photoService = $this->get('meetup.photos');
         $headerPhoto  = $photoService->getRandomPhotosFromPool(1);
 
+        $sponsorService = $this->get('meetup.sponsors');
+        $sponsors       = $sponsorService->getRandomSponsors();
+
         $eventService = $this->get('meetup.events');
         $nextEvents   = $eventService->getUpcomingEvents(true)->toArray();
         $pastEvents   = $eventService->getPastEvents(true)->toArray();
@@ -29,6 +32,7 @@ class DefaultController extends Controller
             'next_event'   => array_shift($nextEvents),
             'past_events'  => array_splice($pastEvents, 0, 2),
             'blog_posts'   => $posts,
+            'sponsors'     => $sponsors
         ];
     }
 }
