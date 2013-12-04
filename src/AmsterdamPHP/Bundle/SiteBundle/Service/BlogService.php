@@ -33,7 +33,7 @@ class BlogService
 
     /**
      * Returns the latest blog posts
-     * 
+     *
      * @return mixed
      */
     public function getLatestBlogPosts()

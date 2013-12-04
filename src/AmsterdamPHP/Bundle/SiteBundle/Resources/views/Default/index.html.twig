@@ -10,6 +10,16 @@
     <div class="row sponsor-box">
         <div class="col-md-12 col-lg-12">
             <h2>SPONSORS</h2>
+            <ul class="sponsor-list bxslider">
+
+                {% for sponsor in sponsors %}
+                    <li style="background-image:url('{{ sponsor.image_url }}')">
+                        <a href="{{ sponsor.url }}">
+                            <span></span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 
@@ -37,4 +47,24 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="/bundles/amsterdamphpsite/js/jquery.bxslider.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                minSlides: 1,
+                maxSlides: 9,
+                slideWidth: 120,
+                slideMargin: 20,
+                ticker: true,
+                speed: 90000,
+                randomStart: true
+            });
+        });
+    </script>
 {% endblock %}

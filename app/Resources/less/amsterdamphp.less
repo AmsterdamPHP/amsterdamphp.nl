@@ -306,12 +306,6 @@ footer {
     background-image: url('../images/speaker-call-bg.png');
 }
 
-.sponsor-box {
-    background-color: #ffffff;
-    margin-bottom: 25px;
-    height:  160px;
-}
-
 .blog-post {
 
     margin-bottom: 20px;
@@ -365,4 +359,48 @@ footer {
         font-size: 14px;
         padding: 5px;
     }
+}
+
+.sponsor-box {
+
+    background-color: #ffffff;
+    margin-bottom: 25px;
+
+    h2 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #919191;
+        margin: 5px 0 0 0;
+    }
+}
+
+.sponsor-list {
+    li {
+        width: 120px;
+        height: 100px;
+
+        background-repeat: no-repeat;
+        background-position: center center;
+//        background-size: cover;
+
+        span {
+            position:absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left: 0;
+            z-index: 1;
+            background-image: url('/images/empty.gif');
+        }
+    }
+}
+
+.bx-wrapper {
+    margin:  0;
+}
+.bx-wrapper .bx-viewport {
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+    border: 0;
+    left: 0;
 }
