@@ -97,7 +97,7 @@ swiftmailer:
 
 dms_meetup_api:
     client:
-        key: %meetup_api%
+        key: %meetup_key%
 
 snc_redis:
     clients:
