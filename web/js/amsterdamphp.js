@@ -11809,16 +11809,13 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
     CollectionAdd.prototype.addField = function (e) {
         var $this = $(this),
-            selector = $this.attr('data-collection'),
-            $parent
+            selector = $this.attr('data-collection')
         ;
-
-        $parent = $(selector);
 
         e && e.preventDefault();
 
         var collection = $('#'+selector),
-            list = collection.find('ul'),
+            list = collection.find('> ul'),
             count = list.find('li').size()
         ;
 
@@ -11837,7 +11834,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     };
 
     CollectionRemove.prototype.removeField = function (e) {
-        var $this = $(this);
+        var $this = $(this),
+            selector = $this.attr('data-field')
+        ;
 
         e && e.preventDefault();
 

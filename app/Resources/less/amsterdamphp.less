@@ -1,11 +1,11 @@
 // Bootstrap
 @import "elements";
 @import "../../../vendor/twbs/bootstrap/less/bootstrap";
-@import "../../../vendor/braincrafted/bootstrap-bundle/Bc/Bundle/BootstrapBundle/Resources/less/form";
+@import "../../../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/less/form";
 
 // Font Awesome
-@import "../../../web/font-awesome/less/font-awesome";
-@FontAwesomePath: '/font-awesome/font';
+@import "../../../web/font-awesome-4.0.3/less/font-awesome";
+@fa-font-path: '/font-awesome-4.0.3/fonts';
 
 // Our font
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
@@ -42,7 +42,11 @@ header {
         font-size: 24px;
 
         a { color: #ffffff;}
-        a:hover { text-decoration: none; color: @amsRed; }
+        a:hover { text-decoration: none; }
+
+        .custom-icon {
+            margin-top:  -5px;
+        }
     }
 
     .nav-menu {
@@ -51,6 +55,7 @@ header {
             margin-bottom: -10px;
             font-size: 18px;
             padding: 0 15px 0 15px;
+            position: relative;
 
             a { color: #ffffff; }
             a:hover { text-decoration: none; }
@@ -59,6 +64,20 @@ header {
 
         li:hover {
             background-color: @amsRed;
+        }
+
+        li:hover:after {
+            position: absolute;
+            display: block;
+            content: "";
+            border-color: @amsRed transparent transparent transparent;
+            border-style: solid;
+            border-width: 10px;
+            height:0;
+            width:0;
+            bottom:-19px;
+            left:1em;
+            z-index: 9999;
         }
     }
 }

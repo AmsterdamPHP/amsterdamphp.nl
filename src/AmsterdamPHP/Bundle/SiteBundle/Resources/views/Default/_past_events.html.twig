@@ -11,7 +11,7 @@
                     {{ (event.headcount > 0)? event.headcount : event.yes_rsvp_count }} {{ event.group.who }} |
                     <span class="rating">
                         {% for index in 1..5 %}
-                            <i class="icon-star{% if index > event.rating.average %}-empty{% endif %}"></i>
+                            <i class="fa fa-star{% if index > event.rating.average %}-o{% endif %}"></i>
                         {% endfor %}
                     </span>
                 </div>
