@@ -7634,7 +7634,6 @@ header .social-icons a {
 }
 header .social-icons a:hover {
   text-decoration: none;
-  color: #ec292c;
 }
 header .social-icons .custom-icon {
   margin-top: -5px;
@@ -7644,6 +7643,7 @@ header .nav-menu li {
   margin-bottom: -10px;
   font-size: 18px;
   padding: 0 15px 0 15px;
+  position: relative;
 }
 header .nav-menu li a {
   color: #ffffff;
@@ -7653,6 +7653,19 @@ header .nav-menu li a:hover {
 }
 header .nav-menu li:hover {
   background-color: #ec292c;
+}
+header .nav-menu li:hover:after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: #ec292c transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  bottom: -19px;
+  left: 1em;
+  z-index: 9999;
 }
 footer {
   background-color: #000000;
