@@ -7636,6 +7636,9 @@ header .social-icons a:hover {
   text-decoration: none;
   color: #ec292c;
 }
+header .social-icons .custom-icon {
+  margin-top: -5px;
+}
 header .nav-menu li {
   height: 50px;
   margin-bottom: -10px;
