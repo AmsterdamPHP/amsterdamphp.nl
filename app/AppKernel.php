@@ -1,6 +1,5 @@
 <?php
 
-use Bc\Bundle\BootstrapBundle\BcBootstrapBundle;
 use DMS\Bundle\TwigExtensionBundle\DMSTwigExtensionBundle;
 use Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle;
 use Symfony\Component\HttpKernel\Kernel;
@@ -24,7 +23,7 @@ class AppKernel extends Kernel
             #Third Party
             new Snc\RedisBundle\SncRedisBundle(),
             new DMS\Bundle\MeetupApiBundle\DMSMeetupApiBundle(),
-            new BcBootstrapBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new DoctrineMigrationsBundle(),
             new DMSTwigExtensionBundle(),
 

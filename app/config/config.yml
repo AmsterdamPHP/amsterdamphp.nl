@@ -26,7 +26,7 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 # Bootstrap
-bc_bootstrap:
+braincrafted_bootstrap:
     assets_dir:     %kernel.root_dir%/../vendor/twbs/bootstrap
     jquery_path:    %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.10.2.js
 

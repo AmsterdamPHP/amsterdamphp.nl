@@ -21,7 +21,7 @@
         "dms/meetup-api-bundle": "dev-master@dev",
         "snc/redis-bundle": "~1.1",
         "predis/predis": "~0.8",
-        "braincrafted/bootstrap-bundle": "bootstrap-3.0-forms-dev@dev",
+        "braincrafted/bootstrap-bundle": "2.0.x-dev@dev",
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery": "1.10.2",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
@@ -54,10 +54,6 @@
         ]
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/egrajeda/bootstrap-bundle.git"
-        },
         {
             "type": "package",
             "package": {

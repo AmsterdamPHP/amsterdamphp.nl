@@ -3,36 +3,32 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a055972a26fcb9e1afafd41db5bd8e6a",
+    "hash": "ed3578147305fa726f2fcfeafae4c8ea",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
-            "version": "dev-bootstrap-3.0-forms",
-            "target-dir": "Bc/Bundle/BootstrapBundle",
+            "version": "2.0.x-dev",
+            "target-dir": "Braincrafted/Bundle/BootstrapBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/egrajeda/bootstrap-bundle.git",
-                "reference": "7b93513ce560e1d0b48999336bdcdd216b2ee2aa"
+                "url": "https://github.com/braincrafted/bootstrap-bundle.git",
+                "reference": "bf05fc91fc7c1f0f8387fac536298d366c9592e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egrajeda/bootstrap-bundle/zipball/7b93513ce560e1d0b48999336bdcdd216b2ee2aa",
-                "reference": "7b93513ce560e1d0b48999336bdcdd216b2ee2aa",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/bf05fc91fc7c1f0f8387fac536298d366c9592e3",
+                "reference": "bf05fc91fc7c1f0f8387fac536298d366c9592e3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.3",
+                "symfony/symfony": ">=2.3"
             },
             "require-dev": {
-                "instaclick/php-code-sniffer": "dev-master",
-                "instaclick/symfony2-coding-standard": "dev-master",
-                "knplabs/knp-markdown-bundle": "dev-master",
-                "knplabs/knp-menu": "dev-master",
-                "knplabs/knp-menu-bundle": "dev-master",
+                "knplabs/knp-menu": "~2.0@alpha",
+                "knplabs/knp-menu-bundle": "~2.0@alpha",
                 "knplabs/knp-paginator-bundle": "dev-master",
-                "mockery/mockery": "dev-master@dev",
-                "nikic/php-parser": "dev-master",
-                "phpmd/phpmd": "1.4.*",
+                "mockery/mockery": "0.8.*",
                 "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
@@ -44,9 +40,10 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
-                    "Bc\\Bundle\\BootstrapBundle": ""
+                    "Braincrafted\\Bundle\\BootstrapBundle": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -54,17 +51,15 @@
                 {
                     "name": "Florian Eckerstorfer",
                     "email": "florian@eckerstorfer.co",
-                    "homepage": "http://florianeckerstorfer.com"
+                    "homepage": "http://florianeckerstorfer.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Twitter Bootstrap for Symfony2",
+            "description": "BraincraftedBootstrapBundle integrates Bootstrap into Symfony2 by providing templates, Twig extensions, services and commands.",
             "keywords": [
                 "bootstrap"
             ],
-            "support": {
-                "source": "https://github.com/egrajeda/bootstrap-bundle/tree/bootstrap-3.0-forms"
-            },
-            "time": "2013-09-29 23:28:21"
+            "time": "2013-12-04 15:10:19"
         },
         {
             "name": "dms/meetup-api-bundle",
