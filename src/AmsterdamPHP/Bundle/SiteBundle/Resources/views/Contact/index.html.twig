@@ -1,0 +1,37 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="contact-page">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="details">
+                    <h3>AmsterdamPHP Foundation</h3>
+                    <h5>Stichting AmsterdamPHP</h5>
+
+                    <ul>
+                        <li><i class="fa fa-fw fa-map-marker"></i> Amsterdam</li>
+                        <li><i class="fa fa-fw fa-phone"></i> +31 00 000 0000</li>
+                        <li><i class="fa fa-fw fa-envelope-o"></i> contact@amsterdamphp.nl</li>
+                        <li><i class="fa fa-fw fa-globe"></i> http://amsterdamphp.nl</li>
+                        <li><i class="fa fa-fw fa-legal"></i> KvK. 59177640</li>
+                    </ul>
+
+                    <h4>Organizers</h4>
+                    <div class="row organizers">
+                        <div class="col-lg-3 col-md-3"><img src="{{ gravatar('rdohms@amsterdamphp.nl') }}" title="Rafael Dohms" alt="Rafael Dohms"/></div>
+                        <div class="col-lg-3 col-md-3"><img src="{{ gravatar('frank@amsterdamphp.nl') }}"  title="Frank van den Brink" alt="Frank van den Brink"/></div>
+                        <div class="col-lg-3 col-md-3"><img src="{{ gravatar('pascal@amsterdamphp.nl') }}" title="Pascal de Vink" alt="Pascal de Vink"/></div>
+                        <div class="col-lg-3 col-md-3"><img src="{{ gravatar('jakub@amsterdamphp.nl') }}"  title="Jakub Gadkowski" alt="Jakub Gadkowski"/></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="form">
+                    <h2>Contact us</h2>
+
+                    {{ form(form, { 'style': 'horizontal' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

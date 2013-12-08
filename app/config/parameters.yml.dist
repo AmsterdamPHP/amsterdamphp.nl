@@ -14,4 +14,5 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    meetup_key: ~
+    meetup_key:        ~
+    akismet_key:       ~
