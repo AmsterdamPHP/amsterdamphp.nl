@@ -16,3 +16,9 @@ app/config/parameters.yml
 # Misc
 xhprof
 .vagrant
+
+# Bower
+bower_components/*
+
+# npm
+node_modules/*
