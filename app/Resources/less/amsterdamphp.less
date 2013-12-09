@@ -50,23 +50,29 @@ header {
     }
 
     .nav-menu {
+
+        li:first-child {
+            padding-left: 15px;
+        }
+
         li {
             height:  50px;
             margin-bottom: -10px;
             font-size: 18px;
-            padding: 0 15px 0 15px;
+            padding: 15px 15px 0 15px;
             position: relative;
 
             a { color: #ffffff; }
             a:hover { text-decoration: none; }
 
+            .text-center;
         }
 
-        li:hover {
+        li:hover, li.active {
             background-color: @amsRed;
         }
 
-        li:hover:after {
+        li:hover:after, li.active:after {
             position: absolute;
             display: block;
             content: "";
@@ -307,11 +313,18 @@ footer {
     padding: 15px 15px 0 15px;
     margin-bottom: 30px;
 
+    display: block;
+
     .call {
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 0;
     }
+}
+
+.callout:hover {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .callout.sponsor {
@@ -422,4 +435,34 @@ footer {
     box-shadow: 0;
     border: 0;
     left: 0;
+}
+
+
+.contact-page {
+
+    .details {
+        padding:  15px;
+        background-color: #FFF;
+        color: #000;
+
+        ul {
+            .list-unstyled;
+
+            li {
+                padding: 5px 0;
+            }
+        }
+
+        .organizers {
+            margin-right: 0px;
+
+            img {
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .form {
+        padding: 15px;
+    }
 }

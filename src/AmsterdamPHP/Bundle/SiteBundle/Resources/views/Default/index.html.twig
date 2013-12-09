@@ -25,15 +25,15 @@
 
     <div class="row">
         <div class="col-md-4 col-lg-4">
-            <div class="callout sponsor">
+            <a class="callout sponsor" href="{{ path('amsphp_be_a_sponsor') }}">
                 <p class="call">SPONSOR US!</p>
                 <p>Show your love for the community</p>
-            </div>
+            </a>
 
-            <div class="callout speaker">
+            <a class="callout speaker" href="{{ path('amsphp_be_a_speaker') }}">
                 <p class="call">BE A SPEAKER</p>
                 <p>Share your knowledge with the community!</p>
-            </div>
+            </a>
 
             {% include 'AmsterdamPHPSiteBundle:Default:_blog_posts.html.twig' %}
         </div>

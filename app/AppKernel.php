@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new DoctrineMigrationsBundle(),
             new DMSTwigExtensionBundle(),
+            new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
+            new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),

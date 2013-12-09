@@ -15,7 +15,7 @@ class BlogService
     /**
      * @var string
      */
-    protected $url = 'http://www.amsterdamphp.nl/';
+    protected $url = 'http://blog.amsterdamphp.nl/';
 
     /**
      * @var Cache
