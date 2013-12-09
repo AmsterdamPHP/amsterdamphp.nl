@@ -40,11 +40,11 @@ class ContactService
     {
 
         //Validate Spam
-        $isSpam = $this->akismet->isSpam(array(
+        $isSpam = $this->akismet->isSpam([
                 'comment_author' => $data['name'],
                 'comment_author_email' => $data['email'],
                 'comment_content' => $data['subject'] . ' ' . $data['message'],
-            ));
+            ]);
 
         if ($isSpam) {
             return false;

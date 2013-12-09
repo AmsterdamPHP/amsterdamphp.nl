@@ -9,11 +9,12 @@
                     <h5>Stichting AmsterdamPHP</h5>
 
                     <ul>
-                        <li><i class="fa fa-fw fa-map-marker"></i> Amsterdam</li>
-                        <li><i class="fa fa-fw fa-phone"></i> +31 00 000 0000</li>
+                        <li><i class="fa fa-fw fa-map-marker"></i> Blankenstraat 49A, 1018RR, Amsterdam</li>
+                        <li><i class="fa fa-fw fa-phone"></i> +31 (0)84 8774044</li>
                         <li><i class="fa fa-fw fa-envelope-o"></i> contact@amsterdamphp.nl</li>
                         <li><i class="fa fa-fw fa-globe"></i> http://amsterdamphp.nl</li>
                         <li><i class="fa fa-fw fa-legal"></i> KvK. 59177640</li>
+                        <li><i class="fa fa-fw fa-money"></i> IBAN NL03ABNA0569579171</li>
                     </ul>
 
                     <h4>Organizers</h4>
@@ -27,6 +28,8 @@
             </div>
             <div class="col-lg-8 col-md-8">
                 <div class="form">
+                    {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
+
                     <h2>Contact us</h2>
 
                     {{ form(form, { 'style': 'horizontal' }) }}

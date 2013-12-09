@@ -50,23 +50,29 @@ header {
     }
 
     .nav-menu {
+
+        li:first-child {
+            padding-left: 15px;
+        }
+
         li {
             height:  50px;
             margin-bottom: -10px;
             font-size: 18px;
-            padding: 0 15px 0 15px;
+            padding: 15px 15px 0 15px;
             position: relative;
 
             a { color: #ffffff; }
             a:hover { text-decoration: none; }
 
+            .text-center;
         }
 
-        li:hover {
+        li:hover, li.active {
             background-color: @amsRed;
         }
 
-        li:hover:after {
+        li:hover:after, li.active:after {
             position: absolute;
             display: block;
             content: "";

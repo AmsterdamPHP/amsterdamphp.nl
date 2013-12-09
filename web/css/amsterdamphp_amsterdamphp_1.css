@@ -7746,12 +7746,16 @@ header .social-icons a:hover {
 header .social-icons .custom-icon {
   margin-top: -5px;
 }
+header .nav-menu li:first-child {
+  padding-left: 15px;
+}
 header .nav-menu li {
   height: 50px;
   margin-bottom: -10px;
   font-size: 18px;
-  padding: 0 15px 0 15px;
+  padding: 15px 15px 0 15px;
   position: relative;
+  text-align: center;
 }
 header .nav-menu li a {
   color: #ffffff;
@@ -7759,10 +7763,12 @@ header .nav-menu li a {
 header .nav-menu li a:hover {
   text-decoration: none;
 }
-header .nav-menu li:hover {
+header .nav-menu li:hover,
+header .nav-menu li.active {
   background-color: #ec292c;
 }
-header .nav-menu li:hover:after {
+header .nav-menu li:hover:after,
+header .nav-menu li.active:after {
   position: absolute;
   display: block;
   content: "";
