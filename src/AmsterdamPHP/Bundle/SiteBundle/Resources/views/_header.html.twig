@@ -14,8 +14,12 @@
             <ul class="nav-menu list-inline">
                 <li><a href="http://meetup.amsterdamphp.nl">Meetings</a></li>
                 <li><a href="http://blog.amsterdamphp.nl">Blog</a></li>
-                <li><a href="">Sponsor Us</a></li>
-                <li><a href="">Be a Speaker</a></li>
+                <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_sponsor' %}class="active"{% endif %}>
+                    <a href="{{ path('amsphp_be_a_sponsor') }}">Sponsor Us</a>
+                </li>
+                <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_speaker' %}class="active"{% endif %}>
+                    <a href="{{ path('amsphp_be_a_speaker') }}">Be a Speaker</a>
+                </li>
                 <li {% if app.request.attributes.get('_route') == 'amsphp_contact' %}class="active"{% endif %}>
                     <a href="{{ path('amsphp_contact') }}">Contact</a>
                 </li>

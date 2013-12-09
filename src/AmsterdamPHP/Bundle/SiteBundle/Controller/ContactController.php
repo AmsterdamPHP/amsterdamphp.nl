@@ -16,6 +16,8 @@ class ContactController extends Controller
 {
     /**
      * @Route("/", name="amsphp_contact")
+     * @Route("/", name="amsphp_be_a_speaker")
+     * @Route("/", name="amsphp_be_a_sponsor")
      * @Template()
      */
     public function indexAction()
