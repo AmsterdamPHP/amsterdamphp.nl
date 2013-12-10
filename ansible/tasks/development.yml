@@ -5,6 +5,9 @@
 - name: Apache
   action: apt pkg=apache2 state=installed
 
+- name: Apache | Define envvars
+  action: template src=../files/apache/envvars.template dest=/etc/apache2/envvars
+
 - name: Apache Modules
   action: command a2enmod $item
   notify: restart apache
@@ -67,18 +70,10 @@
   notify:
     - restart apache
 
-# Currently PHP has a bug that adds a space that breaks ini parsing, it has been fixed, but we need to wait for
-# PHP 5.5.6 to fix this
-
-# - name: PHP | Config Memory Limit
-#   action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
-#   notify:
-#     - restart apache
-
-# - name: PHP | Config Memory Limit
-#   action: ini_file dest=/etc/php5/apache2/php.ini section=global option=memory_limit value=256M mode=0600
-#   notify:
-#     - restart apache
+- name: PHP | Config Memory Limit
+   action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
+   notify:
+     - restart apache
 
 - name: PHP | Enable Custom Config
   action: shell php5enmod -s ALL timezone

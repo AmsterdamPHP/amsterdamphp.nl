@@ -8,6 +8,7 @@
     dbname: amsphp
     dbuser: root
     dbpasswd: root
+    apache_user: vagrant
   tasks:
     - include: tasks/common.yml
     - include: tasks/build.yml
