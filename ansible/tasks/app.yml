@@ -26,6 +26,14 @@
 - name: App | Composer install
   command: composer install chdir={{ root_folder }}
 
+- name: App | npm install
+  command: npm install chdir={{ root_folder }}
+  sudo: False
+
+- name: App | Bower install
+  command: bower install chdir={{ root_folder }}
+  sudo: False
+
 #- name: App | Run Migrations
 #  command: php app/console doctrine:migrations:migrate -n chdir={{ root_folder }}
 
@@ -38,3 +46,6 @@
 - name: App | Reload supervisor to launch processes
   command: supervisorctl reload
 
+- name: App | Grunt
+  command: grunt chdir={{ root_folder }}
+  sudo: False
