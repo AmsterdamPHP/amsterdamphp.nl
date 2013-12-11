@@ -89,6 +89,7 @@ module.exports = function(grunt) {
         watch: {
             files: [
                 'bower_components/**', // Admittedly this might be a bit overkill...
+                'app/Resources/less/elements.less',
                 'app/Resources/less/amsterdamphp.less'
             ],
             tasks: [
