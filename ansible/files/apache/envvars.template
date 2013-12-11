@@ -5,9 +5,9 @@ unset HOME
 
 # for supporting multiple apache2 instances
 if [ "${APACHE_CONFDIR##/etc/apache2-}" != "${APACHE_CONFDIR}" ] ; then
-	SUFFIX="-${APACHE_CONFDIR##/etc/apache2-}"
+    SUFFIX="-${APACHE_CONFDIR##/etc/apache2-}"
 else
-	SUFFIX=
+    SUFFIX=
 fi
 
 # Since there is no sane way to get the parsed apache2 config in scripts, some

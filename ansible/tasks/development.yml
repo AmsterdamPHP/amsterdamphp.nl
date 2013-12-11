@@ -7,9 +7,10 @@
 
 - name: Apache | Define envvars
   action: template src=../files/apache/envvars.template dest=/etc/apache2/envvars
+  notify: restart apache
 
 - name: Apache Modules
-  action: command a2enmod $item
+  action: command a2enmod {{ item }}
   notify: restart apache
   with_items:
     - rewrite
@@ -48,7 +49,7 @@
   apt_repository: repo='ppa:ondrej/php5' update_cache=yes
 
 - name: PHP and Modules
-  action: apt pkg=$item state=latest
+  action: apt pkg={{ item }} state=latest
   notify: restart apache
   tags: common
   with_items:
@@ -71,9 +72,9 @@
     - restart apache
 
 - name: PHP | Config Memory Limit
-   action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
-   notify:
-     - restart apache
+  action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
+  notify:
+    - restart apache
 
 - name: PHP | Enable Custom Config
   action: shell php5enmod -s ALL timezone
@@ -90,11 +91,14 @@
   action: apt pkg=npm state=latest
 
 - name: Tools | Modules via NPM
-  npm: name=$item global=yes
+  npm: name={{ item }} global=yes
   with_items:
     - uglifycss
     - uglify-js
     - less
+
+- name: Tools | RubyGems
+  action: apt pkg=rubygems state=installed
 
 # PHP Tools
 

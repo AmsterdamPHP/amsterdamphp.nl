@@ -13,6 +13,7 @@
     - include: tasks/common.yml
     - include: tasks/build.yml
     - include: tasks/development.yml
+    - include: tasks/deploy.yml
     - include: tasks/host.yml
     - include: tasks/app.yml
 
