@@ -55,11 +55,12 @@ To make it easier for you to contribute and use all the new and shiny, we have s
 
 Like I said, learning experience, we want to pack some new stuff in here for us to experiment with, this may be familiar to some and new to others, that's where you come in to teach others.
 
-- Symfony 2.3
+- [Symfony](http://symfony.com/) 2.3
 - [Behat](http://behat.org/) and [PHPSpec](http://www.phpspec.net/)
 - API's, lots of them.
-- Vagrant + [Ansible](http://www.ansibleworks.com)
-- Redis
-- Less
+- [Vagrant](http://www.vagrantup.com/) + [Ansible](http://www.ansibleworks.com)
+- [Redis](http://redis.io/)
+- [Less](http://lesscss.org/)
+- [Grunt](http://gruntjs.com/getting-started)
 
 Any more suggestions?
