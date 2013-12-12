@@ -94,9 +94,7 @@ module.exports = function(grunt) {
             ],
             tasks: [
                 'concat',
-                'less',
-                'uglify',
-                'cssmin'
+                'less'
             ]
         }
     });
