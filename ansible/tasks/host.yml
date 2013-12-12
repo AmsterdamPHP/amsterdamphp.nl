@@ -12,4 +12,3 @@
 
 - name: Apache | Ensure application files are present
   file: path={{ document_root }} state=directory
-

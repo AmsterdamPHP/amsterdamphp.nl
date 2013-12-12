@@ -5,9 +5,17 @@
 - name: Apache
   action: apt pkg=apache2 state=installed
 
+- name: Apache | Stop for user/group change
+  service: name=apache2 state=stopped
+
 - name: Apache | Define envvars
   action: template src=../files/apache/envvars.template dest=/etc/apache2/envvars
-  notify: restart apache
+
+- name: Apache | Changing lock file owner/group
+  file: path=/var/lock/apache2 owner={{ apache_user }} group={{ apache_group }}
+
+- name: Apache | Stop for user/group change
+  service: name=apache2 state=started
 
 - name: Apache Modules
   action: command a2enmod {{ item }}

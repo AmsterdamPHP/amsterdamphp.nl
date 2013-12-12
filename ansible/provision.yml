@@ -9,6 +9,7 @@
     dbuser: root
     dbpasswd: root
     apache_user: vagrant
+    apache_group: vagrant
   tasks:
     - include: tasks/common.yml
     - include: tasks/build.yml
@@ -18,8 +19,14 @@
     - include: tasks/app.yml
 
   handlers:
+    - name: stop apache
+      service: name=apache2 state=stop
+
+    - name: start apache
+      service: name=apache2 state=start
+
     - name: restart apache
-      service: name=apache2 state=restarted
+      service: name=apache2 state=reloaded
 
     - name: restart supervisor
       service: name=supervisord state=restarted

@@ -32,3 +32,5 @@
 - name: App | Reload supervisor to launch processes
   command: supervisorctl reload
 
+#- name: SSH Home | Point home directory to root directory
+#  action: user name=vagrant home={{ root_folder }}
