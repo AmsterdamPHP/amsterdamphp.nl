@@ -44,6 +44,10 @@ To make it easier for you to contribute and use all the new and shiny, we have s
 5. Point `vagrant.amsterdamphp.dev` to `192.168.33.10`
 6. Code!
 
+### Grunt
+
+To make building assets easy grunt is installed on the Vagrant box. If grunt is new for you be sure to read the  [getting started](http://gruntjs.com/getting-started) guide on their site. Using grunt is easy. Just running `grunt` will build all the assets. While `grunt watch` waits until you change something in the asset sources and rebuilds them when that occurs. When you like to know more about what happens when you run `grunt` run it with `-v` like this `grunt -v` to display verbose output.
+
 ### Guidelines
 
 - use PSR-2 guidelines to write code
@@ -55,11 +59,12 @@ To make it easier for you to contribute and use all the new and shiny, we have s
 
 Like I said, learning experience, we want to pack some new stuff in here for us to experiment with, this may be familiar to some and new to others, that's where you come in to teach others.
 
-- Symfony 2.3
+- [Symfony](http://symfony.com/) 2.3
 - [Behat](http://behat.org/) and [PHPSpec](http://www.phpspec.net/)
 - API's, lots of them.
-- Vagrant + [Ansible](http://www.ansibleworks.com)
-- Redis
-- Less
+- [Vagrant](http://www.vagrantup.com/) + [Ansible](http://www.ansibleworks.com)
+- [Redis](http://redis.io/)
+- [Less](http://lesscss.org/)
+- [Grunt](http://gruntjs.com/)
 
 Any more suggestions?
