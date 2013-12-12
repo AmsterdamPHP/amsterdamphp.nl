@@ -5,8 +5,20 @@
 - name: Apache
   action: apt pkg=apache2 state=installed
 
+- name: Apache | Stop for user/group change
+  service: name=apache2 state=stopped
+
+- name: Apache | Define envvars
+  action: template src=../files/apache/envvars.template dest=/etc/apache2/envvars
+
+- name: Apache | Changing lock file owner/group
+  file: path=/var/lock/apache2 owner={{ apache_user }} group={{ apache_group }}
+
+- name: Apache | Stop for user/group change
+  service: name=apache2 state=started
+
 - name: Apache Modules
-  action: command a2enmod $item
+  action: command a2enmod {{ item }}
   notify: restart apache
   with_items:
     - rewrite
@@ -45,7 +57,7 @@
   apt_repository: repo='ppa:ondrej/php5' update_cache=yes
 
 - name: PHP and Modules
-  action: apt pkg=$item state=latest
+  action: apt pkg={{ item }} state=latest
   notify: restart apache
   tags: common
   with_items:
@@ -67,18 +79,10 @@
   notify:
     - restart apache
 
-# Currently PHP has a bug that adds a space that breaks ini parsing, it has been fixed, but we need to wait for
-# PHP 5.5.6 to fix this
-
-# - name: PHP | Config Memory Limit
-#   action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
-#   notify:
-#     - restart apache
-
-# - name: PHP | Config Memory Limit
-#   action: ini_file dest=/etc/php5/apache2/php.ini section=global option=memory_limit value=256M mode=0600
-#   notify:
-#     - restart apache
+- name: PHP | Config Memory Limit
+  action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
+  notify:
+    - restart apache
 
 - name: PHP | Enable Custom Config
   action: shell php5enmod -s ALL timezone
@@ -95,11 +99,15 @@
   action: apt pkg=npm state=latest
 
 - name: Tools | Modules via NPM
-  npm: name=$item global=yes
+  npm: name={{ item }} global=yes
   with_items:
     - uglifycss
     - uglify-js
     - less
+    - yo
+
+- name: Tools | RubyGems
+  action: apt pkg=rubygems state=installed
 
 # PHP Tools
 

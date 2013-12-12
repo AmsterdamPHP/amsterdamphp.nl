@@ -1,0 +1,9 @@
+---
+####
+# Deploy tools
+# This file makes sure all tools needed for deploy are available
+####
+
+- name: Deploy | Install Capifony
+  gem: name=capifony state=latest
+

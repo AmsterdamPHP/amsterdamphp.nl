@@ -1,14 +1,8 @@
 ---
-- name: App | Add boot time file
-  action: template src=../files/boot.sh dest=/etc/init.d/amsphp-boot mode=0777 owner=root
-
-- name: App | Write to Folder
-  file: path={{ write_to_folder}} state=directory
-
-- name: App | Write to Folder
+- name: App | Logs folder present
   file: path={{ write_to_folder}}/logs state=directory
 
-- name: App | Write to Folder
+- name: App | Cache folder present
   file: path={{ root_folder }}/app/cache state=directory
 
 - name: App | Folder Permissions (Part 1)
@@ -20,11 +14,24 @@
 - name: App | Logs Folder Symlink
   file: src={{ write_to_folder }}/logs dest={{ root_folder }}/app/logs state=link
 
+- name: App | Check parameters.yml
+  action: shell test -f {{ root_folder }}/app/config/parameters.yml
+  register: parameters_present
+
 - name: App | Populate parameters.yml
   action: template src=../files/parameters.dist.yml dest={{ root_folder }}/app/config/parameters.yml
+  when: parameters_present # find better way to do this
 
 - name: App | Composer install
-  command: composer install chdir={{ root_folder }}
+  command: composer install -n --no-progress chdir={{ root_folder }}
+
+- name: App | npm install
+  command: npm install chdir={{ root_folder }}
+  sudo: False
+
+- name: App | Bower install
+  command: bower install chdir={{ root_folder }}
+  sudo: False
 
 #- name: App | Run Migrations
 #  command: php app/console doctrine:migrations:migrate -n chdir={{ root_folder }}
@@ -38,3 +45,9 @@
 - name: App | Reload supervisor to launch processes
   command: supervisorctl reload
 
+- name: App | Grunt
+  command: grunt chdir={{ root_folder }}
+  sudo: False
+
+#- name: SSH Home | Point home directory to root directory
+#  action: user name=vagrant home={{ root_folder }}
