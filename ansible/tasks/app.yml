@@ -15,12 +15,14 @@
   file: src={{ write_to_folder }}/logs dest={{ root_folder }}/app/logs state=link
 
 - name: App | Check parameters.yml
-  action: shell test -f {{ root_folder }}/app/config/parameters.yml
+  shell: test -f {{ root_folder }}/app/config/parameters.yml
   register: parameters_present
+  changed_when: parameters_present.rc == 1
+  failed_when: false
 
 - name: App | Populate parameters.yml
-  action: template src=../files/parameters.dist.yml dest={{ root_folder }}/app/config/parameters.yml
-  when: parameters_present # find better way to do this
+  template: src=../files/parameters.dist.yml dest={{ root_folder }}/app/config/parameters.yml
+  when: parameters_present.rc == 1
 
 - name: App | Composer install
   command: composer install -n --no-progress chdir={{ root_folder }}
