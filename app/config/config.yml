@@ -113,3 +113,12 @@ snc_redis:
 ornicar_akismet:
     api_key:        %akismet_key%
     url:            http://amsterdamphp.nl
+
+google:
+    analytics:
+        trackers:
+            default:
+                name:      amsphp-analytics
+                accountId: ~
+                domain:    amsterdamphp.nl
+                trackPageLoadTime: true

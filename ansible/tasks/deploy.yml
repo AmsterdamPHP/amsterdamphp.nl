@@ -5,5 +5,5 @@
 ####
 
 - name: Deploy | Install Capifony
-  gem: name=capifony state=latest
+  gem: name=capifony state=latest user_install=no
 
