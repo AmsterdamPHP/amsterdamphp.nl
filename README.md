@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/amsterdamphp/amsterdamphp.nl.png?label=ready)](https://waffle.io/amsterdamphp/amsterdamphp.nl)  
+[![Stories in Ready](https://badge.waffle.io/amsterdamphp/amsterdamphp.nl.png?label=ready)](https://waffle.io/amsterdamphp/amsterdamphp.nl)
 amsterdamphp.nl
 ===============
 
@@ -16,7 +16,7 @@ To make contributing easier we have provided a vagrant setup to allow people to 
 
 * Setup VirtualBox
 * Setup Vagrant
-* Setup Ansible
+* Setup Ansible (minium required version is 1.4)
 * Execute `vagrant up`
 * [optional] Add `vagrant.amsterdamphp.nl` to your hosts file pointing to `192.168.33.10`
 
@@ -37,7 +37,7 @@ To make contributing easier we have provided a vagrant setup to allow people to 
 
 To make it easier for you to contribute and use all the new and shiny, we have setup a Vagrant box. It is provisioned with Ansible, so you need to have a few extra things, these are the steps
 
-1. Install Ansible ([See Docs](http://www.ansibleworks.com/docs/intro_installation.html) or use HomeBrew on Mac OSX)
+1. Install Ansible >=1.4 ([See Docs](http://www.ansibleworks.com/docs/intro_installation.html) or use HomeBrew on Mac OSX)
 2. Install VirtualBox
 3. Install Vagrant
 4. Run `vagrant up`
