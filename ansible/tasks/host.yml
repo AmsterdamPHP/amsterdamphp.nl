@@ -1,6 +1,6 @@
 ---
 - name: Apache | Copy Host Config
-  action: template src=../files/apache/amsphp-vhost.conf dest=/etc/apache2/sites-available/amsphp-vhost.conf
+  template: src=../files/apache/amsphp-vhost.conf dest=/etc/apache2/sites-available/amsphp-vhost.conf
 
 - name: Apache | Enable Host Config
   command: a2ensite amsphp-vhost.conf

@@ -1,20 +1,20 @@
 ---
 # Update the repo, because most boxes are heavily outdated
 - name: Commmon | Update repository
-  action: apt update_cache=yes
+  apt: update_cache=yes
 
 # Required for adding other apt repos downthe line
 - name: Commmon | python-software-properties
-  action: apt pkg=python-software-properties state=installed
+  apt: pkg=python-software-properties state=installed
 
 - name: Common | ACL
-  action: apt pkg=acl state=installed
+  apt: pkg=acl state=installed
 
 - name: Common | cURL
-  action: apt pkg=curl state=installed
+  apt: pkg=curl state=installed
 
 - name: Common | Install Git
-  action: apt pkg=git-core state=installed
+  apt: pkg=git-core state=installed
 
 - name: Common | Set the hostname /etc/hostname
   shell: echo {{ hostname }} > /etc/hostname
