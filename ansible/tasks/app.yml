@@ -18,7 +18,7 @@
   shell: test -f {{ root_folder }}/app/config/parameters.yml
   register: parameters_present
   changed_when: parameters_present.rc == 1
-  failed_when: false
+  failed_when: None
 
 - name: App | Populate parameters.yml
   template: src=../files/parameters.dist.yml dest={{ root_folder }}/app/config/parameters.yml
@@ -42,7 +42,7 @@
   service: name=supervisor state=running
 
 - name: App | Assetic Watch Config
-  action: template src=../files/supervisord.conf dest=/etc/supervisor/conf.d/amsphp.conf
+  template: src=../files/supervisord.conf dest=/etc/supervisor/conf.d/amsphp.conf
 
 - name: App | Reload supervisor to launch processes
   command: supervisorctl reload
@@ -52,4 +52,4 @@
   sudo: False
 
 #- name: SSH Home | Point home directory to root directory
-#  action: user name=vagrant home={{ root_folder }}
+#  user: name=vagrant home={{ root_folder }}

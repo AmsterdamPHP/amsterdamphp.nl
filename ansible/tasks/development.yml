@@ -3,13 +3,13 @@
 
 # Apache
 - name: Apache
-  action: apt pkg=apache2 state=installed
+  apt: pkg=apache2 state=installed
 
 - name: Apache | Stop for user/group change
   service: name=apache2 state=stopped
 
 - name: Apache | Define envvars
-  action: template src=../files/apache/envvars.template dest=/etc/apache2/envvars
+  template: src=../files/apache/envvars.template dest=/etc/apache2/envvars
 
 - name: Apache | Changing lock file owner/group
   file: path=/var/lock/apache2 owner={{ apache_user }} group={{ apache_group }}
@@ -18,7 +18,7 @@
   service: name=apache2 state=started
 
 - name: Apache Modules
-  action: command a2enmod {{ item }}
+  command: a2enmod {{ item }}
   notify: restart apache
   with_items:
     - rewrite
@@ -29,10 +29,10 @@
 
 # Storage
 - name: MySQL
-  action: apt pkg=mysql-server state=installed
+  apt: pkg=mysql-server state=installed
 
 - name: MySQL
-  action: apt pkg=python-mysqldb state=installed
+  apt: pkg=python-mysqldb state=installed
 
 # 'localhost' needs to be the last item for idempotency, see
 # http://ansible.cc/docs/modules.html#mysql-user
@@ -50,14 +50,14 @@
   mysql_db: name={{ dbname }} state=present login_password={{ dbpasswd }} login_user={{ dbuser }}
 
 - name: Redis
-  action: apt pkg=redis-server state=installed
+  apt: pkg=redis-server state=installed
 
 # PHP
 - name: PHP 5.5 Custom Repo
   apt_repository: repo='ppa:ondrej/php5' update_cache=yes
 
 - name: PHP and Modules
-  action: apt pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest
   notify: restart apache
   tags: common
   with_items:
@@ -75,17 +75,17 @@
 # Configurations
 
 - name: PHP | Config timezone
-  action: ini_file dest=/etc/php5/mods-available/timezone.ini section=Date option=date.timezone value=Europe/Amsterdam
+  ini_file: dest=/etc/php5/mods-available/timezone.ini section=Date option=date.timezone value=Europe/Amsterdam
   notify:
     - restart apache
 
 - name: PHP | Config Memory Limit
-  action: ini_file dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
+  ini_file: dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0600
   notify:
     - restart apache
 
 - name: PHP | Enable Custom Config
-  action: shell php5enmod -s ALL timezone
+  shell: php5enmod -s ALL timezone
 
 # Build tools
 
@@ -93,10 +93,10 @@
   apt_repository: repo='ppa:richarvey/nodejs' update_cache=yes
 
 - name: Tools | nodejs
-  action: apt pkg=nodejs state=latest
+  apt: pkg=nodejs state=latest
 
 - name: Tools | NPM
-  action: apt pkg=npm state=latest
+  apt: pkg=npm state=latest
 
 - name: Tools | Modules via NPM
   npm: name={{ item }} global=yes
@@ -107,7 +107,7 @@
     - yo
 
 - name: Tools | RubyGems
-  action: apt pkg=rubygems state=installed
+  apt: pkg=rubygems state=installed
 
 # PHP Tools
 
