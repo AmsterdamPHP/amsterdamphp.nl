@@ -29,10 +29,10 @@
 
 # Storage
 - name: MySQL
-  action: apt pkg=mysql-server state=installed
-
-- name: MySQL
-  action: apt pkg=python-mysqldb state=installed
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - mysql-server
+    - python-mysqldb
 
 # 'localhost' needs to be the last item for idempotency, see
 # http://ansible.cc/docs/modules.html#mysql-user
