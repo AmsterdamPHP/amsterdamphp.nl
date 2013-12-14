@@ -3884,6 +3884,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-left: 0;
   }
 }
+.navbar-form .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
 @media (max-width: 767px) {
   .navbar-form .form-group {
     margin-bottom: 5px;
@@ -6082,8 +6086,18 @@ td.visible-print {
   display: inline-block;
   width: auto;
 }
+.form-group .bc-collection {
+  margin-bottom: 0;
+}
 .form-group .bc-collection li + li {
   margin-top: 10px;
+}
+.form-group .bc-collection li:nth-last-child(1) {
+  margin-bottom: 10px;
+}
+.form-inline .form-group {
+  margin-left: 0;
+  margin-right: 0;
 }
 .form-horizontal .col-lg-1 .col-1,
 .form-horizontal .col-lg-2 .col-1,
