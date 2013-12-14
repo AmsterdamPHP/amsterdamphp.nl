@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new DMSTwigExtensionBundle(),
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
+            new AntiMattr\GoogleBundle\GoogleBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),

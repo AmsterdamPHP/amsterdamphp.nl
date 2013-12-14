@@ -1,6 +1,6 @@
 set :application, "amsterdamphp"
 set :domain,      "#{application}.nl"
-set :deploy_to,   "/var/www/#{domain}"
+set :deploy_to,   "/data/www/#{domain}"
 set :app_path,    "app"
 
 set :repository,  "git@github.com:AmsterdamPHP/amsterdamphp.nl.git"

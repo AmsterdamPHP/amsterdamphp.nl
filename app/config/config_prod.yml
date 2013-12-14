@@ -25,3 +25,12 @@ monolog:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
+
+google:
+    analytics:
+        trackers:
+            default:
+                name:      amsphp-analytics
+                accountId: UA-31417159-3
+                domain:    amsterdamphp.nl
+                trackPageLoadTime: true
