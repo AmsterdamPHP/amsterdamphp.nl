@@ -5,7 +5,7 @@
         "**/*"
     ],
     "dependencies": {
-        "jQuery": "1.10.*",
+        "jquery": "1.10.*",
         "html5shiv": "3.6.*",
         "bootstrap": "3.0.*",
         "respond": "1.4.*",
