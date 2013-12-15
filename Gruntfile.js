@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             },
             amsterdamphpjs: {
                 src: [
-                    'bower_components/jquery/jquery.js',
+                    'web/js/jquery.js',
                     'bower_components/bootstrap/js/transition.js',
                     'bower_components/bootstrap/js/alert.js',
                     'bower_components/bootstrap/js/button.js',
