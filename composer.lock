@@ -111,12 +111,12 @@
             "target-dir": "DMS/Bundle/MeetupApiBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rdohms/DMSMeetupApiBundle.git",
+                "url": "https://github.com/rdohms/dms-meetup-api-bundle.git",
                 "reference": "f050172106710293e32385e041507a6a96e0bad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdohms/DMSMeetupApiBundle/zipball/f050172106710293e32385e041507a6a96e0bad3",
+                "url": "https://api.github.com/repos/rdohms/dms-meetup-api-bundle/zipball/f050172106710293e32385e041507a6a96e0bad3",
                 "reference": "f050172106710293e32385e041507a6a96e0bad3",
                 "shasum": ""
             },
@@ -211,12 +211,12 @@
             "target-dir": "DMS/Bundle/TwigExtensionBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rdohms/DMSTwigExtensionBundle.git",
+                "url": "https://github.com/rdohms/dms-twig-extension-bundle.git",
                 "reference": "4d0185be6412bd8befe79fb16017b6d6bedaf60d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdohms/DMSTwigExtensionBundle/zipball/4d0185be6412bd8befe79fb16017b6d6bedaf60d",
+                "url": "https://api.github.com/repos/rdohms/dms-twig-extension-bundle/zipball/4d0185be6412bd8befe79fb16017b6d6bedaf60d",
                 "reference": "4d0185be6412bd8befe79fb16017b6d6bedaf60d",
                 "shasum": ""
             },
