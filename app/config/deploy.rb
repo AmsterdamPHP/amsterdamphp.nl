@@ -3,7 +3,7 @@ set :domain,      "#{application}.nl"
 set :deploy_to,   "/data/www/#{domain}"
 set :app_path,    "app"
 
-set :repository,  "git@github.com:AmsterdamPHP/amsterdamphp.nl.git"
+set :repository,  "git://github.com/AmsterdamPHP/amsterdamphp.nl.git"
 set :scm,         :git
 
 set :model_manager, "doctrine"
@@ -19,7 +19,7 @@ set :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor"]
 set :use_composer, true
 
 # Be more verbose by uncommenting the following line
-# logger.level = Logger::MAX_LEVEL
+ logger.level = Logger::MAX_LEVEL
 
 default_run_options[:pty] = true
 set :use_sudo, false
