@@ -1,0 +1,17 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="sponsors-page">
+        <div class="row">
+            <ul>
+                {% for sponsor in sponsors %}
+                    <li>
+                        <a href="{{ path('amsphp_sponsor', {'id': sponsor.id}) }}">
+                            <img src="{{ sponsor.image_url }}" alt="{{ sponsor.name }}" />
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

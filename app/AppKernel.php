@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
             new AmsterdamPHP\Bundle\SiteBundle\AmsterdamPHPSiteBundle(),
+            new AmsterdamPHP\Bundle\SponsorBundle\AmsterdamPHPSponsorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

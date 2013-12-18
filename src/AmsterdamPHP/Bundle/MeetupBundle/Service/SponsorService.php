@@ -71,11 +71,33 @@ class SponsorService
         $group = array_shift($groups);
         $sponsors = $group['sponsors'];
 
+        // Inject sponsor id to each sponsor
+        foreach ($sponsors as $key => $sponsor) {
+            $sluggableText = $sponsor['name'];
+            $urlized = strtolower( trim( preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', iconv('UTF-8', 'ASCII//TRANSLIT', $sluggableText) ), '-' ) );
+            $urlized = preg_replace("/[\/_|+ -]+/", '-', $urlized);
+
+            $sponsors[$key]['id'] = $urlized;
+        }
+
         //Cache resource
         $this->getCache()->set($cacheKey, base64_encode(serialize($sponsors)));
         $this->getCache()->expireat($cacheKey, strtotime('+24 hours'));
 
         return $sponsors;
+    }
+
+    public function getSponsor($id)
+    {
+        $sponsors = $this->getAllSponsors();
+
+        foreach ($sponsors as $sponsor) {
+            if ($sponsor['id'] == $id) {
+                return $sponsor;
+            }
+        }
+
+        throw new Exception('Sponsor not found');
     }
 
     /**

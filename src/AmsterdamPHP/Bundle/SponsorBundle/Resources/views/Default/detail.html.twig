@@ -1,0 +1,18 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="sponsor-page">
+        <div class="row">
+            <h1>
+                <img src="{{ sponsor.image_url }}" alt="{{ sponsor.name }}" />
+                {{ sponsor.name }}
+            </h1>
+        </div>
+        <div class="row">
+            {{ sponsor.details }}
+        </div>
+        <div class="row">
+            <a href="{{ sponsor.url }}">Visit sponsor</a>
+        </div>
+    </div>
+{% endblock %}
