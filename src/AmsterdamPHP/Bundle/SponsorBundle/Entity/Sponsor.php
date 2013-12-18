@@ -5,7 +5,7 @@ namespace AmsterdamPHP\Bundle\SponsorBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AmsterdamPHP\Bundle\SponsorBundle\Repository\SponsorRepository")
  * @ORM\Table(name="sponsor")
  */
 class Sponsor
