@@ -3,6 +3,11 @@ amsterdam_php_site:
     type:     annotation
     prefix:   /
 
+amsterdam_php_sponsors:
+    resource: "@AmsterdamPHPSponsorBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 #amsterdam_php_meetup:
 #    resource: "@AmsterdamPHPMeetupBundle/Controller/"
 #    type:     annotation

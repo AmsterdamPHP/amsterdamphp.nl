@@ -1,6 +1,6 @@
 <?php
 
-namespace AmsterdamPHP\Bundle\SiteBundle\Controller;
+namespace AmsterdamPHP\Bundle\SponsorBundle\Controller;
 
 use AmsterdamPHP\Bundle\MeetupBundle\Service\SponsorService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -8,12 +8,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * Class SponsorController
+ * Class DefaultController
  *
- * @package AmsterdamPHP\Bundle\SiteBundle\Controller
+ * @package AmsterdamPHP\Bundle\SponsorBundle\Controller
  * @Route("/sponsors")
  */
-class SponsorController extends Controller
+class DefaultController extends Controller
 {
     /**
      * @Route("/", name="amsphp_sponsors")
@@ -43,4 +43,4 @@ class SponsorController extends Controller
             'sponsor'   => $sponsor,
         ];
     }
-} 
+}
