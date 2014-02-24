@@ -31,7 +31,8 @@
         "ornicar/akismet-bundle": "*@dev",
         "ornicar/gravatar-bundle": "dev-master@dev",
         "antimattr/google-bundle": "dev-master@dev",
-        "madcoda/php-youtube-api": "dev-master"
+        "madcoda/php-youtube-api": "dev-master",
+        "liip/imagine-bundle": "dev-master@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*@dev",

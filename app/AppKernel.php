@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Ornicar\AkismetBundle\OrnicarAkismetBundle(),
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
             new AntiMattr\GoogleBundle\GoogleBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),
@@ -71,12 +72,12 @@ class AppKernel extends Kernel
 //        return parent::getCacheDir();
 //    }
 //
-    public function getLogDir()
-    {
-        if (in_array($this->environment, array('dev', 'test'))) {
-            return '/var/shm/amsphp/logs';
-        }
-
-        return parent::getLogDir();
-    }
+//    public function getLogDir()
+//    {
+//        if (in_array($this->environment, array('dev', 'test'))) {
+//            return '/dev/shm/amsphp/logs';
+//        }
+//
+//        return parent::getLogDir();
+//    }
 }

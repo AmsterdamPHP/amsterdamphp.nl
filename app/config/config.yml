@@ -122,3 +122,18 @@ google:
                 accountId: ~
                 domain:    amsterdamphp.nl
                 trackPageLoadTime: true
+
+liip_imagine:
+    filter_sets:
+        sponsor_homepage:
+            quality: 100
+            filters:
+                thumbnail: { size: [120, 90], mode: inset }
+        sponsor_bronze:
+             quality: 100
+             filters:
+                thumbnail: { size: [155, 60], mode: inset }
+        sponsor_community:
+             quality: 100
+             filters:
+                thumbnail: { size: [53, 35], mode: inset }

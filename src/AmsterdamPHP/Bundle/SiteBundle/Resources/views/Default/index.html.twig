@@ -13,7 +13,7 @@
             <ul class="sponsor-list bxslider">
 
                 {% for sponsor in sponsors %}
-                    <li style="background-image:url('{{ sponsor.image_url }}')">
+                    <li style="background-image:url('{{ sponsor.getLogo() | imagine_filter('sponsor_homepage') }}')">
                         <a href="{{ sponsor.url }}">
                             <span></span>
                         </a>

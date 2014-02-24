@@ -29,6 +29,8 @@
 /** Custom Styles */
 header {
 
+    .make-row();
+
     color:  #ffffff;
     background-color: @amsBlack;
     padding-top: 20px;
@@ -88,6 +90,7 @@ header {
 }
 
 footer {
+    .make-row();
     background-color: @amsBlack;
     color:  #ffffff;
     a { color: @amsRed; }
@@ -114,42 +117,16 @@ footer {
     }
 
     .design-credits {
-         display: block;
+        display: block;
         .text-center;
-         font-size: 75%;
-         a { color:  #ffffff; }
+        font-size: 75%;
+        a { color:  #ffffff; }
     }
 }
 
 .content {
     background-color: #F6F6F6;
-}
-
-// Photos
-.header-photo {
-
-    position:relative;
-    width:  100%;
-    height: 400px;
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    span {
-
-        font-size: 55px;
-        font-weight: bold;
-
-        color: #ffffff;
-        padding: 0 20px;
-
-        background-color: rgba(0,0,0, 0.5);
-
-
-        b { color:  @amsRed; }
-    }
-
+    .make-row();
 }
 
 .photo-bar {
@@ -552,3 +529,7 @@ footer {
         a { color:  #ffffff; }
     }
 }
+
+/* Sections */
+@import "home";
+@import "sponsors";

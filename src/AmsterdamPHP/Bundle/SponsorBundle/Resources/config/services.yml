@@ -1,0 +1,36 @@
+services:
+
+    amsterdamphp_sponsor.entity.sponsor:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Service\SponsorService
+        arguments:
+            - @doctrine.orm.default_entity_manager
+
+    amsterdamphp_sponsor.form.package.meeting:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\MeetingPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_meeting }
+
+    amsterdamphp_sponsor.form.package.money:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\MoneyPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_money }
+
+    amsterdamphp_sponsor.form.package.community:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\CommunityPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_community }
+
+    amsterdamphp_sponsor.form.package.bronze:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\BronzePackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_bronze }
+
+    amsterdamphp_sponsor.form.package.silver:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\SilverPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_silver }
+
+    amsterdamphp_sponsor.form.package.gold:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\GoldPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_gold }

@@ -1,0 +1,69 @@
+.sponsors-page {
+    .make-lg-column(12);
+
+    .sponsors-category {
+
+        .make-row();
+        margin-bottom: 15px;
+
+        .header {
+            margin-bottom:  0;
+        }
+
+        .sponsors-list { margin-top: 10px; }
+
+        .sponsor-row { .make-row(); }
+
+        .sponsor {
+
+            margin-top: 10px;
+
+            .logo {
+                .text-center;
+                a {
+                    .thumbnail;
+                    .border-radius(0);
+                }
+            }
+
+            .info {
+                .name { margin-top:  0; }
+                .details {}
+                .link {}
+            }
+        }
+    }
+
+    .sponsors-category.gold {
+        .sponsor { .make-row(); }
+        .header { color: goldenrod; }
+        .logo { .make-lg-column(4); }
+        .info { .make-lg-column(8); }
+    }
+
+    .sponsors-category.bronze {
+        .header { color: #CD7F32; }
+        .logo {
+            .make-lg-column(2);
+        }
+    }
+
+    .sponsors-category.community {
+        .make-lg-column(6);
+
+        .header { color: darkred; }
+        .logo {
+            .make-lg-column(2);
+        }
+    }
+
+    .sponsors-category.meeting {
+        .make-lg-column(6);
+
+        .header { color: #000000; }
+        .logo {
+            .make-lg-column(2);
+        }
+    }
+
+}

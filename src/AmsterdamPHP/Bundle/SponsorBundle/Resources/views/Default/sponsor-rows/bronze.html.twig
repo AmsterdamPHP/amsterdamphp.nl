@@ -1,0 +1,20 @@
+<div class="sponsors-category bronze">
+    <div class="header">
+        <h2>Bronze Sponsors</h2>
+    </div>
+    <div class="sponsor-list">
+        {% for rows in sponsors.bronze|batch(6) %}
+            <div class="sponsor-row">
+                {% for sponsor in rows %}
+                    <div class="sponsor">
+                        <div class="logo"> <!-- col-md-2-->
+                            <a href="{{ sponsor.url }}">
+                                <img src="{{ sponsor.getLogo()|imagine_filter('sponsor_bronze') }}" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

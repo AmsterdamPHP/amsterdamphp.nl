@@ -17,8 +17,8 @@ class DefaultController extends Controller
         $photoService = $this->get('meetup.photos');
         $headerPhoto  = $photoService->getRandomPhotosFromPool(1);
 
-        $sponsorService = $this->get('meetup.sponsors');
-        $sponsors       = $sponsorService->getRandomSponsors();
+        $sponsorService = $this->get('amsterdamphp_sponsor.entity.sponsor');
+        $sponsors       = $sponsorService->getCurrentlyActiveSponsors();
 
         $eventService = $this->get('meetup.events');
         $nextEvents   = $eventService->getUpcomingEvents(true)->toArray();

@@ -8,6 +8,10 @@ amsterdam_php_sponsors:
     type:     annotation
     prefix:   /
 
+_imagine:
+    resource: .
+    type:     imagine
+
 #amsterdam_php_meetup:
 #    resource: "@AmsterdamPHPMeetupBundle/Controller/"
 #    type:     annotation

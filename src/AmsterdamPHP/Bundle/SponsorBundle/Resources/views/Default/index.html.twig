@@ -3,15 +3,21 @@
 {% block content %}
     <div class="sponsors-page">
         <div class="row">
-            <ul>
-                {% for sponsor in sponsors %}
-                    <li>
-                        <a href="{{ path('amsphp_sponsor', {'id': sponsor.id}) }}">
-                            <img src="{{ sponsor.image_url }}" alt="{{ sponsor.name }}" />
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
+            <h1>Our Sponsors</h1>
         </div>
+
+        {% if sponsors.gold.count() > 0 %}
+            {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:gold.html.twig' %}
+        {% endif %}
+
+        {% if sponsors.silver.count() > 0 %}
+            {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:silver.html.twig' %}
+        {% endif %}
+
+        {% if sponsors.bronze.count() > 0 %}
+            {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:bronze.html.twig' %}
+        {% endif %}
+
+        {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:others.html.twig' %}
     </div>
 {% endblock %}

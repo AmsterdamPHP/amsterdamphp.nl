@@ -1,0 +1,36 @@
+<div class="sponsors-category silver">
+    <div class="header">
+        <h2>Silver Sponsors</h2>
+    </div>
+    <div class="sponsor-list">
+        {% for sponsor in sponsors.silver %} <!-- TODO -->
+            <div class="col-md-6">
+                <div class="sponsor">
+                    <div class="col-md-4">
+                        <a class="thumbnail" href="{{ sponsor.url }}">
+                            <img src="{{ sponsor.getLogo() }}" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="name">{{ sponsor.name }}</h3>
+                        <p class="info">Visit at <a href="{{ sponsor.url }}">{{ sponsor.url }}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sponsor">
+                    <div class="col-md-4">
+                        <a class="thumbnail" href="{{ sponsor.url }}">
+                            <img src="{{ sponsor.getLogo() }}" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="name">{{ sponsor.name }}</h3>
+                        <p class="details">{{ sponsor.details }}</p>
+                        <p class="info">Visit at <a href="{{ sponsor.url }}">{{ sponsor.url }}</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

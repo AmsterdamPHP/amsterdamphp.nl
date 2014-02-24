@@ -1,0 +1,64 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Sponsor list</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Logo</th>
+                <th>Name</th>
+                <th>Packages</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('admin_sponsor_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><img src="{{ entity.getLogo() }}" alt="" class="img-thumbnail" width="50"/></td>
+                <td>{{ entity.name }}</td>
+                <td>
+                    {% for package in entity.getCurrentMoneyPackages() %}
+                        <img src="/bundles/amsterdamphpsponsor/badges/badge-{{ package.type }}-tiny.png" alt="{{ package.type }}"/>
+                    {% endfor %}
+                </td>
+                <td>
+                <ul class="list-inline">
+                    <li>
+                        <a class="btn btn-default" href="{{ path('admin_sponsor_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-default" href="{{ path('admin_sponsor_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                Add Package <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('admin_sponsor_add_package', { 'id': entity.id, 'type': 'meeting' }) }}">Meeting</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{{ path('admin_sponsor_add_package', { 'id': entity.id, 'type': 'community' } ) }}">Community</a></li>
+                                <li><a href="{{ path('admin_sponsor_add_package', { 'id': entity.id, 'type': 'bronze' } ) }}">Bronze</a></li>
+                                <li><a href="{{ path('admin_sponsor_add_package', { 'id': entity.id, 'type': 'silver'} ) }}">Silver</a></li>
+                                <li><a href="{{ path('admin_sponsor_add_package', { 'id': entity.id, 'type': 'gold'})  }}">Gold</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-inline">
+        <li>
+            <a href="{{ path('admin_sponsor_new') }}" class="btn btn-default">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}

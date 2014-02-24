@@ -3,7 +3,6 @@
 namespace AmsterdamPHP\Bundle\SponsorBundle\Controller;
 
 use AmsterdamPHP\Bundle\MeetupBundle\Service\SponsorService;
-use AmsterdamPHP\Bundle\SponsorBundle\Repository\SponsorRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -22,15 +21,15 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-//        $sponsorService = $this->get('meetup.sponsors');
-//        $sponsors       = $sponsorService->getRandomSponsors();
+        $service = $this->get('amsterdamphp_sponsor.entity.sponsor');
 
-        /** @var SponsorRepository $repository */
-        $repository = $this->getDoctrine()->getRepository('AmsterdamPHPSponsorBundle:Sponsor');
-        $sponsors = $repository->findAll();
+        $sponsors = $service->getCurrentlyActiveSponsorsByPackage();
+
+        $meetingSponsors = $service->getMeetingSponsors();
 
         return [
-            'sponsors'  => $sponsors
+            'sponsors' => $sponsors,
+            'meetings' => $meetingSponsors
         ];
     }
 
