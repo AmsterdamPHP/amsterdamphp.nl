@@ -1,6 +1,6 @@
 <div class="sponsors-category others">
 
-    <div class="sponsors-category community"> <!-- col-md-6 -->
+    <div class="sponsors-category community">
         <div class="header">
             <h2>Community Sponsors</h2>
         </div>
@@ -9,7 +9,7 @@
                 <div class="sponsor-row">
                     {% for sponsor in rows %}
                         <div class="sponsor">
-                            <div class="logo"> <!-- col-md-2-->
+                            <div class="logo">
                                 <a href="{{ sponsor.url }}">
                                     <img src="{{ sponsor.getLogo()|imagine_filter('sponsor_community') }}" alt="" />
                                 </a>
@@ -21,21 +21,25 @@
         </div>
     </div>
 
-    <div class="sponsors-category meeting"> <!-- col-md-6 -->
+    <div class="sponsors-category meeting">
         <div class="header">
             <h2>Meeting Sponsors</h2>
         </div>
         <div class="sponsor-list">
-            {% for sponsor in meetings %}
-                <div class="sponsor">
-                    <div class="logo"> <!-- col-md-2-->
-                        <a href="{{ sponsor.url }}">
-                            <img src="{{ sponsor.getLogo() }}" alt="" />
-                            <div class="caption text-center">
-                                JAN'14
+            {% for meeting_batch in meetings|batch(6) %}
+                <div class="sponsor-row">
+                    {% for sponsor in meeting_batch %}
+                        <div class="sponsor">
+                            <div class="logo">
+                                <a href="{{ sponsor.url }}">
+                                    <img src="{{ sponsor.getLogo() }}" alt="" />
+                                    <div class="caption text-center">
+                                        JAN'14
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    {% endfor %}
                 </div>
             {% endfor %}
         </div>

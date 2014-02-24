@@ -52,8 +52,8 @@ class SponsorService
      * @param int $max
      * @return ArrayCollection
      */
-    public function getMeetingSponsors($max = 12)
+    public function getMeetingSponsors($max = null)
     {
-        return new ArrayCollection();
+        return $this->repository->getMeetingSponsors($max);
     }
 }

@@ -8,6 +8,10 @@ use Doctrine\ORM\EntityRepository;
 class SponsorRepository extends EntityRepository
 {
 
+    /**
+     * @param null $package
+     * @return ArrayCollection
+     */
     public function getCurrentActiveSponsors($package = null)
     {
         $now = new \DateTime('now');
@@ -28,7 +32,11 @@ class SponsorRepository extends EntityRepository
         return new ArrayCollection($qb->getQuery()->getResult());
     }
 
-    public function getMeetingSponsors($year = null)
+    /**
+     * @param null $year
+     * @return ArrayCollection
+     */
+    public function getMeetingSponsors($max = null, $year = null)
     {
         $year = $year ?: (new \DateTime('now'))->format('Y');
 
@@ -36,8 +44,12 @@ class SponsorRepository extends EntityRepository
 
         $qb->join('sp.meetings', 'mtg');
 
-        $qb->andWhere('YEAR(mtg.meetingDate) <= :year');
+        $qb->andWhere('SUBSTRING(mtg.meetingDate, 0, 4) <= :year');
         $qb->setParameter('year', $year);
+
+        if ($max !== null) {
+            $qb->setMaxResults($max);
+        }
 
         return new ArrayCollection($qb->getQuery()->getResult());
     }

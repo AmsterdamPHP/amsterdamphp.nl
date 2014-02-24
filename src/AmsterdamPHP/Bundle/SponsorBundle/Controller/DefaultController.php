@@ -25,7 +25,7 @@ class DefaultController extends Controller
 
         $sponsors = $service->getCurrentlyActiveSponsorsByPackage();
 
-        $meetingSponsors = $service->getMeetingSponsors();
+        $meetingSponsors = $service->getMeetingSponsors(12);
 
         return [
             'sponsors' => $sponsors,

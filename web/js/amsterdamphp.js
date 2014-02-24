@@ -9787,7 +9787,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 }
 
 })( window );
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: transition.js v3.0.3
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
@@ -9843,7 +9844,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: alert.js v3.0.3
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
@@ -9941,7 +9943,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: button.js v3.0.3
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
@@ -10056,7 +10059,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: carousel.js v3.0.3
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
@@ -10273,7 +10277,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: collapse.js v3.0.3
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
@@ -10452,7 +10457,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: dropdown.js v3.0.3
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
@@ -10606,7 +10612,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: modal.js v3.0.3
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
@@ -10852,7 +10859,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: tooltip.js v3.0.3
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
@@ -11238,7 +11246,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   }
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: popover.js v3.0.3
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
@@ -11355,7 +11364,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   }
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: scrollspy.js v3.0.3
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
@@ -11513,7 +11523,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: tab.js v3.0.3
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
@@ -11648,7 +11659,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;/* ========================================================================
+
+/* ========================================================================
  * Bootstrap: affix.js v3.0.3
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
@@ -11774,3 +11786,125 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
+
+/* ==========================================================
+ * bc-bootstrap-collection.js
+ * http://bootstrap.braincrafted.com
+ * ==========================================================
+ * Copyright 2013 Florian Eckerstorfer
+ *
+ * ========================================================== */
+
+
+!function ($) {
+
+    "use strict"; // jshint ;_;
+
+    /* COLLECTION CLASS DEFINITION
+     * ====================== */
+
+    var addField = '[data-addfield="collection"]',
+        removeField = '[data-removefield="collection"]',
+        CollectionAdd = function (el) {
+            $(el).on('click', addField, this.addField);
+        },
+        CollectionRemove = function (el) {
+            $(el).on('click', removeField, this.removeField);
+        }
+    ;
+
+    CollectionAdd.prototype.addField = function (e) {
+        var $this = $(this),
+            selector = $this.attr('data-collection')
+        ;
+
+        e && e.preventDefault();
+
+        var collection = $('#'+selector),
+            list = collection.find('> ul'),
+            count = list.find('li').size()
+        ;
+
+        var newWidget = collection.attr('data-prototype');
+
+        // Check if an element with this ID already exists.
+        // If it does, increase the count by one and try again
+        var newName = newWidget.match(/id="(.*?)"/);
+        while ($('#' + newName[1].replace(/__name__/g, count)).size() > 0) {
+            count++;
+        }
+        newWidget = newWidget.replace(/__name__/g, count);
+        newWidget = newWidget.replace(/__id__/g, newName[1].replace(/__name__/g, count));
+        var newLi = $('<li></li>').html(newWidget);
+        newLi.appendTo(list);
+    };
+
+    CollectionRemove.prototype.removeField = function (e) {
+        var $this = $(this),
+            selector = $this.attr('data-field')
+        ;
+
+        e && e.preventDefault();
+
+        var listElement = $this.closest('li').remove();
+    }
+
+
+    /* COLLECTION PLUGIN DEFINITION
+     * ======================= */
+
+    var oldAdd = $.fn.addField;
+    var oldRemove = $.fn.removeField;
+
+    $.fn.addField = function (option) {
+        return this.each(function () {
+            var $this = $(this),
+                data = $this.data('addfield')
+            ;
+            if (!data) {
+                $this.data('addfield', (data = new CollectionAdd(this)));
+            }
+            if (typeof option == 'string') {
+                data[option].call($this);
+            }
+        });
+    };
+
+    $.fn.removeField = function (option) {
+        return this.each(function() {
+            var $this = $(this),
+                data = $this.data('removefield')
+            ;
+            if (!data) {
+                $this.data('removefield', (data = new CollectionRemove(this)));
+            }
+            if (typeof option == 'string') {
+                data[option].call($this);
+            }
+        });
+    };
+
+    $.fn.addField.Constructor = CollectionAdd;
+    $.fn.removeField.Constructor = CollectionRemove;
+
+
+    /* COLLECTION NO CONFLICT
+     * ================= */
+
+    $.fn.addField.noConflict = function () {
+        $.fn.addField = oldAdd;
+        return this;
+    }
+    $.fn.removeField.noConflict = function () {
+        $.fn.removeField = oldRemove;
+        return this;
+    }
+
+
+    /* COLLECTION DATA-API
+     * ============== */
+
+    $(document).on('click.addfield.data-api', addField, CollectionAdd.prototype.addField);
+    $(document).on('click.removefield.data-api', removeField, CollectionRemove.prototype.removeField);
+
+ }(window.jQuery);

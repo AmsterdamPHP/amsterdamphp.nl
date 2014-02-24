@@ -55,6 +55,16 @@
                     </ul>
                 </td>
             </tr>
+            <tr>
+                <th>Meetings</th>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for meeting in entity.meetings %}
+                            <li>{{ meeting.meetingType }}: {{ meeting.meetingDate|date('F, Y') }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 
