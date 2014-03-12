@@ -33,6 +33,8 @@
                             <li>
                                 <img src="/bundles/amsterdamphpsponsor/badges/badge-{{ package.type }}-tiny.png" alt="{{ package.type }}"/>
                                 ({{ package.startDate|date('j M, Y') }} to {{ package.endDate|date('j M, Y') }})
+
+                                <a href="{{ path('admin_sponsor_remove_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -50,6 +52,8 @@
                                 {% else %}
                                     ({{ package.startDate|date('j M, Y') }} to {{ package.endDate|date('j M, Y') }})
                                 {% endif %}
+
+                                <a href="{{ path('admin_sponsor_remove_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -78,6 +82,9 @@
         <a href="{{ path('admin_sponsor_edit', { 'id': entity.id }) }}" class="btn btn-default">
             Edit
         </a>
+    </li>
+    <li>
+        {% include "AmsterdamPHPSponsorBundle:Sponsor:_add_package_button.html.twig" with { sponsor: entity } %}
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>

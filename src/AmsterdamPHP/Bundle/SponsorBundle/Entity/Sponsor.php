@@ -387,4 +387,12 @@ class Sponsor
             return ($moment >= $start && $moment <= $end);
         });
     }
+
+    /**
+     * String representation
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

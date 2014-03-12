@@ -2,12 +2,14 @@
 
 namespace AmsterdamPHP\Bundle\SponsorBundle\Controller;
 
+use AmsterdamPHP\Bundle\SponsorBundle\Entity\MoneyPackage;
 use AmsterdamPHP\Bundle\SponsorBundle\Entity\Package;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AmsterdamPHP\Bundle\SponsorBundle\Entity\Sponsor;
 use AmsterdamPHP\Bundle\SponsorBundle\Form\SponsorType;
 
@@ -262,6 +264,22 @@ class SponsorController extends Controller
         ];
     }
 
+    /**
+     * @Route("/{id}/remove-money-package/{package_id}", name="admin_sponsor_remove_package")
+     * @ParamConverter("package", class="AmsterdamPHPSponsorBundle:MoneyPackage", options={"id" = "package_id"})
+     *
+     * @param Sponsor $sponsor
+     * @param MoneyPackage $package
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function removeMoneyPackageAction(Sponsor $sponsor, MoneyPackage $package)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($package);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('admin_sponsor_show', ['id' => $sponsor->getId()]));
+    }
     /**
      * Creates a form to delete a Sponsor entity by id.
      *

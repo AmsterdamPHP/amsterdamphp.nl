@@ -56,4 +56,19 @@ class SponsorService
     {
         return $this->repository->getMeetingSponsors($max);
     }
+
+    /**
+     * Gets a full list of current active sponsors and Meeting Sponsors for last 12 months
+     *
+     * @return ArrayCollection
+     */
+    public function getAllCurrentSponsors()
+    {
+        $moneySponsors = $this->getCurrentlyActiveSponsors();
+        $meetingSponsors = $this->getMeetingSponsors(12);
+
+        $sponsors = array_merge($moneySponsors->toArray(), $meetingSponsors->toArray());
+
+        return new ArrayCollection(array_unique($sponsors));
+    }
 }
