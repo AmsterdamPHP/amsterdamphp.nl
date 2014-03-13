@@ -30,6 +30,10 @@
                 <div class="form">
                     {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
 
+                    {% if sponsor_context %}
+                        {% include "AmsterdamPHPSiteBundle:Contact:_sponsor_us.html.twig" %}
+                    {% endif %}
+
                     <h2>Contact us</h2>
 
                     {{ form(form, { 'style': 'horizontal' }) }}
