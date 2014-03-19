@@ -1,10 +1,19 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+    <div class="github-floater" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+        <ul>
+            <li><a href="https://github.com/AmsterdamPHP/amsterdamphp.nl" data-toggle="tooltip" data-placement="right" title="Fork this on GitHub"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://github.com/AmsterdamPHP/amsterdamphp.nl/issues" data-toggle="tooltip" data-placement="right" title="Report bugs on GitHub"><i class="fa fa-bug"></i></a></li>
+        </ul>
+    </div>
+
     <div class="container">
         <header>
             {% include 'AmsterdamPHPSiteBundle::_header.html.twig' %}
         </header>
+
+
         <div class="content">
             {% block content %}{% endblock %}
         </div>
@@ -13,4 +22,12 @@
         </footer>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
 {% endblock %}
