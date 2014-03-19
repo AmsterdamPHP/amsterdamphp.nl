@@ -17,10 +17,10 @@ class ContactController extends Controller
     /**
      * @Route("/", name="amsphp_contact")
      * @Route("/", name="amsphp_be_a_speaker")
-     * @Route("/", name="amsphp_be_a_sponsor")
+     * @Route("/sponsor-us", name="amsphp_be_a_sponsor", defaults={"sponsor"=true})
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($sponsor = false)
     {
 
         $form = $this->createForm('amsterdamphp_site_contact_type');
@@ -39,7 +39,8 @@ class ContactController extends Controller
         }
 
         return [
-            'form' => $form->createView()
+            'form'            => $form->createView(),
+            'sponsor_context' => $sponsor
         ];
     }
 }
