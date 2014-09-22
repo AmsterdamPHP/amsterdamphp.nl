@@ -198,18 +198,28 @@ footer {
         .pull-right;
         background-color: #E5E5E5;
 
+        .links() {
+          display: block;
+          color:  @amsRed;
+          font-weight:bold;
+          text-align: right;
+          padding:  5px 10px;
+        }
+
         .header {
-            display: block;
-            border-bottom: 1px solid white;
-            color:  @amsRed;
-            font-weight:bold;
-            text-align: right;
-            padding:  5px 10px;
+          border-bottom: 1px solid white;
+          .links();
         }
 
         .stats {
             .list-unstyled;
             padding: 5px 10px;
+        }
+
+        .footer {
+          .links();
+          border-top: 1px solid white;
+          margin-right: 1em;
         }
     }
 
