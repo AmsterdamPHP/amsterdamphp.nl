@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         uglify: {
             ie8: {
                 options: {
-                    report: 'gzip',
+                    report: 'min',
                     banner: '<%= banner %>'
                 },
                 files: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
             },
             amsterdamphpjs: {
                 options: {
-                    report: 'gzip',
+                    report: 'min',
                     banner: '<%= banner %>'
                 },
                 files: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         cssmin: {
             amsterdamphpcss: {
                 options: {
-                    report: 'gzip',
+                    report: 'min',
                     banner: '<%= banner %>'
                 },
                 src: [
