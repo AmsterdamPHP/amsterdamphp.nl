@@ -73,7 +73,7 @@ class AppKernel extends Kernel
     public function getLogDir()
     {
         if (in_array($this->environment, array('dev', 'test'))) {
-            return '/dev/shm/amsphp/logs';
+            return '/var/shm/amsphp/logs';
         }
 
         return parent::getLogDir();
