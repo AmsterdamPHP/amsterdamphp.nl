@@ -71,6 +71,7 @@
     - php5-intl
     - php5-memcached
     - php5-xdebug
+    - libapache2-mod-php5
 
 # Configurations
 
