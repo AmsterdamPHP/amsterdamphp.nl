@@ -8,6 +8,7 @@ vendor/*
 web/uploads/*
 web/bundles/*
 bin/
+app/logs/*
 
 # Configuration files
 app/config/parameters.ini
