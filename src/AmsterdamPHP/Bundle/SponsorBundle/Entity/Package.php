@@ -35,7 +35,7 @@ abstract class Package
         return $this->id;
     }
 
-    /**    /**
+    /**
      * @return string
      */
     public function getType()

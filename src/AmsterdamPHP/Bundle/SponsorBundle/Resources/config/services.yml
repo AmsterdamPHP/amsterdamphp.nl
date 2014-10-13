@@ -20,6 +20,11 @@ services:
         tags:
             - { name: form.type, alias: amsphp_sponsor_package_community }
 
+    amsterdamphp_sponsor.form.package.generic:
+        class: AmsterdamPHP\Bundle\SponsorBundle\Form\GenericPackageType
+        tags:
+            - { name: form.type, alias: amsphp_sponsor_package_generic }
+
     amsterdamphp_sponsor.form.package.bronze:
         class: AmsterdamPHP\Bundle\SponsorBundle\Form\BronzePackageType
         tags:

@@ -16,7 +16,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({
- *      "community" = "CommunityPackage", "bronze" = "BronzePackage", "silver" = "SilverPackage", "gold" = "GoldPackage"
+ *      "community" = "CommunityPackage", "bronze" = "BronzePackage", "silver" = "SilverPackage", "gold" = "GoldPackage",
+ *      "generic" = "GenericPackage"
  * })
  */
 abstract class MoneyPackage extends Package

@@ -32,7 +32,8 @@
         "ornicar/gravatar-bundle": "dev-master@dev",
         "antimattr/google-bundle": "dev-master@dev",
         "madcoda/php-youtube-api": "dev-master",
-        "liip/imagine-bundle": "dev-master@dev"
+        "liip/imagine-bundle": "dev-master@dev",
+        "friendsofsymfony/user-bundle": "~1.3"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*@dev",
