@@ -16,14 +16,16 @@
                     </span>
                 </div>
             </div>
-            <div class="attendance col-lg-5 col-md-5">
-                {% set attendance = event.attendance.toArray() %}
-                {% for guest in attendance|slice(random(attendance|length - 16), 16) %}
-                    {% if guest.member.photo is defined %}
-                        <img src="{{ guest.member.photo.thumb }}" alt="{{ guest.member.name }}"/>
-                    {% endif %}
-                {% endfor %}
-            </div>
+            {% if event.attendance %}
+                <div class="attendance col-lg-5 col-md-5">
+                    {% set attendance = event.attendance.toArray() %}
+                    {% for guest in attendance|slice(random(attendance|length - 16), 16) %}
+                        {% if guest.member.photo is defined %}
+                            <img src="{{ guest.member.photo.thumb }}" alt="{{ guest.member.name }}"/>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
         <div class="row">
             <div class="description-box col-lg-12 col-md-12">
