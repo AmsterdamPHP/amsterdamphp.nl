@@ -5,6 +5,7 @@ namespace AmsterdamPHP\Bundle\MeetupBundle\Service;
 use DMS\Service\Meetup\AbstractMeetupClient;
 use DMS\Service\Meetup\Response\MultiResultResponse;
 use Doctrine\Common\Collections\ArrayCollection;
+use Guzzle\Http\Exception\BadResponseException;
 use Predis\Client;
 
 class EventService
@@ -78,14 +79,20 @@ class EventService
             return $attendance;
         }
 
-        //Get Upcoming events
-        $attendance = $this->api->getAttendance(
-            [
-                'urlname' => 'amsterdamphp',
-                'id'      => $eventId,
-                'filter'  => 'attended'
-            ]
-        );
+        //Get Upcoming events attendence. If the API key you us, is not authorized, skip caching the list.
+        try
+        {
+            $attendance = $this->api->getAttendance(
+                    [
+                            'urlname' => 'amsterdamphp',
+                            'id'      => $eventId,
+                            'filter'  => 'attended'
+                    ]
+            );
+        } catch(BadResponseException $e)
+        {
+            return;
+        }
 
         //Cache resource
         $this->getCache()->set($cacheKey, base64_encode(serialize($attendance)));
