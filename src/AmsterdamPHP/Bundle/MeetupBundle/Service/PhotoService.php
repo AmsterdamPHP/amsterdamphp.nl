@@ -2,31 +2,8 @@
 
 namespace AmsterdamPHP\Bundle\MeetupBundle\Service;
 
-use DMS\Service\Meetup\AbstractMeetupClient;
-use Predis\Client;
-
-class PhotoService
+class PhotoService extends AbstractService
 {
-    /**
-     * @var \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    protected $api;
-
-    /**
-     * @var Client
-     */
-    protected $cache;
-
-    /**
-     * @param AbstractMeetupClient $api
-     * @param \Predis\Client $cache
-     */
-    public function __construct(AbstractMeetupClient $api, Client $cache)
-    {
-        $this->api   = $api;
-        $this->cache = $cache;
-    }
-
     /**
      * Gets a random number of photos
      * 1
@@ -111,7 +88,11 @@ class PhotoService
         while(!isset($metadata['total_count']) || $metadata['total_count'] > count($allPhotos)) {
 
             //Iterate getting all photos
-            $photos = $this->api->getPhotos(array('group_urlname' => 'amsterdamphp'));
+            $photos = $this->api->getPhotos(
+                [
+                    'group_urlname' => $this->group,
+                ]
+            );
 
             $allPhotos = array_merge($allPhotos, $photos->getData());
             $metadata = $photos->getMetadata();
@@ -123,21 +104,4 @@ class PhotoService
 
         return $allPhotos;
     }
-
-    /**
-     * @return \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    public function getApi()
-    {
-        return $this->api;
-    }
-
-    /**
-     * @return \Predis\Client
-     */
-    public function getCache()
-    {
-        return $this->cache;
-    }
-
 }
