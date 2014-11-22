@@ -5,6 +5,13 @@ services:
         arguments:
             cache: @snc_redis.cache
 
+    amsterdamphp_site.integration.youtube:
+        class: AmsterdamPHP\Bundle\SiteBundle\Service\YoutubeService
+        arguments:
+            cache: @snc_redis.cache
+            key: %youtube_key%
+            playlist: %youtube_playlist%
+
     amsterdamphp_site.email.contact:
         class: AmsterdamPHP\Bundle\SiteBundle\Service\ContactService
         arguments:

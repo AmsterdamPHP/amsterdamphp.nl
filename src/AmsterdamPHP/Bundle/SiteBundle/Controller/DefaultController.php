@@ -27,12 +27,16 @@ class DefaultController extends Controller
         $blogService = $this->get('amsterdamphp_site.integration.blog');
         $posts       = $blogService->getLatestBlogPosts();
 
+        $youtubeService = $this->get('amsterdamphp_site.integration.youtube');
+        $videos         = $youtubeService->getLatestVideos();
+
         return [
             'header_photo' => $headerPhoto,
             'next_event'   => array_shift($nextEvents),
             'past_events'  => array_splice($pastEvents, 0, 2),
             'blog_posts'   => $posts,
-            'sponsors'     => $sponsors
+            'sponsors'     => $sponsors,
+            'videos'       => $videos,
         ];
     }
 }
