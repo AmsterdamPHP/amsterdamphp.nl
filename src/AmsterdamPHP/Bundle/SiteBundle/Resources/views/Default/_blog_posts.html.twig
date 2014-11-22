@@ -7,8 +7,7 @@
             </div>
             <p class="title">{{ post.title }}</p>
             <p class="content">
-                {{ post.description|striptags|truncate(250) }}
-                <a href="{{ post.link }}">More</a>
+                {{ post.description|raw }}
             </p>
         </div>
     {% endfor %}
