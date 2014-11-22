@@ -2,31 +2,8 @@
 
 namespace AmsterdamPHP\Bundle\MeetupBundle\Service;
 
-use DMS\Service\Meetup\AbstractMeetupClient;
-use Predis\Client;
-
-class SponsorService
+class SponsorService extends AbstractService
 {
-    /**
-     * @var \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    protected $api;
-
-    /**
-     * @var Client
-     */
-    protected $cache;
-
-    /**
-     * @param AbstractMeetupClient $api
-     * @param \Predis\Client $cache
-     */
-    public function __construct(AbstractMeetupClient $api, Client $cache)
-    {
-        $this->api   = $api;
-        $this->cache = $cache;
-    }
-
     /**
      * Gets a random number of sponsors
      *
@@ -60,7 +37,7 @@ class SponsorService
         //Get Upcoming events
         $groupsInfo = $this->api->getGroups(
             [
-                'group_urlname' => 'amsterdamphp',
+                'group_urlname' => $this->group,
                 'fields'        => 'sponsors',
                 'only'          => 'sponsors',
             ]
@@ -76,21 +53,5 @@ class SponsorService
         $this->getCache()->expireat($cacheKey, strtotime('+24 hours'));
 
         return $sponsors;
-    }
-
-    /**
-     * @return \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    public function getApi()
-    {
-        return $this->api;
-    }
-
-    /**
-     * @return \Predis\Client
-     */
-    public function getCache()
-    {
-        return $this->cache;
     }
 }
