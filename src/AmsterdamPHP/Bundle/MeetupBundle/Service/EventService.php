@@ -2,34 +2,11 @@
 
 namespace AmsterdamPHP\Bundle\MeetupBundle\Service;
 
-use DMS\Service\Meetup\AbstractMeetupClient;
 use DMS\Service\Meetup\Response\MultiResultResponse;
-use Doctrine\Common\Collections\ArrayCollection;
 use Guzzle\Http\Exception\BadResponseException;
-use Predis\Client;
 
-class EventService
+class EventService extends AbstractService
 {
-    /**
-     * @var \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    protected $api;
-
-    /**
-     * @var Client
-     */
-    protected $cache;
-
-    /**
-     * @param AbstractMeetupClient $api
-     * @param \Predis\Client $cache
-     */
-    public function __construct(AbstractMeetupClient $api, Client $cache)
-    {
-        $this->api   = $api;
-        $this->cache = $cache;
-    }
-
     /**
      * Gets an array of all User Group Photos
      *
@@ -53,7 +30,7 @@ class EventService
         //Get Upcoming events
         $events = $this->api->getEvents(
             [
-                'group_urlname' => 'amsterdamphp',
+                'group_urlname' => $this->group,
                 'status'        => 'upcoming',
                 'text_format'   => 'plain'
             ]
@@ -137,7 +114,7 @@ class EventService
         //Get Upcoming events
         $events = $this->api->getEvents(
             [
-                'group_urlname' => 'amsterdamphp',
+                'group_urlname' => $this->group,
                 'status'        => 'past',
                 'text_format'   => 'plain',
                 'desc'          => 'true'
@@ -153,21 +130,4 @@ class EventService
 
         return $events;
     }
-
-    /**
-     * @return \DMS\Service\Meetup\AbstractMeetupClient
-     */
-    public function getApi()
-    {
-        return $this->api;
-    }
-
-    /**
-     * @return \Predis\Client
-     */
-    public function getCache()
-    {
-        return $this->cache;
-    }
-
 }

@@ -16,3 +16,4 @@ parameters:
 
     meetup_key:
     akismet_key:
+    group_urlname:

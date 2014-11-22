@@ -10,18 +10,21 @@ services:
         arguments:
             client: @dms_meetup_api.key_client
             cache: @snc_redis.cache
+            group: %group_urlname%
 
     meetup.sponsors:
         class: %meetup.sponsors.class%
         arguments:
             client: @dms_meetup_api.key_client
             cache: @snc_redis.cache
+            group: %group_urlname%
 
     meetup.events:
         class: %meetup.events.class%
         arguments:
             client: @dms_meetup_api.key_client
             cache: @snc_redis.cache
+            group: %group_urlname%
 
     meetup.twig.photos:
         class: %meetup.twig.photos.class%
