@@ -10,6 +10,8 @@ Its a community project, lead by the organisers and executed by the members. All
 
 We want this to be a community project we all rally behind and keep up to date, but we also want it to be a **learning experience**. This means experimenting with new technologies and trying out things we may not have time to use in everyday life.
 
+*Note*: You need a meetup.com API key (https://secure.meetup.com/meetup_api/key/) and enough permissions to get the attendees of a meetup. That requires at least the 'Event organiser' role.
+
 ### Vagrant up and away
 
 To make contributing easier we have provided a vagrant setup to allow people to run a machine that provides all the tools needed for our tech sandbox. To get all of this running follow these steps:
