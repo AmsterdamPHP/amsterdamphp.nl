@@ -7,6 +7,8 @@ use Predis\Client as Cache;
 
 class YoutubeService
 {
+    const CACHE_TTL = '+24 hours';
+    
     /**
      * @var Client
      */
@@ -47,7 +49,7 @@ class YoutubeService
         if ($videoList === null){
             $videoList = base64_encode(serialize($this->client->getPlaylistItemsByPlaylistId($this->playlist)));
             $this->cache->set($cacheKey, $videoList);
-            $this->cache->expireat($cacheKey, strtotime('+5 hours'));
+            $this->cache->expireat($cacheKey, strtotime(self::CACHE_TTL));
         }
 
         $videoList = unserialize(base64_decode($videoList));
