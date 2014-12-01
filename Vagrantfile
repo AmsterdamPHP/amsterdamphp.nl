@@ -24,7 +24,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "./", "/var/www/amsphp", id: "vagrant-root", :nfs => true
+
+  if (/linux/ =~ RUBY_PLATFORM) != nil
+    config.vm.synced_folder "./", "/var/www/amsphp", id: "vagrant-root", nfs: true, :linux__nfs_options => ["rw", "no_root_squash", "async", "no_subtree_check"]
+  else
+    config.vm.synced_folder "./", "/var/www/amsphp", id: "vagrant-root", :nfs => true
+  end
 
   # View the documentation for the provider you're using for more
   # information on available options.
