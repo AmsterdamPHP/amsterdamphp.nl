@@ -44,7 +44,8 @@ To make it easier for you to contribute and use all the new and shiny, we have s
 3. Install Vagrant
 4. Run `vagrant up`
 5. Point `vagrant.amsterdamphp.dev` to `192.168.33.10`
-6. Code!
+6. In parameters.yml set meetup_key value to your meetup.com API key. Set group_urlname to amsterdamphp
+7. Code!
 
 ### Grunt
 
