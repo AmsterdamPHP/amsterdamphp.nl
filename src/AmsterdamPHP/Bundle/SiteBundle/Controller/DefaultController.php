@@ -35,4 +35,13 @@ class DefaultController extends Controller
             'sponsors'     => $sponsors
         ];
     }
+
+    /**
+     * @Route("/code-of-conduct", name="code-of-conduct")
+     * @Template()
+     */
+    public function codeOfConductAction()
+    {
+        return [];
+    }
 }
