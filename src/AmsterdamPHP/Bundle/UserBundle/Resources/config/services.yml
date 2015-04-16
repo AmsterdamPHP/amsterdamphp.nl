@@ -1,0 +1,6 @@
+services:
+
+    amsterdamphp_user.form.login:
+        class: AmsterdamPHP\Bundle\UserBundle\Form\LoginType
+        tags:
+            - { name: form.type, alias: amsterdamphp_login }

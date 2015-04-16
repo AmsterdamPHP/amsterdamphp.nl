@@ -1,3 +1,8 @@
+amsterdam_php_user:
+    resource: "@AmsterdamPHPUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 amsterdam_php_site:
     resource: "@AmsterdamPHPSiteBundle/Controller/"
     type:     annotation

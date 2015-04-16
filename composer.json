@@ -21,7 +21,7 @@
         "dms/meetup-api-bundle": "dev-master@dev",
         "snc/redis-bundle": "~1.1",
         "predis/predis": "~0.8",
-        "braincrafted/bootstrap-bundle": "2.0.x-dev@dev",
+        "braincrafted/bootstrap-bundle": "develop-dev@dev",
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery": "1.10.2",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
@@ -33,7 +33,8 @@
         "antimattr/google-bundle": "dev-master@dev",
         "madcoda/php-youtube-api": "dev-master",
         "liip/imagine-bundle": "dev-master@dev",
-        "friendsofsymfony/user-bundle": "~1.3"
+        "friendsofsymfony/user-bundle": "~1.3",
+        "liip/imagine-bundle": "dev-master@dev"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*@dev",
