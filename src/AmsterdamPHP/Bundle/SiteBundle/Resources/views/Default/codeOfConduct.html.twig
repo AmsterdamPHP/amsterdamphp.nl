@@ -1,0 +1,50 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="code-of-conduct-page">
+        <div class="info-sidebar row">
+            <div class="col-lg-4 col-md-4">
+                <div class="details">
+                    <h3>Reporting problems</h3>
+
+                    <p>If you think this Code of Conduct has been violated and you are observing or being the target or harassment or inappropriate behavior, we ask that you report the transgression <b>privately</b> to one of the organisers and let us handle the situation.</p>
+
+                    <p>Use any available channels (private message, email to organisers, etc. or personally), if you so wish we will keep your anonymity and try to handle every situation with as little incident as needed, but ensuring a swift and effective solution.</p>
+
+                    <p>Public shaming and finger pointing is also not condoned by our group, so we ask you to try and resolve matters discreetly with us and not over public channels such as twitter. </p>
+
+                    <h4>Organizers</h4>
+                    <ul class="organizer-list">
+                        <li class="organizer-line row">{% include 'AmsterdamPHPSiteBundle:shared:_organizer.html.twig' with { name: "Rafael Dohms", email: "rdohms@amsterdamphp.nl", twitter: 'rdohms'} %}</li>
+                        <li class="organizer-line row">{% include 'AmsterdamPHPSiteBundle:shared:_organizer.html.twig' with { name: "Pascal de Vink", email: "pascal@amsterdamphp.nl"} %}</li>
+                        <li class="organizer-line row">{% include 'AmsterdamPHPSiteBundle:shared:_organizer.html.twig' with { name: "Jakub Gadkowski", email: "jakub@amsterdamphp.nl"} %}</li>
+                        <li class="organizer-line row">{% include 'AmsterdamPHPSiteBundle:shared:_organizer.html.twig' with { name: "Jeroen Groeneweg", email: "jeroen@amsterdamphp.nl"} %}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8 col-lg-8">
+                <h1>Code of Conduct</h1>
+                <p>Amsterdam is a melting pot of cultures and languages. It's mix of residents and tourists lead to unique combinations and every tech group inherits this diversity. Much like Amsterdam, our development community is also diverse in many aspects, from our origins and culture to our choice of framework and language.</p>
+
+                <p>AmsterdamPHP wishes to create a friendly environment for every developer it encounters, everyone should feel comfortable and safe in our events and online community. More than that we wish this community to be a meeting point, a place where you can come and make new friends.</p>
+
+                <p>Founded by a mix of expats and dutch organizers, this spirit has been worked on since our very beginning, helping expat developers find a safe place to meet peers and grow a better network and exposing the local community to new ideas and content. Along with this philosophy we also focus on informal meetups such as our drink-ups and game nights to step away from just technology and allow our members to bond and create friendships.</p>
+
+                <p>This CoC is a formalization of our beliefs, it is here to offer to you, our member, the guarantee that we will do our best to provide you with a safe environment in which to grow your knowledge base and your network. For this we count on you also, to be aware of our inherent differences and to respect different opinions and cultures, to be respectful and kind to others. </p>
+
+                <p>Organizers of AmsterdamPHP reserve the right to remove any participant, violating the spirit of this code, from the premises and take further action as necessary, be that reporting to higher authorities or banning members from future events and participation.</p>
+
+                <p><em>Harassment includes offensive verbal comments related to gender, age, sexual orientation, disability, physical appearance, body size, race, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.</em></p>
+
+                <p>These values and rules extend to everyone, members, invited speakers, sponsors and anyone participating in the User Group and any of our activities.</p>
+
+                <p>We also count on you to be discreet and report any issues privately to our organizers so they can be handled in the best way possible without causing embarrassment and further stress to any of the involved parties.</p>
+
+                <p>This is your community, its up to you to keep it safe and welcoming. Welcome to our group, we wish you great times and enjoyment while you are with us, and hope to launch each of you into a bright future, either with knowledge and friends or by helping you become a speaker or library developer.</p>
+
+                <p><b>Welcome to AmsterdamPHP.</b></p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
