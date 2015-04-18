@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17f79f7403a1869c3ea07c098a4b9f42",
+    "hash": "67db699695bf374e22836fc9dd6a44c4",
     "packages": [
         {
             "name": "antimattr/google-bundle",
@@ -1302,16 +1302,16 @@
         },
         {
             "name": "madcoda/php-youtube-api",
-            "version": "v1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madcoda/php-youtube-api.git",
-                "reference": "b4d888316974012c5d98d85bf4bca1c6fe06b8be"
+                "reference": "673f75882e7c44df9ca304cff07048e0781ea6ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/madcoda/php-youtube-api/zipball/b4d888316974012c5d98d85bf4bca1c6fe06b8be",
-                "reference": "b4d888316974012c5d98d85bf4bca1c6fe06b8be",
+                "url": "https://api.github.com/repos/madcoda/php-youtube-api/zipball/673f75882e7c44df9ca304cff07048e0781ea6ac",
+                "reference": "673f75882e7c44df9ca304cff07048e0781ea6ac",
                 "shasum": ""
             },
             "require": {
@@ -1343,7 +1343,7 @@
                 "video",
                 "youtube"
             ],
-            "time": "2014-07-07 04:59:39"
+            "time": "2015-04-08 15:48:17"
         },
         {
             "name": "monolog/monolog",
@@ -3100,9 +3100,11 @@
         "ornicar/akismet-bundle": 20,
         "ornicar/gravatar-bundle": 20,
         "antimattr/google-bundle": 20,
+        "madcoda/php-youtube-api": 20,
         "phpspec/phpspec": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
