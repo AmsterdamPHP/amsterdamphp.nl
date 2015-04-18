@@ -10,7 +10,7 @@ class YoutubeService
     const CACHE_TTL = '+24 hours';
     
     /**
-     * @var Client
+     * @var Youtube
      */
     protected $client;
 
@@ -27,11 +27,9 @@ class YoutubeService
     /**
      * Constructor
      */
-    public function __construct(Cache $cache, $key, $playlist)
+    public function __construct(Cache $cache, Youtube $client, $playlist)
     {
-        $this->client = new Youtube(array(
-            'key' => $key,
-        ));
+        $this->client = $client;
         $this->cache = $cache;
         $this->playlist = $playlist;
     }

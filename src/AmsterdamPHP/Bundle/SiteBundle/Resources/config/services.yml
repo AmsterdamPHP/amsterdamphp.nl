@@ -1,4 +1,17 @@
+parameters:
+    amsterdamphp_site.integration.youtube_factory.class: AmsterdamPHP\Bundle\SiteBundle\Service\YoutubeFactory
+    amsterdamphp_site.integration.youtube_client.class: Madcoda\Youtube
+
 services:
+    amsterdamphp_site.integration.youtube_factory:
+        class: %amsterdamphp_site.integration.youtube_factory.class%
+        arguments:
+            key: %youtube_key%
+
+    amsterdamphp_site.integration.youtube_client:
+        class:            "%amsterdamphp_site.integration.youtube_client.class%"
+        factory_service:  amsterdamphp_site.integration.youtube_factory
+        factory_method:   getClient
 
     amsterdamphp_site.integration.blog:
         class: AmsterdamPHP\Bundle\SiteBundle\Service\BlogService
@@ -9,7 +22,7 @@ services:
         class: AmsterdamPHP\Bundle\SiteBundle\Service\YoutubeService
         arguments:
             cache: @snc_redis.cache
-            key: %youtube_key%
+            client: @amsterdamphp_site.integration.youtube_client
             playlist: %youtube_playlist%
 
     amsterdamphp_site.email.contact:
