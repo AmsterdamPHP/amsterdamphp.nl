@@ -24,9 +24,6 @@ class DefaultController extends Controller
         $nextEvents   = $eventService->getUpcomingEvents(true)->toArray();
         $pastEvents   = $eventService->getPastEvents(true)->toArray();
 
-        $blogService = $this->get('amsterdamphp_site.integration.blog');
-        $posts       = $blogService->getLatestBlogPosts();
-
         $youtubeService = $this->get('amsterdamphp_site.integration.youtube');
         $videos         = $youtubeService->getLatestVideos();
 
@@ -34,7 +31,6 @@ class DefaultController extends Controller
             'header_photo' => $headerPhoto,
             'next_event'   => array_shift($nextEvents),
             'past_events'  => array_splice($pastEvents, 0, 2),
-            'blog_posts'   => $posts,
             'sponsors'     => $sponsors,
             'videos'       => $videos,
         ];

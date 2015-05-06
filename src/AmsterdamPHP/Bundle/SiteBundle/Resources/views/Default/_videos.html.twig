@@ -1,0 +1,27 @@
+<div class="videos">
+    {% for video in videos|slice(0, 4) %}
+        <div class="video">
+            <span>
+                <a href="https://www.youtube.com/watch?v={{ video.snippet.resourceId.videoId }}"
+                   target="_blank"><img
+                            class="thumbnail"
+                            src="{{ video.snippet.thumbnails.default.url }}" /></a>
+            </span>
+
+            {% set title = video.snippet.title|split(':') %}
+            <ul class="list-unstyled">
+                <li class="date">
+                    <a href="https://www.youtube.com/watch?v={{ video.snippet.resourceId.videoId }}"
+                       target="_blank">{{ title[0] }}</a>
+                </li>
+                <li class="title">
+                    <a href="https://www.youtube.com/watch?v={{ video.snippet.resourceId.videoId }}"
+                       target="_blank">{{ title[1] }}</a>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    <a class="more"
+       href="https://www.youtube.com/user/AmsterdamPHP/videos"
+       target="_blank">OLDER VIDEOS</a>
+</div>
