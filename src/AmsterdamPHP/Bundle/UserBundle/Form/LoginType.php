@@ -4,6 +4,7 @@ namespace AmsterdamPHP\Bundle\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * Class LoginType
@@ -32,6 +33,20 @@ class LoginType extends AbstractType
                 ]
         ]);
     }
+
+
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(
+            [
+            'intention' => 'authenticate',
+            ]
+        );
+    }
+
 
     /**
      * @return string

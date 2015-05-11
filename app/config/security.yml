@@ -12,7 +12,7 @@ security:
         in_memory:
             memory:
                 users:
-                    admin: { password: $2y$12$SqGYRAIb.NiS9rsHHhpJBOUqa2bdiezVjH0lmncI1NiWtARyJZ7Jm, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: $2a$12$xkL54c33C6UZ2JShKXiqbuRUvSdl/x5H6Ev3wDtWXbsQCHpbg/Qga, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -26,11 +26,13 @@ security:
                 login_path: login
 
                 csrf_provider: form.csrf_provider
+                csrf_parameter: "amsterdamphp_login[_token]"
 
                 username_parameter: "amsterdamphp_login[username]"
                 password_parameter: "amsterdamphp_login[password]"
                 use_referer: true
                 target_path_parameter: "amsterdamphp_login[_target_path]"
+                provider: in_memory
             logout:       true
             anonymous:    ~
             remember_me:
