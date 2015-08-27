@@ -5,8 +5,8 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.6.*",
+        "php": ">=5.3.9",
+        "symfony/symfony": "2.7.*",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.2",
@@ -19,11 +19,11 @@
         "incenteev/composer-parameter-handler": "~2.0",
 
         "dms/meetup-api-bundle": "dev-master@dev",
-        "snc/redis-bundle": "~1.1",
+        "snc/redis-bundle": "1.1.8",
         "predis/predis": "~0.8",
         "braincrafted/bootstrap-bundle": "develop-dev@dev",
-        "twbs/bootstrap": "3.0.*",
-        "jquery/jquery": "1.10.2",
+        "twbs/bootstrap": "~3.0",
+        "jquery/jquery": "~1.10.2",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
         "doctrine/migrations": "dev-master@dev",
         "dms/twig-extension-bundle": "~1.2",
@@ -43,7 +43,7 @@
         "behat/mink-extension": "~1.2",
         "behat/mink-browserkit-driver": "~1.1",
         "polishsymfonycommunity/symfony2-mocker-extension": "~1.0",
-        "sanpi/behatch-contexts": "~1.2"
+        "behatch/contexts": "~1.2"
     },
     "scripts": {
         "post-root-package-install": [
