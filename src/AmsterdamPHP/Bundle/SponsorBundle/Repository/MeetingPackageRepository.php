@@ -2,6 +2,7 @@
 
 namespace AmsterdamPHP\Bundle\SponsorBundle\Repository;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +13,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class MeetingPackageRepository extends EntityRepository
 {
+    /**
+     * @param null $year
+     * @return ArrayCollection
+     */
+    public function getRecentMeetingPackages($max = null, $year = null)
+    {
+        $year = $year ?: (new \DateTime('now'))->format('Y');
+
+        $qb = $this->createQueryBuilder('meeting');
+        $qb->andWhere('SUBSTRING(meeting.meetingDate, 0, 4) <= :year');
+        $qb->setParameter('year', $year);
+
+        if ($max !== null) {
+            $qb->setMaxResults($max);
+        }
+
+        return new ArrayCollection($qb->getQuery()->getResult());
+    }
 }

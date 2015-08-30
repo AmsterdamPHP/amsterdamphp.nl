@@ -34,7 +34,7 @@
                                 <img src="/bundles/amsterdamphpsponsor/badges/badge-{{ package.type }}-tiny.png" alt="{{ package.type }}"/>
                                 ({{ package.startDate|date('j M, Y') }} to {{ package.endDate|date('j M, Y') }})
 
-                                <a href="{{ path('admin_sponsor_remove_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
+                                <a href="{{ path('admin_sponsor_remove_money_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -53,7 +53,7 @@
                                     ({{ package.startDate|date('j M, Y') }} to {{ package.endDate|date('j M, Y') }})
                                 {% endif %}
 
-                                <a href="{{ path('admin_sponsor_remove_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
+                                <a href="{{ path('admin_sponsor_remove_money_package', {id: entity.id, package_id: package.id}) }}"><i class="fa fa-times"></i></a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -64,7 +64,10 @@
                 <td>
                     <ul class="list-unstyled">
                         {% for meeting in entity.meetings %}
-                            <li>{{ meeting.meetingType }}: {{ meeting.meetingDate|date('F, Y') }}</li>
+                            <li>
+                                {{ meeting.meetingType }}: {{ meeting.meetingDate|date('F, Y') }}
+                                <a href="{{ path('admin_sponsor_remove_meeting_package', {id: entity.id, package_id: meeting.id}) }}"><i class="fa fa-times"></i></a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </td>

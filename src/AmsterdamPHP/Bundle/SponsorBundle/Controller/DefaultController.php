@@ -25,11 +25,13 @@ class DefaultController extends Controller
 
         $sponsors = $service->getCurrentlyActiveSponsorsByPackage();
 
-        $meetingSponsors = $service->getMeetingSponsors(12);
+        $meetings = $this->getDoctrine()->getRepository(
+            'AmsterdamPHPSponsorBundle:MeetingPackage'
+        )->getRecentMeetingPackages(12);
 
         return [
             'sponsors' => $sponsors,
-            'meetings' => $meetingSponsors
+            'meetings' => $meetings
         ];
     }
 

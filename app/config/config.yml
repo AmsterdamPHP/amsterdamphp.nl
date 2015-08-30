@@ -135,8 +135,8 @@ liip_imagine:
         sponsor_bronze:
              quality: 100
              filters:
-                thumbnail: { size: [155, 60], mode: inset }
+                thumbnail: { size: [250, 90], mode: inset }
         sponsor_community:
              quality: 100
              filters:
-                thumbnail: { size: [53, 35], mode: inset }
+                thumbnail: { size: [250, 60], mode: inset }

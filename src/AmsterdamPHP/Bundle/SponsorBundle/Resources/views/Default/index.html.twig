@@ -18,6 +18,52 @@
             {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:bronze.html.twig' %}
         {% endif %}
 
+        {% if sponsors.generic.count() > 0 %}
+            <div class="sponsors-category generic">
+                <div class="header">
+                    <h2>Action Sponsors</h2>
+                </div>
+                <div class="sponsor-list">
+                    {% for rows in sponsors.generic|batch(4) %}
+                        <div class="sponsor-row">
+                            {% for sponsor in rows %}
+                                <div class="sponsor">
+                                    <div class="logo">
+                                        <a href="{{ sponsor.url }}">
+                                            <img src="{{ sponsor.getLogo()|imagine_filter('sponsor_community') }}" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if sponsors.community.count() > 0 %}
+            <div class="sponsors-category community">
+                <div class="header">
+                    <h2>Community Sponsors</h2>
+                </div>
+                <div class="sponsor-list">
+                    {% for rows in sponsors.community|batch(12) %}
+                        <div class="sponsor-row">
+                            {% for sponsor in rows %}
+                                <div class="sponsor">
+                                    <div class="logo">
+                                        <a href="{{ sponsor.url }}">
+                                            <img src="{{ sponsor.getLogo()|imagine_filter('sponsor_community') }}" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
         {% include 'AmsterdamPHPSponsorBundle:Default/sponsor-rows:others.html.twig' %}
     </div>
 {% endblock %}

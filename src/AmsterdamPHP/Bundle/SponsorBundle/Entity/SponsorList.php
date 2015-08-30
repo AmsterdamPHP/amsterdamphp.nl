@@ -4,6 +4,9 @@ namespace AmsterdamPHP\Bundle\SponsorBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
+/**
+ * Class SponsorList
+ */
 class SponsorList
 {
 
@@ -25,6 +28,11 @@ class SponsorList
     /**
      * @var ArrayCollection
      */
+    protected $generic;
+
+    /**
+     * @var ArrayCollection
+     */
     protected $community;
 
     /**
@@ -36,6 +44,7 @@ class SponsorList
         $this->silver    = new ArrayCollection();
         $this->bronze    = new ArrayCollection();
         $this->community = new ArrayCollection();
+        $this->generic   = new ArrayCollection();
     }
 
     /**
@@ -72,6 +81,9 @@ class SponsorList
         }
         if ($package instanceof BronzePackage) {
             return $this->bronze->add($package->getSponsor());
+        }
+        if ($package instanceof GenericPackage) {
+            return $this->generic->add($package->getSponsor());
         }
         if ($package instanceof CommunityPackage) {
             return $this->community->add($package->getSponsor());
@@ -111,5 +123,15 @@ class SponsorList
     {
         return $this->silver;
     }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGeneric()
+    {
+        return $this->generic;
+    }
+
+
 
 }
