@@ -1,0 +1,15 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Sponsor creation</h1>
+
+    {{ form(form, { style: "horizontal"}) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_sponsor') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

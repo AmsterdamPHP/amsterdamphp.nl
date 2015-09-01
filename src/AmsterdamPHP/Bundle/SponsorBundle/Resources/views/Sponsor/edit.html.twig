@@ -1,0 +1,24 @@
+{% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Sponsor edit</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            {{ form(edit_form) }}
+        </div>
+        <div class="col-md-4"><img src="{{ entity.getLogo() }}" alt="" class="img-thumbnail"/></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="record_actions list-inline">
+                <li>
+                    <a class="btn btn-default" href="{{ path('admin_sponsor') }}">Back to the list</a>
+                </li>
+                <li>{{ form(delete_form) }}</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

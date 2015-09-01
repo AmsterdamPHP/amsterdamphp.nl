@@ -23,3 +23,6 @@ bower_components/*
 
 # npm
 node_modules/*
+
+# uploads
+web/media/cache/*

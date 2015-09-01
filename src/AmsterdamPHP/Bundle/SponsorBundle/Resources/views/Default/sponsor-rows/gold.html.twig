@@ -1,0 +1,21 @@
+<div class="sponsors-category gold">
+    <div class="header">
+        <h2>Gold Sponsors</h2>
+    </div>
+    <div class="sponsor-list">
+        {% for sponsor in sponsors.gold %}
+            <div class="sponsor">
+                <div class="logo"> <!-- col-md-4-->
+                    <a href="{{ sponsor.url }}">
+                        <img src="{{ sponsor.getLogo() }}" alt="" />
+                    </a>
+                </div>
+                <div class="info"> <!-- col-md-8-->
+                    <h3 class="name">{{ sponsor.name }}</h3>
+                    <p class="details">{{ sponsor.details }}</p>
+                    <p class="link"><a href="{{ sponsor.url }}">Check them out at {{ sponsor.url }}</a></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

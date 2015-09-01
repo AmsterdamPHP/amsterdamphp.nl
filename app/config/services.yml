@@ -1,0 +1,6 @@
+services:
+
+    joindin.api:
+        class: Joindin\Api\Client
+        arguments:
+            - %joindin.api%

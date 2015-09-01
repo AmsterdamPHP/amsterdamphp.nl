@@ -1,6 +1,8 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -10,29 +12,32 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: %admin_passwd%, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
+        main:
+            pattern:    ^/
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
-            logout:
-                path:   _demo_logout
-                target: _demo
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+                check_path: login_check
+                login_path: login
 
+                csrf_provider: form.csrf_provider
+                csrf_parameter: "amsterdamphp_login[_token]"
+
+                username_parameter: "amsterdamphp_login[username]"
+                password_parameter: "amsterdamphp_login[password]"
+                use_referer: true
+                target_path_parameter: "amsterdamphp_login[_target_path]"
+                provider: in_memory
+            logout:       true
+            anonymous:    ~
+            remember_me:
+                key: %secret%
+                remember_me_parameter: "amsterdamphp_login[_remember_me]"
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }

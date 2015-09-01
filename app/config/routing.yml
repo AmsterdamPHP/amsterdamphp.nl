@@ -1,7 +1,20 @@
+amsterdam_php_user:
+    resource: "@AmsterdamPHPUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 amsterdam_php_site:
     resource: "@AmsterdamPHPSiteBundle/Controller/"
     type:     annotation
     prefix:   /
+
+amsterdam_php_sponsors:
+    resource: "@AmsterdamPHPSponsorBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 #amsterdam_php_meetup:
 #    resource: "@AmsterdamPHPMeetupBundle/Controller/"
