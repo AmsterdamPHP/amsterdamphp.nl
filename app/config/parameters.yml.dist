@@ -19,3 +19,10 @@ parameters:
     group_urlname:
     youtube_key:
     youtube_playlist:
+
+    admin_passwd:      ChangeThisObviously
+
+    slack.api_token:   ~
+    joindin.api:
+        base_url:      http://api.joind.in/
+        access_token:  ~
