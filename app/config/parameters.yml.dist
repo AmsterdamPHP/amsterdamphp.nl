@@ -19,3 +19,5 @@ parameters:
     group_urlname:
     youtube_key:
     youtube_playlist:
+
+    admin_passwd: ChangeThisObviously

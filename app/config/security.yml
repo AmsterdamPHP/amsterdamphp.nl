@@ -12,7 +12,7 @@ security:
         in_memory:
             memory:
                 users:
-                    admin: { password: $2a$12$xkL54c33C6UZ2JShKXiqbuRUvSdl/x5H6Ev3wDtWXbsQCHpbg/Qga, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: %admin_passwd%, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
