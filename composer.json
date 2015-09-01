@@ -35,7 +35,10 @@
         "liip/imagine-bundle": "dev-master@dev",
         "friendsofsymfony/user-bundle": "~1.3",
         "liip/imagine-bundle": "dev-master@dev",
-        "nesbot/carbon": "^1.20"
+        "nesbot/carbon": "^1.20",
+        "cleentfaar/slack-bundle": "^0.15.4",
+        "joindin/api-client": "^0.1.3",
+        "codeliner/array-reader": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

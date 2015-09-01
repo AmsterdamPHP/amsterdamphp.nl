@@ -140,3 +140,6 @@ liip_imagine:
              quality: 100
              filters:
                 thumbnail: { size: [250, 60], mode: inset }
+
+cl_slack:
+    api_token: %slack.api_token%

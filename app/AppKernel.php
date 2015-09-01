@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
             new AntiMattr\GoogleBundle\GoogleBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new CL\Bundle\SlackBundle\CLSlackBundle(),
 
             #AmsterdamPHP
             new AmsterdamPHP\Bundle\MeetupBundle\AmsterdamPHPMeetupBundle(),

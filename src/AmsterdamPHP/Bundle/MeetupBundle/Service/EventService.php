@@ -130,4 +130,24 @@ class EventService extends AbstractService
 
         return $events;
     }
+
+    /**
+     * @return MultiResultResponse
+     */
+    public function getCurrentMonthlyMeeting()
+    {
+        //Get Upcoming events
+        $events = $this->api->getEvents(
+            [
+                'group_urlname' => $this->group,
+                'status'        => 'upcoming',
+                'text_format'   => 'plain',
+                'time'          => '0m,1m'
+            ]
+        );
+
+        return $events->filter(function($event) {
+            return strpos($event['name'], 'Monthly Meeting') !== false;
+        });
+    }
 }
