@@ -6,8 +6,9 @@
                 <span class="date">{{ post.pubDate|date('F d, Y') }}</span>
             </div>
             <p class="title">{{ post.title }}</p>
-            <p class="content">
-                {{ post.description|raw }}
+            <p class="post-content">
+                {{ post.description|striptags|truncate(250) }}
+                <a href="{{ post.link }}">More</a>
             </p>
         </div>
     {% endfor %}

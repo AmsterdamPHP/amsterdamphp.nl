@@ -92,6 +92,29 @@ class MeetupContext extends BehatContext implements ServiceMockerAwareInterface
     }
 
     /**
+     * @param $num
+     * @param string $prefix
+     * @return array
+     */
+    protected function getSponsorArray($num)
+    {
+        $sponsors = [];
+        for ($i = 0; $i < $num; $i++) {
+            $sponsors[$i] = [
+                'details' => "O'Reilly is one of the largest publishers of Tech-related books",
+                'image_url' => 'http://photos2.meetupstatic.com/photos/sponsor/c/f/4/6/iab120x90_1433062.jpeg',
+                'redeem' => "Use DSUG discount code at O'Reilly's online store",
+                'name' => "O'Reilly",
+                'perk_url' => 'http://www.meetup.com/sponsor/OReilly-73300/',
+                'url' => 'http://www.oreilly.com/store/',
+                'info' => '40% off Print books',
+            ];
+        }
+
+        return $sponsors;
+    }
+
+    /**
      * @Given /^Meetup API returns upcoming events with:$/
      */
     public function meetupApiReturnsUpcomingEventsWith(TableNode $table)
@@ -182,6 +205,18 @@ class MeetupContext extends BehatContext implements ServiceMockerAwareInterface
 
         $cacheMock = $this->mocker->mockService('snc_redis.cache', Client::class);
         $cacheMock->shouldReceive('get')->with('meetup.api.photos.all')->andReturn(serialize($this->getPhotoArray(10)));
+
+        $cacheMock = $this->mocker->mockService('snc_redis.cache', Client::class);
+        $cacheMock->shouldReceive('get')->with('meetup.api.sponsors.all')->andReturn(serialize($this->getSponsorArray(10)));
+    }
+
+    /**
+     * @Given /^Meetup API returns "([^"]*)" sponsor[s?]$/
+     */
+    public function meetupApiReturnsSponsors($number)
+    {
+        $cacheMock = $this->mocker->mockService('snc_redis.cache', Client::class);
+        $cacheMock->shouldReceive('get')->with('meetup.api.sponsors.all')->andReturn(serialize($this->getSponsorArray($number)));
     }
 }
 

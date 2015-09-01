@@ -5,6 +5,9 @@
         <ul>
             <li><a href="https://github.com/AmsterdamPHP/amsterdamphp.nl" data-toggle="tooltip" data-placement="right" title="Fork this on GitHub"><i class="fa fa-github"></i></a></li>
             <li><a href="https://github.com/AmsterdamPHP/amsterdamphp.nl/issues" data-toggle="tooltip" data-placement="right" title="Report bugs on GitHub"><i class="fa fa-bug"></i></a></li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li><a href="{{ path('admin_sponsor') }}" data-toggle="tooltip" data-placement="right" title="Manage Sponsors"><i class="fa fa-eur"></i></a></li>
+            {% endif %}
         </ul>
     </div>
 
@@ -13,10 +16,10 @@
             {% include 'AmsterdamPHPSiteBundle::_header.html.twig' %}
         </header>
 
-
         <div class="content">
             {% block content %}{% endblock %}
         </div>
+
         <footer>
             {% include 'AmsterdamPHPSiteBundle::_footer.html.twig' %}
         </footer>

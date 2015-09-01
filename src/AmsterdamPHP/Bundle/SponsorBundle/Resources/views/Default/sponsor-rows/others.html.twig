@@ -1,0 +1,24 @@
+<div class="sponsors-category meeting">
+    <div class="header">
+        <h2>Meeting Sponsors</h2>
+    </div>
+    <div class="sponsor-list">
+        {% for meeting_batch in meetings|batch(12) %}
+            <div class="sponsor-row">
+                {% for meeting in meeting_batch %}
+                    <div class="sponsor">
+                        <div class="logo">
+                            <a href="{{ meeting.sponsor.url }}">
+                                <img src="{{ meeting.sponsor.getLogo() }}" alt="" />
+                                <div class="caption text-center">
+                                    {{ meeting.meetingDate|localizeddate('none', 'none', 'en_us', null, "MMM''yy")|upper }}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
