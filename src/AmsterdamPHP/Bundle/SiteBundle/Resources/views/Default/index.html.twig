@@ -1,11 +1,6 @@
 {% extends 'AmsterdamPHPSiteBundle::layout.html.twig' %}
 
 {% block content %}
-    <div class="header-photo" style="background-image:url('{{ getMeetupPhotoUrl(header_photo, 'highres') }}')">
-        <div class="photo-credits">photo by {{ getMeetupPhotoCredits(header_photo) }}</div>
-        <span>An english-speaking group for <b>PHP</b></span>
-        <span>developers in and around <b>Amsterdam</b></span>
-    </div>
 
     <div class="row sponsor-box">
         <div class="col-md-12 col-lg-12">
@@ -26,13 +21,15 @@
     <div class="row">
         <div class="col-md-4 col-lg-4">
             <a class="callout sponsor" href="{{ path('amsphp_be_a_sponsor') }}">
-                <p class="call">SPONSOR US!</p>
-                <p>Show your love for the community</p>
+                <div>
+                    <p class="call">SPONSOR US</p>
+                    <p>Show your love for the community.</p>
+                </div>
             </a>
 
             <a class="callout speaker" href="{{ path('amsphp_be_a_speaker') }}">
                 <p class="call">BE A SPEAKER</p>
-                <p>Share your knowledge with the community!</p>
+                <p>Share your knowledge!</p>
             </a>
 
             {% include 'AmsterdamPHPSiteBundle:Default:_videos.html.twig' %}

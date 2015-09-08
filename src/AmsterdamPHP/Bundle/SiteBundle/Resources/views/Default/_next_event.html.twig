@@ -1,45 +1,54 @@
 <div class="upcoming meetup col-lg-12 col-md-12">
-    <div class="title-bar">NEXT MONTHLY MEETUP</div>
+    <a class="callout upcoming">
+        <p class="call">NEXT MONTHLY MEETUP</p>
+        <div class="callCount">
+            <span class="month">{{ (event.time/1000)|date('M') }}</span>
+            <span class="day">{{ (event.time/1000)|date('d') }}</span>
+        </div>
+        <p>
+            {% if event.venue is defined %}
+                {{ event.venue.address_1 }}, {{ event.venue.city }}
+            {% else %}
+                TBA, Amsterdam
+            {% endif %}
+            -
+            {{ (event.time/1000)|date('l, M. d') }}
+            {{ (event.time/1000)|date('G:i') }}
+        </p>
+    </a>
+    <div class="map-box col-lg-12 col-md-12" style="padding: 0">
+        <div id="gmap" class="map">MAP</div>
+        <span class="address">
+
+        </span>
+    </div>
     <div class="content-box row">
-        <div class="info-box col-lg-6 col-md-6">
+        <div class="info-box col-lg-12 col-md-12">
             <div class="rsvp-box">
-                <span class="header"><a href="{{ event.event_url }}">RSVP >></a></span>
+                <span class="header"><a href="{{ event.event_url }}">RSVP NOW!</a></span>
                 <ul class="stats">
-                    <li>{{ event.yes_rsvp_count }} Attending</li>
+                    <li><b>{{ event.yes_rsvp_count }}</b> Attending</li>
                     {% if event.rsvp_limit is defined and event.waiting_list|default(null) == 0 %}
-                    <li class="spots-left">{{ event.rsvp_limit - event.yes_rsvp_count }} Spots left</li>
+                        <li class="spots-left"><b>{{ event.rsvp_limit - event.yes_rsvp_count }}</b> Spots left</li>
                     {% elseif event.waiting_list|default(0) > 0 %}
-                    <li class="waiting-list">{{ event.waiting_list }} Waiting</li>
+                        <li class="waiting-list"><b>{{ event.waiting_list }}</b> Waiting</li>
                     {% endif %}
                 </ul>
             </div>
 
-            <p class="date">
-                {{ (event.time/1000)|date('l, M. d') }}<br>
-                {{ (event.time/1000)|date('G:i') }}
-            </p>
-            <p class="name">{{ event.name }}</p>
+            <div class="title-bar">{{ event.name }}</div>
 
             {% if event.venue is defined %}
-            <p class="host-sponsor">{{ event.venue.name }}</p>
+                <p class="host-sponsor">{{ event.venue.name }}</p>
             {% endif %}
 
             <p class="description">
                 {{ event.description|striptags|truncate(300) }}
-                <a href="{{ event.event_url }}">Learn more</a>
+                <br><a class="amsButton" href="{{ event.event_url }}">Learn more</a>
             </p>
 
         </div>
-        <div class="map-box col-lg-6 col-md-6">
-            <span class="address">
-                {% if event.venue is defined %}
-                    {{ event.venue.address_1 }}, {{ event.venue.city }}
-                {% else %}
-                    TBA, Amsterdam
-                {% endif %}
-            </span>
-            <div id="gmap" class="map">MAP</div>
-        </div>
+
     </div>
 </div>
 
