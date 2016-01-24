@@ -90,11 +90,8 @@
 
 # Build tools
 
-- name: Tools | Add nodejs repo
-  apt_repository: repo='ppa:richarvey/nodejs' update_cache=yes
-
 - name: Tools | nodejs
-  apt: pkg=nodejs state=latest
+  apt: pkg=nodejs-legacy state=latest
 
 - name: Tools | NPM
   apt: pkg=npm state=latest
@@ -106,9 +103,11 @@
     - uglify-js
     - less
     - yo
+    - bower
+    - grunt-cli
 
 - name: Tools | RubyGems
-  apt: pkg=rubygems state=installed
+  apt: pkg=rubygems-integration state=installed
 
 # PHP Tools
 
