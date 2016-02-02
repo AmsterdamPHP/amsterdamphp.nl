@@ -12,40 +12,34 @@ We want this to be a community project we all rally behind and keep up to date, 
 
 *Note*: You need a meetup.com API key (https://secure.meetup.com/meetup_api/key/) and enough permissions to get the attendees of a meetup. That requires at least the 'Event organiser' role.
 
-### Vagrant up and away
-
-To make contributing easier we have provided a vagrant setup to allow people to run a machine that provides all the tools needed for our tech sandbox. To get all of this running follow these steps:
-
-* Setup VirtualBox
-* Setup Vagrant
-* Setup Ansible (minium required version is 1.4)
-* Execute `vagrant up`
-* [optional] Add `vagrant.amsterdamphp.nl` to your hosts file pointing to `192.168.33.10`
-
-**note:** This box has a always running process that will constantly compile the less files into CSS while you work, you do not need to run it yourself.
-
 ### How to contribute?
 
 1. **look at the issues**, they are our guide, find something you are comfortable with and claim it
-2. if details are lacking, **start a discussion** on the issue
-3. **run the behat tests** for that feature (or write if needed)
-4. **write your code** according to the guidelines below
-5. **run behat tests** make sure everything is green
-6. **open a PR** and wait for the review results by one of the project leads
-7. ...
-8. **Profit!**, no I'm kidding, but the learning process should indeed be a profit for you.
+* if details are lacking, **start a discussion** on the issue
+* **run the behat tests** for that feature (or write if needed)
+* **write your code** according to the guidelines below
+* **run behat tests** make sure everything is green
+* **open a PR** and wait for the review results by one of the project leads
+* ...
+* **Profit!**, no I'm kidding, but the learning process should indeed be a profit for you.
 
 #### Booting up Vagrant Box
 
 To make it easier for you to contribute and use all the new and shiny, we have setup a Vagrant box. It is provisioned with Ansible, so you need to have a few extra things, these are the steps
 
 1. Install Ansible >=1.4 ([See Docs](http://www.ansibleworks.com/docs/intro_installation.html) or use HomeBrew on Mac OSX)
-2. Install VirtualBox
-3. Install Vagrant
-4. Run `vagrant up`
-5. Point `vagrant.amsterdamphp.dev` to `192.168.33.10`
-6. In parameters.yml set meetup_key value to your meetup.com API key. Set group_urlname to amsterdamphp
-7. Code!
+* Install VirtualBox
+* Install Vagrant
+* Run `vagrant up`
+* Point `vagrant.amsterdamphp.dev` to `192.168.33.10`
+* In parameters.yml set:
+    * `meetup_key` value to your meetup.com API key
+    * `group_urlname` to **amsterdamphp**
+    * `youtube_key` to your YouTube API key
+    * `youtube_playlist` to **PLV7ClNW8PgyAPtbJ2q12BbDmHCXBjQAfc**
+* Code!
+
+**note:** This box has a always running process that will constantly compile the less files into CSS while you work, you do not need to run it yourself.
 
 ### Grunt
 
