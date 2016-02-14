@@ -8,15 +8,28 @@
         </ul>
     </div>
 
-    <div class="container">
-        <header>
-            {% include 'AmsterdamPHPSiteBundle::_header.html.twig' %}
-        </header>
-
+    <header>
+        {% include 'AmsterdamPHPSiteBundle::_header.html.twig' %}
+    </header>
+    {% if header_photo is defined %}
+    <div class="header-photo" style="background-image:url('{{ getMeetupPhotoUrl(header_photo, 'highres') }}')">
+        <div class="gradient">
+            <div class="photo-credits">photo by {{ getMeetupPhotoCredits(header_photo) }}</div>
+            <div class="container">
+                <span>An english-speaking group for <b>PHP</b></span>
+                <span>developers in and around <b>Amsterdam</b></span>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="header-photo-placeholder"></div>
+    {% endif %}
+    <div class="container dropshadow offsettop">
 
         <div class="content">
             {% block content %}{% endblock %}
         </div>
+
         <footer>
             {% include 'AmsterdamPHPSiteBundle::_footer.html.twig' %}
         </footer>

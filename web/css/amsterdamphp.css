@@ -7728,17 +7728,34 @@ form .alert ul {
  */
 /** Our Colors */
 /** Bootstrap override */
+.amsButton {
+  display: inline-block;
+  background-color: #393939;
+  padding: 2px 10px 3px 10px;
+  color: #fff;
+  margin: 10px 0;
+  border-radius: 2px;
+}
+.amsButton:hover {
+  background-color: #ec292c;
+  color: #fff;
+  text-decoration: none;
+}
 /** Custom Styles */
+body {
+  background-color: #eeeeee;
+}
 header {
   color: #ffffff;
-  background-color: #000000;
-  padding-top: 20px;
+  background-color: #111111;
+  border-bottom: 1px solid #393939;
 }
 header .logo {
-  padding: 10px 25px;
+  margin-top: 20px;
 }
 header .social-icons {
   font-size: 24px;
+  margin-right: 10px;
 }
 header .social-icons a {
   color: #ffffff;
@@ -7753,10 +7770,10 @@ header .nav-menu li:first-child {
   padding-left: 15px;
 }
 header .nav-menu li {
-  height: 50px;
+  height: 40px;
   margin-bottom: -10px;
   font-size: 18px;
-  padding: 15px 15px 0 15px;
+  padding: 5px 15px 0 15px;
   position: relative;
   text-align: center;
 }
@@ -7785,14 +7802,16 @@ header .nav-menu li.active:after {
   z-index: 9999;
 }
 footer {
-  background-color: #000000;
+  background-color: #111111;
   color: #ffffff;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 footer a {
   color: #ec292c;
 }
 footer .about {
-  padding: 25px 0;
+  padding: 25px 10px;
 }
 footer .about .lead {
   font-weight: bold;
@@ -7817,7 +7836,17 @@ footer .design-credits a {
   color: #ffffff;
 }
 .content {
-  background-color: #F6F6F6;
+  background-color: #FFF;
+  padding-top: 15px;
+}
+.offsettop {
+  margin-top: -50px;
+}
+.dropshadow {
+  background-color: #fff;
+  box-shadow: 0 10px 5px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 .header-photo {
   position: relative;
@@ -7827,15 +7856,29 @@ footer .design-credits a {
   background-position: center center;
   background-size: cover;
 }
+.header-photo .gradient {
+  display: block;
+  position: relative;
+  box-shadow: inset 112px 0 115px -4px rgba(0, 0, 0, 0.75), inset -112px 0 115px -4px rgba(0, 0, 0, 0.75);
+  height: 100%;
+}
 .header-photo span {
-  font-size: 55px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: normal;
+  font-style: italic;
   color: #ffffff;
-  padding: 0 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 20px;
+  background-color: #111111;
+  float: left;
+  clear: both;
+  margin-top: 10px;
 }
 .header-photo span b {
   color: #ec292c;
+}
+.header-photo-placeholder {
+  position: relative;
+  height: 50px;
 }
 .photo-bar {
   padding-left: 0;
@@ -7877,39 +7920,36 @@ footer .design-credits a {
 }
 .photo-credits {
   font-size: 10px;
-  background: #000000;
-  opacity: 0.5;
+  background: #111111;
   color: #ffffff;
-  padding: 3px;
+  padding: 5px 10px;
   float: right !important;
   float: right;
-}
-.meetup .title-bar {
-  font-weight: bold;
-  padding: 3px;
-  margin-bottom: 10px;
-  font-size: 24px;
 }
 .meetup.upcoming .rsvp-box {
-  float: right !important;
+  background-color: #fff;
+  position: relative;
+  right: 15px;
+  top: -120px;
   float: right;
-  background-color: #E5E5E5;
+  width: 130px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 .meetup.upcoming .rsvp-box .header {
   display: block;
   border-bottom: 1px solid white;
-  color: #ec292c;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   padding: 5px 10px;
+  background-color: forestgreen;
+}
+.meetup.upcoming .rsvp-box .header a {
+  color: #fff;
 }
 .meetup.upcoming .rsvp-box .stats {
   padding-left: 0;
   list-style: none;
   padding: 5px 10px;
-}
-.meetup.upcoming .info-box {
-  color: #393939;
 }
 .meetup.upcoming .info-box .date {
   font-size: 22px;
@@ -7919,7 +7959,10 @@ footer .design-credits a {
 .meetup.upcoming .info-box .name {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+}
+.meetup.upcoming .map-box {
+  margin-bottom: 10px;
 }
 .meetup.upcoming .map-box .address {
   margin-bottom: 10px;
@@ -7927,32 +7970,23 @@ footer .design-credits a {
 .meetup.upcoming .map-box .map {
   height: 250px;
 }
-.meetup.upcoming .title-bar {
-  color: #ffffff;
-  background-color: #ec292c;
-  border-bottom: 1px solid #ffffff;
-}
-.meetup.upcoming .title-bar:after {
-  position: absolute;
-  display: block;
-  content: '';
-  border-bottom: 1px solid white;
-  width: 100%;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin: 0 0 0 -3px;
-}
-.meetups.past .title-bar {
+.title-bar {
   font-weight: bold;
-  padding: 3px;
-  margin-bottom: 10px;
-  font-size: 24px;
-  border-bottom: 1px solid #ec292c;
+  margin: 0 0 10px 0;
+  padding: 0 0 5px 0;
+  font-size: 26px;
+  border-bottom: 1px dashed #cccccc;
   color: #ec292c;
 }
-.meetup.past {
-  margin-bottom: 15px;
+.subtitle-bar {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.meetup.upcoming p.host-sponsor {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 .meetup.past .overview-box .date {
   font-size: 14px;
@@ -7977,15 +8011,15 @@ footer .design-credits a {
   margin-bottom: 5px;
 }
 .meetup.past .description-box {
-  font-size: 16px;
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 .callout {
   color: #ffffff;
   font-size: 16px;
   height: 91px;
-  padding: 15px 15px 0 15px;
-  margin-bottom: 30px;
+  position: relative;
+  padding: 15px 15px 0 85px;
   display: block;
 }
 .callout .call {
@@ -7997,48 +8031,66 @@ footer .design-credits a {
   text-decoration: none;
   color: #ffffff;
 }
+.callout.upcoming {
+  border-bottom: 5px solid #111111;
+  background: #ec292c url('/images/calendar_icon.png') 15px 12px no-repeat;
+}
+.callout.upcoming .callCount {
+  color: #ec292c;
+  margin-left: -80px;
+  position: absolute;
+  width: 80px;
+  top: 14px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.callout.upcoming span.day,
+.callout.upcoming span.month {
+  display: block;
+  line-height: 1.3;
+}
+.callout.upcoming span.day {
+  font-weight: bold;
+  font-size: 22px;
+}
 .callout.sponsor {
-  border-bottom: 3px solid #ec292c;
-  background: #000000;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5b5b5b), color-stop(1, #000000));
-  background: -ms-linear-gradient(bottom, #5b5b5b, #000000);
-  background: -moz-linear-gradient(center bottom, #5b5b5b 0%, #000000 100%);
-  background: -o-linear-gradient(#000000, #5b5b5b);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#5b5b5b', GradientType=0);
+  border-bottom: 5px solid #111111;
+  background: #ec292c url('/images/sponsor_icon.png') 15px 12px no-repeat;
+  margin-bottom: 30px;
 }
 .callout.speaker {
-  border-bottom: 3px solid #393939;
-  background-color: #ec292c;
-  background-image: url('../images/speaker-call-bg.png');
+  border-bottom: 5px solid #111111;
+  background: #ec292c url('/images/speaker_icon.png') 15px 12px no-repeat;
+  margin-bottom: 10px;
 }
 .videos {
-  margin-bottom: 15px;
-  text-align: center;
-}
-.videos .more {
-  border: 1px solid #ec292c;
-  font-size: 14px;
-  padding: 5px;
+  overflow: auto;
+  clear: both;
 }
 .video {
+  overflow: auto;
+  clear: both;
+}
+.video span {
+  display: block;
+  float: left;
+}
+.video ul {
+  display: block;
+  float: left;
+  font-size: 14px;
   height: 110px;
-  position: relative;
-  padding-left: 140px;
-  text-align: left;
+  padding: 0 0 0 10px;
+  width: 230px;
 }
-.video .thumbnail {
-  position: absolute;
-  left: 0;
+.video ul a {
+  color: #333;
 }
-.video ul .title {
-  font-weight: bolder;
-  font-size: 125%;
-}
-.video ul .date {
-  font-size: 90%;
-}
-.video ul .date a {
-  color: #393939;
+.video ul li.title a {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 .blog-post {
   margin-bottom: 20px;
@@ -8086,20 +8138,15 @@ footer .design-credits a {
   font-size: 14px;
   padding: 5px;
 }
-.more-button {
-  border: 1px solid #ec292c;
-  font-size: 14px;
-  padding: 5px;
-}
 .sponsor-box {
   background-color: #ffffff;
   margin-bottom: 25px;
 }
 .sponsor-box h2 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: normal;
   color: #919191;
-  margin: 5px 0 0 0;
+  margin: 15px 0 0 0;
 }
 .sponsor-list {
   padding-left: 0;
@@ -8131,63 +8178,59 @@ footer .design-credits a {
 .bx-wrapper {
   margin: 0;
 }
+.bx-wrapper:after {
+  box-shadow: inset 0px -20px 15px 15px #ffffff;
+  pointer-events: none;
+  content: '';
+  display: block;
+  position: absolute;
+  width: auto;
+  height: 155px;
+  top: 30px;
+  left: 15px;
+  right: 15px;
+}
 .bx-wrapper .bx-viewport {
   -webkit-box-shadow: 0;
   box-shadow: 0;
   border: 0;
   left: 0;
 }
+.code-of-conduct-page .details,
 .contact-page .details {
   padding: 15px;
   background-color: #FFF;
-  color: #000;
 }
+.code-of-conduct-page .details ul,
 .contact-page .details ul {
   padding-left: 0;
   list-style: none;
 }
+.code-of-conduct-page .details ul li,
 .contact-page .details ul li {
   padding: 5px 0;
 }
+.code-of-conduct-page .details .organizers,
 .contact-page .details .organizers {
   margin-right: 0px;
 }
+.code-of-conduct-page .details .organizers img,
 .contact-page .details .organizers img {
   border-radius: 5px;
 }
+.code-of-conduct-page .form,
 .contact-page .form {
   padding: 15px;
 }
-.info-sidebar .details {
-  padding: 15px;
-  background-color: #FFF;
-  color: #000;
-}
-.info-sidebar .details .organizer-list {
-  padding-left: 0;
-  list-style: none;
-}
-.info-sidebar .details .organizer-list .organizer-line {
-  margin-bottom: 3px;
-}
-.info-sidebar .details .organizer-list .organizer-line img {
-  border-radius: 5px;
-}
-.info-sidebar .form {
-  padding: 15px;
-}
 .github-floater {
-  margin-top: 15px;
-  float: left;
+  position: fixed;
   font-size: 1.8em;
   background-color: #ec292c;
   color: #ffffff;
   padding: 6px;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-box-shadow: 2px 2px 3px #9b9b9b;
-  -webkit-box-shadow: 2px 2px 3px #9b9b9b;
-  box-shadow: 2px 2px 3px #9b9b9b;
+  border-bottom: 5px solid #111111;
+  z-index: 100;
+  top: 120px;
 }
 .github-floater ul {
   padding-left: 0;

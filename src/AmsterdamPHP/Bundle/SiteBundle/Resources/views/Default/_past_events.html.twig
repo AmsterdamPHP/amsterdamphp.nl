@@ -1,12 +1,12 @@
 <div class="past meetups col-lg-12 col-md-12">
-    <div class="title-bar">LAST MEETINGS</div>
+    <div class="title-bar">Previous meetings</div>
 
     {% for event in events %}
     <div class="meetup past">
         <div class="overview-box row">
             <div class="col-lg-7 col-md-7">
-                <p class="date">{{ (event.time/1000)|date('F d - H:i') }}</p>
                 <p class="name">{{ event.name }}</p>
+                <p class="date">{{ (event.time/1000)|date('F d - H:i') }}</p>
                 <div class="stats">
                     {{ (event.headcount > 0)? event.headcount : event.yes_rsvp_count }} {{ event.group.who }} |
                     <span class="rating">
@@ -29,8 +29,8 @@
         </div>
         <div class="row">
             <div class="description-box col-lg-12 col-md-12">
-                {{ event.description|striptags|truncate(300) }}
-                <a href="{{ event.event_url }}">Learn More</a>
+                {{ event.description|striptags|escape|truncate(300) }}
+                <br><a class="amsButton" href="{{ event.event_url }}">Learn More</a>
             </div>
         </div>
     </div>

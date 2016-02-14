@@ -1,36 +1,47 @@
 <nav>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="logo"><a href="{{ path('home') }}"><img src="/images/logo.png" alt="AmsterdamPHP"/></a></div>
-        </div>
-        <div class="col-md-8 text-right">
-            <ul class="social-icons list-inline">
-                <li><a href="http://www.true.nl"><img src="/images/true-logo.png" alt="Hosting by True"></a></li>
-                <li><a href="http://twitter.com/AmsterdamPHP"><i class="fa fa-twitter-square"></i></a></li>
-                <li><a href="http://meetup.amsterdamphp.nl">
-                        <img class="custom-icon" src="/bundles/amsterdamphpsite/images/meetup-icon-2.png" alt=""/>
-                </a></li>
-                <li><a href="https://www.facebook.com/groups/352174841510553"><i class="fa fa-facebook-square"></i></a></li>
-            </ul>
-            <ul class="nav-menu list-inline">
-                <li><a href="http://meetup.amsterdamphp.nl">Meetings</a></li>
-                <li><a href="http://blog.amsterdamphp.nl">Blog</a></li>
-                <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_sponsor' %}class="active"{% endif %}>
-                    <a href="{{ path('amsphp_be_a_sponsor') }}">Sponsor Us</a>
-                </li>
-                <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_speaker' %}class="active"{% endif %}>
-                    <a href="{{ path('amsphp_be_a_speaker') }}">Be a Speaker</a>
-                </li>
-                <li {% if app.request.attributes.get('_route') == 'amsphp_contact' %}class="active"{% endif %}>
-                    <a href="{{ path('amsphp_contact') }}">Contact</a>
-                </li>
-                <li {% if app.request.attributes.get('_route') == 'code-of-conduct' %}class="active"{% endif %}>
-                    <a href="{{ path('code-of-conduct') }}">Conduct</a>
-                </li>
-                <li>
-                    <a href="//raffles.amsterdamphp.nl">Raffles</a>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo"><a href="{{ path('home') }}"><img src="/images/logo.png" alt="AmsterdamPHP"/></a></div>
+            </div>
+            <div class="col-md-8 text-right">
+                <ul class="social-icons list-inline">
+                    <li>
+                        <a href="http://www.true.nl"><img src="/images/true-logo.png" alt="Hosting by True"></a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/AmsterdamPHP"><i class="fa fa-twitter-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="http://meetup.amsterdamphp.nl"><img class="custom-icon" src="/bundles/amsterdamphpsite/images/meetup-icon-2.png" alt=""/></a></li>
+                    <li>
+                        <a href="https://www.facebook.com/groups/352174841510553"><i class="fa fa-facebook-square"></i></a>
+                    </li>
+                </ul>
+                <ul class="nav-menu list-inline">
+                    <li>
+                        <a href="http://meetup.amsterdamphp.nl">Meetings</a>
+                    </li>
+                    <li>
+                        <a href="http://blog.amsterdamphp.nl">Blog</a>
+                    </li>
+                    <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_sponsor' %}class="active"{% endif %}>
+                        <a href="{{ path('amsphp_be_a_sponsor') }}">Sponsor Us</a>
+                    </li>
+                    <li {% if app.request.attributes.get('_route') == 'amsphp_be_a_speaker' %}class="active"{% endif %}>
+                        <a href="{{ path('amsphp_be_a_speaker') }}">Be a Speaker</a>
+                    </li>
+                    <li {% if app.request.attributes.get('_route') == 'amsphp_contact' %}class="active"{% endif %}>
+                        <a href="{{ path('amsphp_contact') }}">Contact</a>
+                    </li>
+                    <li {% if app.request.attributes.get('_route') == 'code-of-conduct' %}class="active"{% endif %}>
+                        <a href="{{ path('code-of-conduct') }}">Conduct</a>
+                    </li>
+                    <li>
+                        <a href="//raffles.amsterdamphp.nl">Raffles</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
