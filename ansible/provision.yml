@@ -10,8 +10,10 @@
     dbpasswd: root
     apache_user: vagrant
     apache_group: vagrant
+    swap_file_path: /swapfile
   tasks:
     - include: tasks/common.yml
+    - include: tasks/swapon.yml
     - include: tasks/build.yml
     - include: tasks/development.yml
     - include: tasks/deploy.yml
