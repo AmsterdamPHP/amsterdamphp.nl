@@ -53,25 +53,27 @@
   apt: pkg=redis-server state=installed
 
 # PHP
-- name: PHP 5.5 Custom Repo
-  apt_repository: repo='ppa:ondrej/php5' update_cache=yes
+- name: PHP 7 Custom Repo
+  apt_repository: repo='ppa:ondrej/php' update_cache=yes
 
 - name: PHP and Modules
   apt: pkg={{ item }} state=latest
   notify: restart apache
   tags: common
   with_items:
-    - php5
-    - php5-mysql
-    - php5-xmlrpc
+    - php7.0
+    - php7.0-mysql
+    - php7.0-xmlrpc
     - php-soap
-    - php5-gd
+    - php7.0-gd
     - php-apc
-    - php5-curl
-    - php5-intl
-    - php5-memcached
-    - php5-xdebug
-    - libapache2-mod-php5
+    - php7.0-curl
+    - php7.0-intl
+    - php7.0-memcached
+    - php7.0-xdebug
+    - php7.0-zip
+    - php7.0-xml
+    - libapache2-mod-php7.0
 
 # Configurations
 
@@ -81,12 +83,12 @@
     - restart apache
 
 - name: PHP | Config Memory Limit
-  ini_file: dest=/etc/php5/cli/php.ini section=global option=memory_limit value=256M mode=0644
+  ini_file: dest=/etc/php/7.0/cli/php.ini section=global option=memory_limit value=256M mode=0644
   notify:
     - restart apache
 
 - name: PHP | Enable Custom Config
-  shell: php5enmod -s ALL timezone
+  shell: phpenmod -s ALL timezone
 
 # Build tools
 
