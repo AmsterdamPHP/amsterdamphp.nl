@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/opt/project
+      - ./var/run:/var/run
+      - ./docker/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    networks:
+      - amsphpnl
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    build:
+      context: .
+      dockerfile: docker/php-fpm.Dockerfile
+      target: dev
+    volumes:
+      - ./:/opt/project
+      - ./var/run:/var/run
+    networks:
+      - amsphpnl
+
+networks:
+  amsphpnl:
+    name: amsphpnl
